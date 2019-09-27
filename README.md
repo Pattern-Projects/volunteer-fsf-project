@@ -11,6 +11,7 @@ The project is shared for use with the [GNU General Public License v3](https://g
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
+
     
 ## UX
 
@@ -39,6 +40,7 @@ The web app is a single page with different displays given for different functio
 - [Mockup Missing]()  
 - [Mockup Missing]()  
 
+
 ## Features
 
 Features planned, implemented and outlined for later development 
@@ -48,3 +50,8 @@ Features planned, implemented and outlined for later development
 ### Implemented Features
 
 ### Features Left to Implement
+
+
+## Technologies Used
+
+This project makes use of the following technologies:
