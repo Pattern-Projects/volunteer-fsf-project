@@ -79,4 +79,5 @@ The images for the website are taken from:
 ### Acknowledgements
 Thank you to the following for inspiration, motivation and the direction I needed:
 - Seun Owonikoko    @seun_mentor
+- Samantha Dartnall @Sammy Dartnall
 - Code Institute
