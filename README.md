@@ -56,7 +56,6 @@ Features planned, implemented and outlined for later development
 
 This project makes use of the following technologies:
 
-
 ## Testing
 
 The site was tested through a number of means:
@@ -67,3 +66,14 @@ The site was tested through a number of means:
 ## Deployment
 
 The project is hosted on
+
+## Credits
+
+### Content
+The text on the website has been copied and edited from:
+
+### Media
+The images for the website are taken from:
+
+### Acknowledgements
+Thank you to the following for inspiration, motivation and the direction I needed:
