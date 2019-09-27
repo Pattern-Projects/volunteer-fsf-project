@@ -1,4 +1,5 @@
 # volunteer-fsf-project
+
 A site for volunteers to find volunteering opportunities around the world.
 Data from volunteer work camps will be displayed and can be applied to by paying a small fee.
 
@@ -32,7 +33,18 @@ Expected users of the website include
     - font-family: 'Roboto', 'helvetica' sans-serif;
 
 ### Mockups
+
 The web app is a single page with different displays given for different functions:
 - [Mockup Missing]()  
 - [Mockup Missing]()  
 - [Mockup Missing]()  
+
+## Features
+
+Features planned, implemented and outlined for later development 
+
+### Planned Features
+
+### Implemented Features
+
+### Features Left to Implement
