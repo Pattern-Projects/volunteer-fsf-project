@@ -55,3 +55,15 @@ Features planned, implemented and outlined for later development
 ## Technologies Used
 
 This project makes use of the following technologies:
+
+
+## Testing
+
+The site was tested through a number of means:
+
+### User Stories
+
+
+## Deployment
+
+The project is hosted on
