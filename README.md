@@ -15,8 +15,8 @@ The project is shared for use with the [GNU General Public License v3](https://g
     
 ## UX
 
-![<!--Responsive Views of Home Page-->
-Responsive image missing](documentation/Responsive.png)
+<!--Responsive Views of Home Page-->
+![Responsive image missing](documentation/Responsive.png)
 
 ### Users 
 
@@ -28,7 +28,8 @@ Expected users of the website include
 
 ### Design
 
-![Website Logo Missing<!--- Gold circles representing the seats of the Oireachtas-->](documentation/logo.png)
+<!--- Gold circles representing the seats of the Oireachtas-->
+![Website Logo Missing](documentation/logo.png)
 - Colour scheme consists of complementary colours 
 - roboto font used throughout the website
     - font-family: 'Roboto', 'helvetica' sans-serif;
@@ -77,3 +78,5 @@ The images for the website are taken from:
 
 ### Acknowledgements
 Thank you to the following for inspiration, motivation and the direction I needed:
+- Seun Owonikoko    @seun_mentor
+- Code Institute
