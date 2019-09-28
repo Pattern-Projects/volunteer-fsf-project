@@ -8,5 +8,14 @@
 </head>
 <body>
     Hello There
+    <table>
+        {% for camp in camps %}
+        <tr>
+            <th>{{ camp.name }}</th>
+            <td>{{ camp.available }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="add_camp">Add Camp</a>
 </body>
 </html>
