@@ -56,9 +56,9 @@ Features planned, implemented and outlined for later development
 ## Technologies Used
 
 This project makes use of the following technologies:
-- [Django 1.11](https://docs.djangoproject.com/en/1.11/)
-    - **Django** is an open-source fullstack development framework
-    - [django.test](https://docs.djangoproject.com/en/1.11/topics/testing/) extends Python's unittest
+- [Django 1.11](https://docs.djangoproject.com/en/1.11/) is an open-source fullstack development framework.
+    - [django.test](https://docs.djangoproject.com/en/1.11/topics/testing/) extends Python's unittest.
+    - [Coverage.py 4.5.4](https://coverage.readthedocs.io/en/v4.5.x/) generates interactive HTML reports on the coverage of running a function across the project code. Used here for gauging effectiveness of testing
 ## Testing
 
 The site was tested through a number of means:
