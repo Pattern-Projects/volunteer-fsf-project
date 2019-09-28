@@ -58,7 +58,7 @@ Features planned, implemented and outlined for later development
 This project makes use of the following technologies:
 - [Django 1.11](https://docs.djangoproject.com/en/1.11/)
     - **Django** is an open-source fullstack development framework
-
+    - [django.test](https://docs.djangoproject.com/en/1.11/topics/testing/) extends Python's unittest
 ## Testing
 
 The site was tested through a number of means:
@@ -71,6 +71,10 @@ The site was tested through a number of means:
 The project is hosted on
 
 ## Credits
+
+### Useful Links
+[`$ pip freeze > requirements.txt` considered harmful](https://medium.com/@tomagee/pip-freeze-requirements-txt-considered-harmful-f0bce66cf895)
+[django.test](https://docs.djangoproject.com/en/1.11/topics/testing/)
 
 ### Content
 The text on the website has been copied and edited from:
