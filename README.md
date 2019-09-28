@@ -56,6 +56,8 @@ Features planned, implemented and outlined for later development
 ## Technologies Used
 
 This project makes use of the following technologies:
+- [Django 1.11](https://docs.djangoproject.com/en/1.11/)
+    - **Django** is an open-source fullstack development framework
 
 ## Testing
 
