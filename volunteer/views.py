@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from .models import Camp
 
 # Create your views here.
 def get_camps(request):
-    return render(request, "camps.html")
+    results = Camp.objects.all()
+    return render(request, "camps.html", {'camps': results})
