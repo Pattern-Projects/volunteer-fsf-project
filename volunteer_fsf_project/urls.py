@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from volunteer.views import get_camps
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', get_camps),
+    
 ]
