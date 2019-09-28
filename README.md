@@ -81,6 +81,7 @@ The text on the website has been copied and edited from:
 
 ### Media
 The images for the website are taken from:
+[Pexels](https://www.pexels.com/)
 
 ### Acknowledgements
 Thank you to the following for inspiration, motivation and the direction I needed:
