@@ -5,7 +5,7 @@ from volunteer.forms import CampForm
 # volunteer Form Tests
 class modelTestCase(TestCase):
         def test_can_create_an_camp_with_just_a_name(self):
-            form = CampForm({'name':"Switzerland"})
+            form = CampForm({'name':"Camp"})
             self.assertTrue(form.is_valid())
             
         def test_correct_message_for_missing_name(self):

@@ -12,3 +12,7 @@ class modelTestCase(TestCase):
         form = CampForm({'name':''})
         self.assertFalse(form.is_valid())
         self.assertEqual(form.errors['name'], [u'This field is required.'])
+        
+    def test_camp_as_a_string(self):
+        camp = Camp(name="Camp")
+        self.assertEqual("Camp", str(camp))

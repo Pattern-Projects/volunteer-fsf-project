@@ -30,3 +30,4 @@ def edit_camp(request, id):
     else:
         form = CampForm(instance=camp)
     return render(request, "camp_form.html", {'form': form})
+
