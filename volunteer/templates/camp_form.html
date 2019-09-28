@@ -13,12 +13,8 @@
         
         {% csrf_token %}
         
-        <label for="id_name">Name: </label><br>
-        <input type="text" id="id_name" name="name"/><br>
-        <br>
-        <label for="id_available">Available: </label><br>
-        <input type="checkbox" id="id_available" name="available"/><br>
-        <br>
+        {{ form }}
+        
         <input type="submit" value="Submit"/>
     </form>
 </body>
