@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, HttpResponse, redirect, get_object_or_404
 from .models import Camp
 from .forms import CampForm
 
@@ -16,4 +16,17 @@ def create_camp(request):
             return redirect(get_camps)
     else:
         form = CampForm()
+    return render(request, "camp_form.html", {'form': form})
+    
+# Edit existing camp
+def edit_camp(request, id):
+    camp = get_object_or_404(Camp, pk=id)
+    
+    if request.method=="POST":
+        form = CampForm(request.POST, instance=camp)
+        if form.is_valid():
+            form.save()
+            return redirect(get_camps)
+    else:
+        form = CampForm(instance=camp)
     return render(request, "camp_form.html", {'form': form})
