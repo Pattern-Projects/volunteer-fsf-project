@@ -1,2 +1,4 @@
 Django==1.11
 coverage==4.5.4
+gunicorn==19.9.0
+psycopg2==2.7.3.2
