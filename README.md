@@ -102,8 +102,12 @@ There are two ways of deploying to Heroku:
     `python3 manage.py migrate`
 9. Git add and commit with an apporpriate message.
 10. Push to a new github repository in your account
-11. In heroku app dashboard set automatic deplyment and select your repository
-12. Click deploy branch
+11. In Heroku Web Dashboard, on the Deployment tab set deployment method to Github
+12. In the connect to Github section sign in then connect the appropirate repo
+13. With master branch selected, turn on Automatic Deploys
+14. In the Manual Deploy section, with the master branch selected, click Deploy Branch for your first deployment
+
+Your project is now deployed! To view the running app click Open App at the top of the page. It may take a moment to open when visiting after a time of inactivity.
 
 ### Heroku Toolbelt Deployment
 
@@ -128,6 +132,7 @@ There are two ways of deploying to Heroku:
 5. Push to heroku using:
     `git push heroku master`
 
+Your project is now deployed! To view the running app click Open App at the top of the page. It may take a moment to open when visiting after a time of inactivity.
 
 ## Credits
 
@@ -135,6 +140,7 @@ There are two ways of deploying to Heroku:
 - [`$ pip freeze > requirements.txt` considered harmful](https://medium.com/@tomagee/pip-freeze-requirements-txt-considered-harmful-f0bce66cf895)
 [django.test](https://docs.djangoproject.com/en/1.11/topics/testing/)
 - [Process Types and the Procfile](https://pythonhosted.org/deis/using_deis/process-types/)
+- [Github Markdown Header Anchors](https://gist.github.com/asabaylus/3071099)
 
 ### Content
 The text on the website has been copied and edited from:
