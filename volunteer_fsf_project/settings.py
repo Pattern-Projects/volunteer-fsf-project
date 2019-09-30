@@ -26,7 +26,7 @@ SECRET_KEY = '9ui6^@e@5bi1m0)r0g&8_lfve&1br!r278d60r4ausk1pf8#@b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["3fdaf3da1a014b068f21ef37082769dc.vfs.cloud9.us-east-1.amazonaws.com", "volunteer-fsf-project.herokuapp.com"]
+ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'), os.environ.get('HOSTNAME')]
 
 
 # Application definition
@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'volunteer_fsf_project.wsgi.application'
 
 #Migrate with help of dj_database_url
 DATABASES = {
-    'default': dj_database_url.parse("postgres://qbaercitjsejxw:375103b6229264b8d098259dc74649df9806895f633611c6379bd8034ba74e9a@ec2-176-34-183-20.eu-west-1.compute.amazonaws.com:5432/d6difvob6av69i")
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 # Password validation
