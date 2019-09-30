@@ -62,6 +62,7 @@ This project makes use of the following technologies:
 - [PostgreSQL](https://www.postgresql.org/) is an open-source relational DBMS that works well with **Heroku** and **Django**
 - [gunicorn 19.9.0](https://gunicorn.org/) is a web server gateway interface that runs on **Python**
 - [psycopg2 2.7.3.2](https://pypi.org/project/psycopg2/) is a PostgreSQL database adapter for **Python**
+- [dj_database_url ](https://pypi.org/project/dj-database-url/) is a simple helper to configure Django database using db url
 
 ## Testing
 
