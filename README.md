@@ -60,6 +60,7 @@ This project makes use of the following technologies:
     - [django.test](https://docs.djangoproject.com/en/1.11/topics/testing/) extends Python's unittest.
     - [Coverage.py 4.5.4](https://coverage.readthedocs.io/en/v4.5.x/) generates interactive HTML reports on the coverage of running a function across the project code. Used here for gauging effectiveness of testing
 - [PostgreSQL](https://www.postgresql.org/) is an open-source relational DBMS that works well with **Heroku** and **Django**
+- [gunicorn 19.9.0](https://gunicorn.org/) is a web server gateway interface that runs on **Python**
 
 ## Testing
 
