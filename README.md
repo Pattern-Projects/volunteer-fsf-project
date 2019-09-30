@@ -83,8 +83,8 @@ Deployment requires some preparation. Before following the steps below ensure yo
 3. Have an existing Github account from github.com
 
 There are two ways of deploying to Heroku:
-1. [Through Heroku's Web Dashboard](#Heroku Web Dashboard Deployment) available on most OS
-2. [Through the Heroku Toolbelt](#Heroku Toolbelt Deployment) available on Ubuntu 16+
+1. [Through Heroku's Web Dashboard](#Heroku-Web-Dashboard-Deployment) available on most OS
+2. [Through the Heroku Toolbelt](#Heroku-Toolbelt-Deployment) available on Ubuntu 16+
 
 ### Heroku Web Dashboard Deployment
 
