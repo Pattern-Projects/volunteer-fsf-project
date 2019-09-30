@@ -132,7 +132,7 @@ Your project is now deployed! To view the running app click Open App at the top 
 5. Push to heroku using:
     `git push heroku master`
 
-Your project is now deployed! To view the running app click Open App at the top of the page. It may take a moment to open when visiting after a time of inactivity.
+Your project is now deployed! Visit `https://your_app_name.herokuapp.com/` to view the site. It may take a moment to open when visiting after a time of inactivity.
 
 ## Credits
 
