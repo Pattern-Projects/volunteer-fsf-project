@@ -77,28 +77,34 @@ The site was tested through a number of means:
 To deploy your own instance of volunteer-fsf-project with a little effort.
 It is suggested that you use [Heroku](http://heroku.com) for your deplyment as the project was developed with that in mind.
 
+Deployment requires some preparation. Before following the steps below ensure you have the following ready:
+1. Clone the volunteer-fsf-project git repo onto your local machine
+2. Open or Create a heroku account at heroku.com
+3. Have an existing github account from github.com
+
 There are two ways of depling to heroku:
 1. [Through heroku's web dashboard](#Heroku Web Dashboard Deployment) available on most OS
 2. [Throught the heroku toolbelt](#Heroku Toolbelt Deployment) available on Ubuntu 16+
 
-### Preparation for deployment
 
-Deployment requires some preparation:
-1. Clone the volunteer-fsf-project git repo onto your local machine
-2. Open or Create a heroku account at heroku.com
-3. Have an existing github account from github.com
- 
 
 ### Heroku Web Dashboard Deployment
 
 1. Create a new app on heroku.com - this will require a unique name
-2. In the local repo open volunteer-fsf-project/volunteer-fsf-project/settings.py
-3. Add the following to ALLOWED_HOSTS in the settings file:
+2. In the Overview tab add the **Heroku Posgres** Hobby Dev add-on
+3. In the Settings tab Reveal Config Vars and copy the value for DATABASE_URL
+4. In the local repo open volunteer-fsf-project/volunteer-fsf-project/settings.py
+5. Replace DATABASES with the following:
+    `DATABASES = {'default': dj_database_url.parse("Your DATABASE_URL")}`
+6. Add the following to ALLOWED_HOSTS in the settings file:
     `'your_app_name.herokuapp.com'`
-4. Save changes and commit with an apporpriate message.
-5. Push to a new github repository in your account
-6. In heroku app dashboard set automatic deplyment and select your repository
-7. Click deploy branch
+7. Save changes.
+8. In a teminal type:
+    `python3 manage.py migrate`
+9. Git add and commit with an apporpriate message.
+10. Push to a new github repository in your account
+11. In heroku app dashboard set automatic deplyment and select your repository
+12. Click deploy branch
 
 ### Heroku Toolbelt Deployment
 
@@ -108,7 +114,15 @@ Deployment requires some preparation:
     `heroku login`
 3. Create a new app project:
     `heroku create your_app_name`
+4. Point toolbelt to this project with:
+    `heroku git:remote -a your_app_name`
+4. Connect a Postgres: Hobby Dev Add-on with:
+    `heroku addons:create heroku-postgresql:hobby-dev`
+4. Retrieve the DATABASE_URL:
+    `heroku config:get DATABASE_URL`
 4. In the local repo open volunteer-fsf-project/volunteer-fsf-project/settings.py
+5. Replace DATABASES with the following:
+    `DATABASES = {'default': dj_database_url.parse("Your DATABASE_URL")}`
 3. Add the following to ALLOWED_HOSTS in the settings file:
     `'your_app_name.herokuapp.com'`
 4. Save changes and commit with an apporpriate message.
