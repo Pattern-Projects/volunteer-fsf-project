@@ -56,6 +56,7 @@ Features planned, implemented and outlined for later development
 ## Technologies Used
 
 This project makes use of the following technologies:
+- [Python 3.6.8](https://www.python.org/) is a general purpose programming language.
 - [Django 1.11](https://docs.djangoproject.com/en/1.11/) is an open-source fullstack development framework.
     - [django.test](https://docs.djangoproject.com/en/1.11/topics/testing/) extends Python's unittest.
     - [Coverage.py 4.5.4](https://coverage.readthedocs.io/en/v4.5.x/) generates interactive HTML reports on the coverage of running a function across the project code. Used here for gauging effectiveness of testing
@@ -78,13 +79,14 @@ The site was tested through a number of means:
 To deploy your own instance of volunteer-fsf-project take a little effort.
 It is suggested that you use [Heroku](http://heroku.com) for your deplyment as the project was developed with that in mind.
 
->>> Some work required here as with config vars some of these steps aren't required <<<
+>>> Some work required here - with config vars some of these steps aren't required <<<
 
 Deployment requires some preparation. Before following the steps below ensure you have done the following:
-1. Clone the volunteer-fsf-project git repo onto your local machine
-2. Open or Create a Heroku account at heroku.com
-3. Have an existing Github account from github.com
-4. Fork a copy of volunteer-fsf-project to you github
+1. A development environment with Python 3.6.8 or higher installed
+1. Open or Create a Heroku account at heroku.com
+2. Have an existing Github account from github.com
+3. Fork a copy of volunteer-fsf-project to you github
+4. Clone your fork of the volunteer-fsf-project git repo onto your developement environment
 
 There are two ways of deploying to Heroku:
 1. [Through Heroku's Web Dashboard](#Heroku-Web-Dashboard-Deployment) available on most OS
