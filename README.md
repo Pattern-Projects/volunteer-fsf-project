@@ -132,8 +132,9 @@ There are two ways of deploying to Heroku:
 ## Credits
 
 ### Useful Links
-[`$ pip freeze > requirements.txt` considered harmful](https://medium.com/@tomagee/pip-freeze-requirements-txt-considered-harmful-f0bce66cf895)
+- [`$ pip freeze > requirements.txt` considered harmful](https://medium.com/@tomagee/pip-freeze-requirements-txt-considered-harmful-f0bce66cf895)
 [django.test](https://docs.djangoproject.com/en/1.11/topics/testing/)
+- [Process Types and the Procfile](https://pythonhosted.org/deis/using_deis/process-types/)
 
 ### Content
 The text on the website has been copied and edited from:
