@@ -26,7 +26,7 @@ SECRET_KEY = '9ui6^@e@5bi1m0)r0g&8_lfve&1br!r278d60r4ausk1pf8#@b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["3fdaf3da1a014b068f21ef37082769dc.vfs.cloud9.us-east-1.amazonaws.com"]
+ALLOWED_HOSTS = ["3fdaf3da1a014b068f21ef37082769dc.vfs.cloud9.us-east-1.amazonaws.com", "volunteer-fsf-project.herokuapp.com"]
 
 
 # Application definition

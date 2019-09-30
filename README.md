@@ -74,24 +74,22 @@ The site was tested through a number of means:
 
 ## Deployment
 
-To deploy your own instance of volunteer-fsf-project with a little effort.
+To deploy your own instance of volunteer-fsf-project take a little effort.
 It is suggested that you use [Heroku](http://heroku.com) for your deplyment as the project was developed with that in mind.
 
-Deployment requires some preparation. Before following the steps below ensure you have the following ready:
+Deployment requires some preparation. Before following the steps below ensure you have done the following:
 1. Clone the volunteer-fsf-project git repo onto your local machine
-2. Open or Create a heroku account at heroku.com
-3. Have an existing github account from github.com
+2. Open or Create a Heroku account at heroku.com
+3. Have an existing Github account from github.com
 
-There are two ways of depling to heroku:
-1. [Through heroku's web dashboard](#Heroku Web Dashboard Deployment) available on most OS
-2. [Throught the heroku toolbelt](#Heroku Toolbelt Deployment) available on Ubuntu 16+
-
-
+There are two ways of deploying to Heroku:
+1. [Through Heroku's Web Dashboard](#Heroku Web Dashboard Deployment) available on most OS
+2. [Through the Heroku Toolbelt](#Heroku Toolbelt Deployment) available on Ubuntu 16+
 
 ### Heroku Web Dashboard Deployment
 
 1. Create a new app on heroku.com - this will require a unique name
-2. In the Overview tab add the **Heroku Posgres** Hobby Dev add-on
+2. In the Overview tab add the **Heroku Posgres: Hobby Dev** add-on
 3. In the Settings tab Reveal Config Vars and copy the value for DATABASE_URL
 4. In the local repo open volunteer-fsf-project/volunteer-fsf-project/settings.py
 5. Replace DATABASES with the following:
