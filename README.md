@@ -78,10 +78,13 @@ The site was tested through a number of means:
 To deploy your own instance of volunteer-fsf-project take a little effort.
 It is suggested that you use [Heroku](http://heroku.com) for your deplyment as the project was developed with that in mind.
 
+>>> Some work required here as with config vars some of these steps aren't required <<<
+
 Deployment requires some preparation. Before following the steps below ensure you have done the following:
 1. Clone the volunteer-fsf-project git repo onto your local machine
 2. Open or Create a Heroku account at heroku.com
 3. Have an existing Github account from github.com
+4. Fork a copy of volunteer-fsf-project to you github
 
 There are two ways of deploying to Heroku:
 1. [Through Heroku's Web Dashboard](#Heroku-Web-Dashboard-Deployment) available on most OS
