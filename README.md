@@ -86,58 +86,62 @@ Deployment requires some preparation. Before following the steps below ensure yo
 1. Open or Create a Heroku account at heroku.com
 2. Have an existing Github account from github.com
 3. Fork a copy of volunteer-fsf-project to you github
-4. Clone your fork of the volunteer-fsf-project git repo onto your developement environment
+
+### Deploying to Heroku hosting service
 
 There are two ways of deploying to Heroku:
 1. [Through Heroku's Web Dashboard](#Heroku-Web-Dashboard-Deployment) available on most OS
 2. [Through the Heroku Toolbelt](#Heroku-Toolbelt-Deployment) available on Ubuntu 16+
 
-### Heroku Web Dashboard Deployment
+#### Heroku Web Dashboard Deployment
 
 1. Create a new app on heroku.com - this will require a unique name
 2. In the Overview tab add the **Heroku Posgres: Hobby Dev** add-on
-3. In the Settings tab Reveal Config Vars and copy the value for DATABASE_URL
-4. In the local repo open volunteer-fsf-project/volunteer-fsf-project/settings.py
-5. Replace DATABASES with the following:
-    `DATABASES = {'default': dj_database_url.parse("Your DATABASE_URL")}`
-6. Add the following to ALLOWED_HOSTS in the settings file:
-    `'your_app_name.herokuapp.com'`
-7. Save changes.
-8. In a teminal type:
-    `python3 manage.py migrate`
-9. Git add and commit with an apporpriate message.
-10. Push to a new github repository in your account
-11. In Heroku Web Dashboard, on the Deployment tab set deployment method to Github
-12. In the connect to Github section sign in then connect the appropirate repo
-13. With master branch selected, turn on Automatic Deploys
-14. In the Manual Deploy section, with the master branch selected, click Deploy Branch for your first deployment
+3. In the Settings tab Reveal Config Vars add the following values:
+    - `DISABLE_COLLECTSTATIC : 1`
+    - `HOSTNAME : your_app_name.herokuapp.com`
+4. On the Deployment tab set deployment method to Github
+5. In the connect to Github section sign in then connect your fork of the project
+6. With master branch selected, turn on Automatic Deploys
+7. In the Manual Deploy section, with the master branch selected, click Deploy Branch for your first deployment
 
 Your project is now deployed! To view the running app click Open App at the top of the page. It may take a moment to open when visiting after a time of inactivity.
 
-### Heroku Toolbelt Deployment
+#### Heroku Toolbelt Deployment
 
-1. Open a new terminal in the local repo and install heroku toolbelt with:
+1. Clone your fork of the volunteer-fsf-project git repo onto your developement environment
+2. Navigate inside the project:
+    `cd volunteer-fsf-project`
+3. Open a new terminal in the local repo and install heroku toolbelt with:
     `sudo snap install --classic heroku`
-2. Login to heroku using the toolbelt:
+4. Login to heroku using the toolbelt:
     `heroku login`
-3. Create a new app project:
+5. Create a new app project:
     `heroku create your_app_name`
-4. Point toolbelt to this project with:
+6. Point toolbelt to the created project with:
     `heroku git:remote -a your_app_name`
-4. Connect a Postgres: Hobby Dev Add-on with:
+7. Connect a Postgres: Hobby Dev Add-on with:
     `heroku addons:create heroku-postgresql:hobby-dev`
-4. Retrieve the DATABASE_URL:
+8. Retrieve the DATABASE_URL to ensure it is connected:
     `heroku config:get DATABASE_URL`
-4. In the local repo open volunteer-fsf-project/volunteer-fsf-project/settings.py
-5. Replace DATABASES with the following:
-    `DATABASES = {'default': dj_database_url.parse("Your DATABASE_URL")}`
-3. Add the following to ALLOWED_HOSTS in the settings file:
-    `'your_app_name.herokuapp.com'`
-4. Save changes and commit with an apporpriate message.
-5. Push to heroku using:
+9. Set the following config vars:
+    - `heroku config:set DISABLE_COLLECTSTATIC=1`
+    - `heroku config:set HOSTNAME=your_app_name.herokuapp.com`
+10. Push to heroku using:
     `git push heroku master`
 
 Your project is now deployed! Visit `https://your_app_name.herokuapp.com/` to view the site. It may take a moment to open when visiting after a time of inactivity.
+
+### Running Locally
+To run the project locally.
+Using a development environment with Python 3.6.8 or higher installed
+Clone your fork of the volunteer-fsf-project git repo onto your developement environment
+Open the project and install the dependencies.
+Migrate data
+Open a terminal and type in:
+    `run`
+
+Your project is now running! To view the project open it in a web browser.
 
 ## Credits
 
