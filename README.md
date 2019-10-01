@@ -180,7 +180,7 @@ Your project is now running! To view the project open it in a web browser.
 [django.test](https://docs.djangoproject.com/en/1.11/topics/testing/)
 - [Process Types and the Procfile](https://pythonhosted.org/deis/using_deis/process-types/)
 - [Github Markdown Header Anchors](https://gist.github.com/asabaylus/3071099)
-
+- [.gitignore not ignoring the files specified.](https://github.community/t5/How-to-use-Git-and-GitHub/gitignore-not-ignoring-the-files-specified/td-p/11055)
 ### Content
 The text on the website has been copied and edited from:
 
