@@ -47,6 +47,22 @@ The web app is a single page with different displays given for different functio
 Features planned, implemented and outlined for later development 
 
 ### Planned Features
+- Camps list
+- Filters
+    - Region
+    - Country
+    - Topic
+    - Type of Work
+    - Setting
+    - Dates
+    - Special requirements
+    - Number of Places Available
+- Searchable
+- Translatable Pages
+- Membership Sign Up
+- Newsletter and Blog
+- Newsletter Signup
+- Login Authentication
 
 ### Implemented Features
 
@@ -72,6 +88,17 @@ This project makes use of the following technologies:
 The site was tested through a number of means:
 
 ### User Stories
+
+### Django TestCase
+
+You can run theses tests by first following the steps in Deployment to get the project running.
+Ensure that the dependencies are installed.
+Next in a terminal inside the project type:
+    `coverage manage.py test`
+When the tests are complete you will be provided a report on the pass rate of the program methods. This should be 100%.
+To view an interactive HTML display of the coverage of code tested run this in the terminal:
+    `coverage html`
+When the command completes open the report in a web browser:
 
 
 ## Deployment
