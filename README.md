@@ -113,6 +113,7 @@ Deployment requires some preparation. Before following the steps below ensure yo
 1. Open or Create a Heroku account at heroku.com
 2. Have an existing Github account from github.com
 3. Fork a copy of volunteer-fsf-project to you github
+4. You have generated a secret key - can be generated [here](https://miniwebtool.com/django-secret-key-generator/)
 
 ### Deploying to Heroku hosting service
 
@@ -127,6 +128,7 @@ There are two ways of deploying to Heroku:
 3. In the Settings tab Reveal Config Vars add the following values:
     - `DISABLE_COLLECTSTATIC : 1`
     - `HOSTNAME : your_app_name.herokuapp.com`
+    - `SECRET_KEY : your_secret_key`
 4. On the Deployment tab set deployment method to Github
 5. In the connect to Github section sign in then connect your fork of the project
 6. With master branch selected, turn on Automatic Deploys
@@ -154,6 +156,7 @@ Your project is now deployed! To view the running app click Open App at the top 
 9. Set the following config vars:
     - `heroku config:set DISABLE_COLLECTSTATIC=1`
     - `heroku config:set HOSTNAME=your_app_name.herokuapp.com`
+    - `heroku config:set SECRET_KEY=your_secret_key`
 10. Push to heroku using:
     `git push heroku master`
 
