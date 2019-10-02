@@ -7,7 +7,11 @@
     <title>Volunteer - Camps</title>
 </head>
 <body>
-    Hello There
+
+    <nav><ul>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+    </ul></nav>
+
     <table>
         {% for camp in camps %}
         <tr>
@@ -22,5 +26,14 @@
         {% endfor %}
     </table>
     <a href="add_camp">Add Camp</a>
+
+    <hr>
+    {% if messages %}
+    <div>
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    </div>
+    {% endif %}
 </body>
 </html>
