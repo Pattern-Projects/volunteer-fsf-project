@@ -65,7 +65,9 @@ Features planned, implemented and outlined for later development
 - Login Authentication
 
 ### Implemented Features
-
+- Camps list
+- Authentication
+    - Logout
 ### Features Left to Implement
 
 
