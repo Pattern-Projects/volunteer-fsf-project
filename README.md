@@ -170,11 +170,28 @@ Using a development environment with Python 3.6.8 or higher installed
 Clone your fork of the volunteer-fsf-project git repo onto your developement environment
 Open the project and install the dependencies:
     `pip3 install -r requirements.txt`
-Migrate data
-Open a terminal and type in:
+In the terminal export the following values:
+    `export DEVELOPMENT=1`
+    `export SECRET_KEY='your_secret_key'`
+Next run the project:
     `python3 manage.py runserver`
 
 Your project is now running! To view the project open it in a web browser.
+
+### Running with Gitpod
+Open the forked volunteer-fsf-project page on github.com
+Prefix the url with the following:
+    `gitpod.io/#`
+Gitpod will create an environment for you in a couple minutes
+When the IDE is ready, in the terminal install dependencies:
+    `pip3 install -r requirements.txt`
+In the terminal export the following values:
+    `export DEVELOPMENT=1`
+    `export SECRET_KEY='your_secret_key'`
+Next run the project:
+    `python3 manage.py runserver`
+
+Your project is now running! To view the project open it in Preview.
 
 ## Credits
 
