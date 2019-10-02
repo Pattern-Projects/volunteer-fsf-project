@@ -82,6 +82,7 @@ This project makes use of the following technologies:
 - [dj_database_url 0.5.0](https://pypi.org/project/dj-database-url/) is a simple helper to configure Django database using db url
 - [Heroku](http://heroku.com) is a cloud platform as a service which allows easy deployment of this project and database
 - [Heroku Toolbelt](https://devcenter.heroku.com/articles/heroku-cli) connects to Heroku through a terminal
+- [Gitpod](gitpod.io) is an in browser IDE that can open and setup git repositories directly from github
 
 ## Testing
 
