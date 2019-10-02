@@ -170,7 +170,7 @@ Using a development environment with Python 3.6.8 or higher installed
 Clone your fork of the volunteer-fsf-project git repo onto your developement environment
 Open the project and install the dependencies:
     `pip3 install -r requirements.txt`
-Apply migrations:
+Apply any migrations:
     `python3 manage.py migrate`
 In the terminal export the following values:
     `export DEVELOPMENT=1`
@@ -187,7 +187,7 @@ Prefix the url with the following:
 Gitpod will create an environment for you in a couple minutes
 When the IDE is ready, in the terminal install dependencies:
     `pip3 install -r requirements.txt`
-Apply migrations:
+Apply any migrations:
     `python3 manage.py migrate`
 In the terminal export the following values:
     `export DEVELOPMENT=1`
