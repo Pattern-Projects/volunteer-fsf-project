@@ -12,13 +12,13 @@ The project is shared for use with the [GNU General Public License v3](https://g
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    
+
 ## UX
 
 <!--Responsive Views of Home Page-->
 ![Responsive image missing](documentation/Responsive.png)
 
-### Users 
+### Users
 
 Expected users of the website include
 
@@ -30,21 +30,21 @@ Expected users of the website include
 
 <!--- Gold circles representing the seats of the Oireachtas-->
 ![Website Logo Missing](documentation/logo.png)
-- Colour scheme consists of complementary colours 
+- Colour scheme consists of complementary colours
 - roboto font used throughout the website
     - font-family: 'Roboto', 'helvetica' sans-serif;
 
 ### Mockups
 
 The web app is a single page with different displays given for different functions:
-- [Mockup Missing]()  
-- [Mockup Missing]()  
-- [Mockup Missing]()  
+- [Mockup Missing]()
+- [Mockup Missing]()
+- [Mockup Missing]()
 
 
 ## Features
 
-Features planned, implemented and outlined for later development 
+Features planned, implemented and outlined for later development
 
 ### Planned Features
 - Camps list
@@ -166,7 +166,8 @@ Your project is now deployed! Visit `https://your_app_name.herokuapp.com/` to vi
 To run the project locally.
 Using a development environment with Python 3.6.8 or higher installed
 Clone your fork of the volunteer-fsf-project git repo onto your developement environment
-Open the project and install the dependencies.
+Open the project and install the dependencies:
+    `pip3 install -r requirements.txt`
 Migrate data
 Open a terminal and type in:
     `run`
