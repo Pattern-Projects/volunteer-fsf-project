@@ -83,6 +83,7 @@ This project makes use of the following technologies:
 - [Heroku](http://heroku.com) is a cloud platform as a service which allows easy deployment of this project and database
 - [Heroku Toolbelt](https://devcenter.heroku.com/articles/heroku-cli) connects to Heroku through a terminal
 - [Gitpod](gitpod.io) is an in browser IDE that can open and setup git repositories directly from github
+- [AWS Cloud9](https://www.awseducate.com/signin/SiteLogin) IDE services from Amazon and connecting into their suite of products.
 
 ## Testing
 
