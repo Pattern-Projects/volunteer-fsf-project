@@ -170,7 +170,7 @@ Open the project and install the dependencies:
     `pip3 install -r requirements.txt`
 Migrate data
 Open a terminal and type in:
-    `run`
+    `python3 manage.py runserver`
 
 Your project is now running! To view the project open it in a web browser.
 
@@ -182,6 +182,8 @@ Your project is now running! To view the project open it in a web browser.
 - [Process Types and the Procfile](https://pythonhosted.org/deis/using_deis/process-types/)
 - [Github Markdown Header Anchors](https://gist.github.com/asabaylus/3071099)
 - [.gitignore not ignoring the files specified.](https://github.community/t5/How-to-use-Git-and-GitHub/gitignore-not-ignoring-the-files-specified/td-p/11055)
+- [How can I change the author name / email of a commit?](https://www.git-tower.com/learn/git/faq/change-author-name-email)
+
 ### Content
 The text on the website has been copied and edited from:
 
