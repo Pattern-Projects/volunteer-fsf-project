@@ -63,7 +63,9 @@ Features planned, implemented and outlined for later development
 - Newsletter and Blog
 - Newsletter Signup
 - Login Authentication
-
+- Documentation
+    - README
+    - Doc Strings
 ### Implemented Features
 - Camps list
 - Authentication
@@ -203,13 +205,14 @@ Your project is now running! To view the project open it in Preview.
 
 ### Useful Links
 - [`$ pip freeze > requirements.txt` considered harmful](https://medium.com/@tomagee/pip-freeze-requirements-txt-considered-harmful-f0bce66cf895)
-[django.test](https://docs.djangoproject.com/en/1.11/topics/testing/)
+- [django.test](https://docs.djangoproject.com/en/1.11/topics/testing/)
 - [Process Types and the Procfile](https://pythonhosted.org/deis/using_deis/process-types/)
 - [Github Markdown Header Anchors](https://gist.github.com/asabaylus/3071099)
 - [.gitignore not ignoring the files specified.](https://github.community/t5/How-to-use-Git-and-GitHub/gitignore-not-ignoring-the-files-specified/td-p/11055)
 - [How can I change the author name / email of a commit?](https://www.git-tower.com/learn/git/faq/change-author-name-email)
 - [VI Text Editor with Commands: Linux/Unix Tutorial](https://www.guru99.com/the-vi-editor.html)
 - [Gitpod - Environment Variables](https://www.gitpod.io/docs/47_environment_variables/)
+- [Docstrings in Python](https://www.datacamp.com/community/tutorials/docstrings-python)
 
 ### Content
 The text on the website has been copied and edited from:
