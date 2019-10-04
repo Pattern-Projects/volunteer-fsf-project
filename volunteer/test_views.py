@@ -17,6 +17,10 @@ class modelTestCase(TestCase):
         page = self.client.get("/login")
         self.assertEqual(page.status_code, 200)
 
+    def test_registration_page(self):
+        page = self.client.get("/registration")
+        self.assertEqual(page.status_code, 200)
+
     def test_get_home_page(self):
         page = self.client.get("/")
         self.assertEqual(page.status_code, 200)
