@@ -1,14 +1,34 @@
 from django.shortcuts import render, HttpResponse, redirect, reverse, get_object_or_404
 from django.contrib import auth, messages
 from .models import Camp
-from .forms import CampForm, UserLoginForm
+from .forms import CampForm, UserLoginForm, UserRegistrationForm
 
 # Authentication
 
 #Register
 def registration(request):
     """Opens the registration page"""
-    return render(request, 'registration.html')
+    if request.user.is_authenticated:
+        return redirect(reverse('home'))
+
+    if request.method=='POST':
+        registration_form = UserRegistrationForm(request.POST)
+
+        if registration_form.is_valid():
+            registration_form.save()
+
+            user = auth.authenticate(username=request.POST['username'],
+                                    password=request.POST['password1'])
+            if user:
+                auth.login(user=user, request=request)
+                messages.success(request, "You have been logged in!")
+                return redirect(reverse('home'))
+            else:
+                messages.error(request, 'Unable to register your account right now')
+
+    else:
+        registration_form = UserRegistrationForm()
+    return render(request, "registration.html", {'registration_form': registration_form})
 
 # Login
 def login(request):
