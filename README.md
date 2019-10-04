@@ -66,10 +66,13 @@ Features planned, implemented and outlined for later development
 - Documentation
     - README
     - Doc Strings
+
+
 ### Implemented Features
 - Camps list
 - Authentication
     - Logout
+    - Login
 ### Features Left to Implement
 
 

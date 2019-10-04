@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect, reverse, get_object_or_404
 from django.contrib import auth, messages
 from .models import Camp
-from .forms import CampForm
+from .forms import CampForm, UserLoginForm
 
 # Authentication
 
@@ -13,7 +13,20 @@ def registration(request):
 # Login
 def login(request):
     """Opens the loginn page"""
-    return render(request, 'login.html')
+    if request.method=='POST':
+        login_form = UserLoginForm(request.POST)
+        if login_form.is_valid():
+            user = auth.authenticate(   username=request.POST['username'],
+                                        password=request.POST['password'])
+            if user:
+                messages.success(request, 'successful login!')
+                auth.login(user=user, request=request)
+            else:
+                login_form.add_error(None, 'Username or password are incorrect')
+
+    else:
+        login_form = UserLoginForm()
+    return render(request, "login.html", {'login_form': login_form})
 
 # Logout
 def logout(request):
