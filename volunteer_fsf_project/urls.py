@@ -19,8 +19,11 @@ from volunteer.views import logout, get_camps, create_camp, edit_camp
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    # url(r'^login$', login, name="login"),
     url(r'^logout$', logout, name="logout"),
-    url(r'^$', get_camps, name="get_camps"),
+    # url(r'^registration$', registration, name="registration"),
+    url(r'^$', get_camps, name="home"),
+    url(r'^get_camps$', get_camps, name="get_camps"),
     url(r'^add_camp$', create_camp),
     url(r'^edit_camp/(?P<id>\d+)$', edit_camp)
 ]

@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Volunteer - Camps</title>
-</head>
-<body>
-
-    <nav><ul>
-        <li><a href="{% url 'logout' %}">Logout</a></li>
-    </ul></nav>
+{% extends 'base.html' %}
+{% block page_title %}Home Page{% endblock %}
+{% block page_heading %}Home{% endblock %}
+{% block content %}
 
     <table>
         {% for camp in camps %}
@@ -27,13 +18,4 @@
     </table>
     <a href="add_camp">Add Camp</a>
 
-    <hr>
-    {% if messages %}
-    <div>
-        {% for message in messages %}
-            {{ message }}
-        {% endfor %}
-    </div>
-    {% endif %}
-</body>
-</html>
+{% endblock %}
