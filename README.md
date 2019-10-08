@@ -92,11 +92,13 @@ This project makes use of the following technologies:
 - [Gitpod](gitpod.io) is an in browser IDE that can open and setup git repositories directly from github
 - [AWS Cloud9](https://www.awseducate.com/signin/SiteLogin) IDE services from Amazon and connecting into their suite of products.
 - [Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
+- [Font Awsome](https://fontawesome.com/)
 
 ## Developement
 
 ### Styling
 Bootstrap CSS is added to the project through a CDN link in the base.html <head> tag.
+Icons are imported from FontAwesome using their new kit system
 
 ### Heroku
 Heroku provides a number of useful tools to aid in development
