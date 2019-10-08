@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'volunteer'
+    'django_forms_bootstrap',
+    'volunteer',
 ]
 
 MIDDLEWARE = [
