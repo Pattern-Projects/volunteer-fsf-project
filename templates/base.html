@@ -7,6 +7,7 @@
 
     <title>{% block page_title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/f3e1d18d42.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav><ul>
@@ -18,6 +19,7 @@
             <li><a href="{% url 'registration' %}">Register</a></li>
         {% endif %}
     </ul></nav>
+    <i class="fas fa-hand-holding-heart"></i>
     <hr> {% if messages %}
     <div>
         {% for message in messages %} {{ message }} {% endfor %}
