@@ -108,7 +108,7 @@ Example:
     - [CSV](https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.csv?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c)
     - [JSON](https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.json?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c)
     - Google Sheets - paste provided macro into your sheet:
-        =IMPORTDATA("https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.csv?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c")
+        ```=IMPORTDATA("https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.csv?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c")```
 
 
 ## Testing
