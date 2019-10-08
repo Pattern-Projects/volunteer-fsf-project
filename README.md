@@ -235,6 +235,7 @@ Your project is now running! To view the project open it in Preview.
 - [VI Text Editor with Commands: Linux/Unix Tutorial](https://www.guru99.com/the-vi-editor.html)
 - [Gitpod - Environment Variables](https://www.gitpod.io/docs/47_environment_variables/)
 - [Docstrings in Python](https://www.datacamp.com/community/tutorials/docstrings-python)
+- [Heroku Case Study - Life.io - Dataclips](https://www.heroku.com/customers/lifeio?c=7013A000002ILZjQAO&utm_campaign=Dataclips%20-%20Email&utm_medium=email&utm_source=nurture&utm_content=customers&utm_term=lifeio#heroku-dataclips)
 
 ### Content
 The text on the website has been copied and edited from:
