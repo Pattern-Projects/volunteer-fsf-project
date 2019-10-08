@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load bootstrap_tags %}
 {% block page_title %}Camp Form{% endblock %}
 {% block page_heading %}Camp Form{% endblock %}
 {% block content %}
@@ -7,7 +8,7 @@
 
         {% csrf_token %}
 
-        {{ form.as_p }}
+        {{ form | as_bootstrap }}
 
         <input type="submit" value="Submit"/>
 
