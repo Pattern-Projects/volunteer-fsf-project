@@ -92,6 +92,24 @@ This project makes use of the following technologies:
 - [Gitpod](gitpod.io) is an in browser IDE that can open and setup git repositories directly from github
 - [AWS Cloud9](https://www.awseducate.com/signin/SiteLogin) IDE services from Amazon and connecting into their suite of products.
 
+## Developement
+
+### Heroku
+Heroku provides a number of useful tools to aid in development
+
+#### Heroku Postgres Add-on
+Databases can be created and hosted on heroku using their built in PostgreSQL add-ons.
+
+#### Dataclips
+The Heorku Postgres add-on allows for secure links to SQL quries of the database known as dataclips. They are great for quick referencing of the database and sharing of specific data across teams.
+Following the provided links quickly exports and downloads the current data quiry results to you computer or a Google Sheets account.
+Example:
+- All available camps
+    -[CSV](https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.csv?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c)
+    -[JSON](https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.json?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c)
+    -[Google Sheets](=IMPORTDATA("https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.csv?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c")) paste provided macro into your Google sheet
+
+
 ## Testing
 
 The site was tested through a number of means:
