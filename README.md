@@ -105,9 +105,9 @@ The Heorku Postgres add-on allows for secure links to SQL quries of the database
 Following the provided links quickly exports and downloads the current data quiry results to you computer or a Google Sheets account.
 Example:
 - All available camps
-    -[CSV](https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.csv?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c)
-    -[JSON](https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.json?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c)
-    -[Google Sheets](=IMPORTDATA("https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.csv?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c")) paste provided macro into your Google sheet
+    - [CSV](https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.csv?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c)
+    - [JSON](https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.json?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c)
+    - [Google Sheets](=IMPORTDATA("https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.csv?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c")) paste provided macro into your Google sheet
 
 
 ## Testing
