@@ -115,7 +115,7 @@ Example:
     - [CSV](https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.csv?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c)
     - [JSON](https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.json?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c)
     - Google Sheets - paste provided macro into your sheet:
-        ```=IMPORTDATA("https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.csv?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c")```
+        - ```=IMPORTDATA("https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.csv?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c")```
 
 
 ## Testing
@@ -127,13 +127,13 @@ The site was tested through a number of means:
 ### Django TestCase
 
 You can run theses tests by first following the steps in Deployment to get the project running.
-Ensure that the dependencies are installed.
-Next in a terminal inside the project type:
-    `coverage manage.py test`
-When the tests are complete you will be provided a report on the pass rate of the program methods. This should be 100%.
-To view an interactive HTML display of the coverage of code tested run this in the terminal:
-    `coverage html`
-When the command completes open the report in a web browser:
+- Ensure that the dependencies are installed.
+- Next in a terminal inside the project type:
+    - `coverage manage.py test`
+- When the tests are complete you will be provided a report on the pass rate of the program methods. This should be 100%.
+- To view an interactive HTML display of the coverage of code tested run this in the terminal:
+    - `coverage html`
+- When the command completes open the report in a web browser:
 
 
 ## Deployment
@@ -141,14 +141,12 @@ When the command completes open the report in a web browser:
 To deploy your own instance of volunteer-fsf-project take a little effort.
 It is suggested that you use [Heroku](http://heroku.com) for your deplyment as the project was developed with that in mind.
 
->>> Some work required here - with config vars some of these steps aren't required <<<
-
 Deployment requires some preparation. Before following the steps below ensure you have done the following:
 1. A development environment with Python 3.6.8 or higher installed
 1. Open or Create a Heroku account at heroku.com
 2. Have an existing Github account from github.com
 3. Fork a copy of volunteer-fsf-project to you github
-4. You have generated a secret key - can be generated [here](https://miniwebtool.com/django-secret-key-generator/)
+4. Generate a secret key - can be generated [here](https://miniwebtool.com/django-secret-key-generator/)
 
 ### Deploying to Heroku hosting service
 
@@ -175,25 +173,25 @@ Your project is now deployed! To view the running app click Open App at the top 
 
 1. Clone your fork of the volunteer-fsf-project git repo onto your developement environment
 2. Navigate inside the project:
-    `cd volunteer-fsf-project`
+    - `cd volunteer-fsf-project`
 3. Open a new terminal in the local repo and install heroku toolbelt with:
-    `sudo snap install --classic heroku`
+    - `sudo snap install --classic heroku`
 4. Login to heroku using the toolbelt:
-    `heroku login`
+    - `heroku login`
 5. Create a new app project:
-    `heroku create your_app_name`
+    - `heroku create your_app_name`
 6. Point toolbelt to the created project with:
-    `heroku git:remote -a your_app_name`
+    - `heroku git:remote -a your_app_name`
 7. Connect a Postgres: Hobby Dev Add-on with:
-    `heroku addons:create heroku-postgresql:hobby-dev`
+    - `heroku addons:create heroku-postgresql:hobby-dev`
 8. Retrieve the DATABASE_URL to ensure it is connected:
-    `heroku config:get DATABASE_URL`
+    - `heroku config:get DATABASE_URL`
 9. Set the following config vars:
     - `heroku config:set DISABLE_COLLECTSTATIC=1`
     - `heroku config:set HOSTNAME=your_app_name.herokuapp.com`
     - `heroku config:set SECRET_KEY=your_secret_key`
 10. Push to heroku using:
-    `git push heroku master`
+    - `git push heroku master`
 
 Your project is now deployed! Visit `https://your_app_name.herokuapp.com/` to view the site. It may take a moment to open when visiting after a time of inactivity.
 
@@ -243,6 +241,7 @@ Your project is now running! To view the project open it in Preview.
 - [Gitpod - Environment Variables](https://www.gitpod.io/docs/47_environment_variables/)
 - [Docstrings in Python](https://www.datacamp.com/community/tutorials/docstrings-python)
 - [Heroku Case Study - Life.io - Dataclips](https://www.heroku.com/customers/lifeio?c=7013A000002ILZjQAO&utm_campaign=Dataclips%20-%20Email&utm_medium=email&utm_source=nurture&utm_content=customers&utm_term=lifeio#heroku-dataclips)
+- [StackOverflow - Git pull from another repository](https://stackoverflow.com/questions/24815952/git-pull-from-another-repository/24816134#24816134)
 
 ### Content
 The text on the website has been copied and edited from:
