@@ -82,18 +82,19 @@ This project makes use of the following technologies:
 - [Python 3.6.8](https://www.python.org/) is a general purpose programming language.
 - [Django 1.11](https://docs.djangoproject.com/en/1.11/) is an open-source fullstack development framework.
     - [django.test](https://docs.djangoproject.com/en/1.11/topics/testing/) extends Python's unittest.
-    - [Coverage.py 4.5.4](https://coverage.readthedocs.io/en/v4.5.x/) generates interactive HTML reports on the coverage of running a function across the project code. Used here for gauging effectiveness of testing
-- [PostgreSQL](https://www.postgresql.org/) is an open-source relational DBMS that works well with **Heroku** and **Django**
-- [gunicorn 19.9.0](https://gunicorn.org/) is a web server gateway interface that runs on **Python**
-- [psycopg2 2.7.3.2](https://pypi.org/project/psycopg2/) is a PostgreSQL database adapter for **Python**
-- [dj_database_url 0.5.0](https://pypi.org/project/dj-database-url/) is a simple helper to configure Django database using db url
-- [Django Forms Bootsrap](https://github.com/pinax/django-forms-bootstrap) this plug-in allows for bootstrap styling on django forms
-- [Heroku](http://heroku.com) is a cloud platform as a service which allows easy deployment of this project and database
-- [Heroku Toolbelt](https://devcenter.heroku.com/articles/heroku-cli) connects to Heroku through a terminal
-- [Gitpod](gitpod.io) is an in browser IDE that can open and setup git repositories directly from github
+    - [Coverage.py 4.5.4](https://coverage.readthedocs.io/en/v4.5.x/) generates interactive HTML reports on the coverage of running a function across the project code. Used here for gauging effectiveness of testing.
+- [PostgreSQL](https://www.postgresql.org/) is an open-source relational DBMS that works well with **Heroku** and **Django**.
+- [gunicorn 19.9.0](https://gunicorn.org/) is a web server gateway interface that runs on **Python**.
+- [psycopg2 2.7.3.2](https://pypi.org/project/psycopg2/) is a PostgreSQL database adapter for **Python**.
+- [dj_database_url 0.5.0](https://pypi.org/project/dj-database-url/) is a simple helper to configure Django database using db url.
+- [Django Forms Bootsrap](https://github.com/pinax/django-forms-bootstrap) this plug-in allows for bootstrap styling on django forms.
+- [Heroku](http://heroku.com) is a cloud platform as a service which allows easy deployment of this project and database.
+- [Heroku Toolbelt](https://devcenter.heroku.com/articles/heroku-cli) connects to Heroku through a terminal.
+- [Gitpod](gitpod.io) is an in browser IDE that can open and setup git repositories directly from github.
 - [AWS Cloud9](https://www.awseducate.com/signin/SiteLogin) IDE services from Amazon and connecting into their suite of products.
-- [Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) CSS styling from **Bootstrap**
+- [Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) CSS styling from **Bootstrap**.
 - [Font Awsome](https://fontawesome.com/) provide neat icons with easy styling.
+- [Travis CI](https://travis-ci.org/)  Continuous Integration from **Travis**.
 
 ## Developement
 
@@ -123,6 +124,10 @@ Example:
 The site was tested through a number of means:
 
 ### User Stories
+
+### Travis - Continuous Integration
+
+[![Build Status](https://travis-ci.org/Pattern-Projects/volunteer-fsf-project.svg?branch=master)](https://travis-ci.org/Pattern-Projects/volunteer-fsf-project)
 
 ### Django TestCase
 
