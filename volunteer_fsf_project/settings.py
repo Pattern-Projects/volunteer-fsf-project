@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_forms_bootstrap',
     'volunteer',
+    'camps',
 ]
 
 MIDDLEWARE = [
