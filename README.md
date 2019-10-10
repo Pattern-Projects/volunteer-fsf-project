@@ -136,7 +136,8 @@ You can run theses tests by first following the steps in Deployment to get the p
     - `pip3 install -r requirements.txt`
 - Next in a terminal inside the project type:
     - `coverage run --source=. manage.py test`
-- When the tests are complete you will be provided a report on the pass rate of the program methods. This should be 100%.
+- When the tests are complete you can generate a report on the pass rate of the program methods.
+    - `coverage report`
 - To view an interactive HTML display of the coverage of code tested run this in the terminal:
     - `coverage html`
 - When the command completes open the report in a web browser:
@@ -248,6 +249,7 @@ Your project is now running! To view the project open it in Preview.
 - [Docstrings in Python](https://www.datacamp.com/community/tutorials/docstrings-python)
 - [Heroku Case Study - Life.io - Dataclips](https://www.heroku.com/customers/lifeio?c=7013A000002ILZjQAO&utm_campaign=Dataclips%20-%20Email&utm_medium=email&utm_source=nurture&utm_content=customers&utm_term=lifeio#heroku-dataclips)
 - [StackOverflow - Git pull from another repository](https://stackoverflow.com/questions/24815952/git-pull-from-another-repository/24816134#24816134)
+- [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 
 ### Content
 The text on the website has been copied and edited from:
