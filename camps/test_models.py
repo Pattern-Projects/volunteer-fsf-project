@@ -16,7 +16,8 @@ class campModelTestCase(TestCase):
             title="Camp",
             country = "Ireland",
             organisation = "Volunteer-Ireland",
-            description = "A camp in Ireland")
+            description = "A camp in Ireland"
+            )
 
         self.assertEqual("Camp", camp.title)
         self.assertEqual("Ireland", camp.country)
@@ -52,3 +53,7 @@ class campModelTestCase(TestCase):
         self.assertTrue(camp.created_date)
         self.assertTrue(camp.published_date)
         self.assertEqual("Irish camp", camp.tag)
+
+    def test_camp_as_a_string(self):
+        camp = Camp(title="A camp")
+        self.assertEqual("A camp", str(camp))

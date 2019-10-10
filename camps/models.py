@@ -26,6 +26,11 @@ class Camp(models.Model):
     published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     tag = models.CharField(max_length=30, blank=True, null=True)
 
-    # Return title
+    # Return title str
+    def __str__(self):
+        return self.title
+
+    # Return title unicode
     def __unicode__(self):
         return self.title
+
