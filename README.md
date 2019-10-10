@@ -100,17 +100,29 @@ This project makes use of the following technologies:
 
 ### Git Flow
 Development Version Control workflow follows these steps:
-New features branches are branched from `develop` branch
-Feature is developed over development cycle
-`feature` branch is merged into `develop` branch
-`develop` branch is tagged with latest release version
-`develop` branch is pushed to remote
-`develop` branch is merged into `master` branch
-`master` branch is pushed to remote
-Travis tests continuous Integration on latest `master` push
-Heroku creates new build from latest `master` push
+- New `feature` branches are branched from `develop` branch
+- `feature` is developed over development cycle
+- `feature` branch is tested with coverage
+- `feature` branch is merged into `develop` branch
+- `develop` branch is tagged with projects latest release version
+- `develop` branch is tested with django TestCase
+- Bug fixes and patches are added if required
+- `develop` branch is pushed to remote
+- `develop` branch is merged into `master` branch
+- `master` branch is pushed to remote
+- Travis tests Continuous Integration on latest `master` push
+- Heroku creates new build from latest `master` push
 
-Note: Feature branches generally do not require pushing to remote but have been retained here for assessment.
+Note: `feature` branches can be removed from remote after merging with `develop` branch but have been retained here for assessment.
+
+### Test Driven Development
+Features are developed using Test Driven Development practices:
+- `feature` branch is branched from `develop` branch
+- `feature` branch is tested with Django TestCase for pass standard
+- `feature` is broken into stages, tests are written for each stages
+- Stages are developed until they pass stage tests
+- On all stages complete feature branch is tested with `coverage` to ensure high level of test coverage
+- `feature` branch is ready to merge with develop branch
 
 ### Styling
 Bootstrap CSS is added to the project through a CDN link in the base.html <head> tag.
