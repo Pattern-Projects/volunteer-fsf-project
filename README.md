@@ -1,4 +1,4 @@
-# volunteer-fsf-project
+# volunteer-fsf-project [![Build Status](https://travis-ci.org/Pattern-Projects/volunteer-fsf-project.svg?branch=master)](https://travis-ci.org/Pattern-Projects/volunteer-fsf-project)
 
 A site for volunteers to find volunteering opportunities around the world.
 Data from volunteer work camps will be displayed and can be applied to by paying a small fee.
