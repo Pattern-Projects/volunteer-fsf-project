@@ -133,8 +133,9 @@ The site was tested through a number of means:
 
 You can run theses tests by first following the steps in Deployment to get the project running.
 - Ensure that the dependencies are installed.
+    - `pip3 install -r requirements.txt`
 - Next in a terminal inside the project type:
-    - `coverage manage.py test`
+    - `coverage run --source=. manage.py test`
 - When the tests are complete you will be provided a report on the pass rate of the program methods. This should be 100%.
 - To view an interactive HTML display of the coverage of code tested run this in the terminal:
     - `coverage html`
