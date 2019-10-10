@@ -98,6 +98,20 @@ This project makes use of the following technologies:
 
 ## Developement
 
+### Git Flow
+Development Version Control workflow follows these steps:
+New features branches are branched from `develop` branch
+Feature is developed over development cycle
+`feature` branch is merged into `develop` branch
+`develop` branch is tagged with latest release version
+`develop` branch is pushed to remote
+`develop` branch is merged into `master` branch
+`master` branch is pushed to remote
+Travis tests continuous Integration on latest `master` push
+Heroku creates new build from latest `master` push
+
+Note: Feature branches generally do not require pushing to remote but have been retained here for assessment.
+
 ### Styling
 Bootstrap CSS is added to the project through a CDN link in the base.html <head> tag.
 Icons are imported from FontAwesome using their new kit system
