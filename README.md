@@ -41,6 +41,28 @@ The web app is a single page with different displays given for different functio
 - [Mockup Missing]()
 - [Mockup Missing]()
 
+### Camp Structure
+Camp information:
+- title
+- country
+- organisation
+- description
+- image
+
+Camp Details:
+- positions
+- positions_female
+- positions_male
+- start_date
+- end_date
+- extra_host_country_fee
+- extra_host_country_fee_currency
+
+Camp Organising Data:
+- created_date
+- published_date
+- tag
+
 
 ## Features
 
