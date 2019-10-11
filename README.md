@@ -143,8 +143,10 @@ Features are developed using Test Driven Development practices:
 - `feature` branch is tested with Django TestCase for pass standard
 - `feature` is broken into stages, tests are written for each stages
 - Stages are developed until they pass stage tests
-- On all stages complete feature branch is tested with `coverage` to ensure high level of test coverage
-- `feature` branch is ready to merge with develop branch
+- Good time to commit to git
+- When all stages are complete:
+    - feature branch is tested with `coverage` to ensure high level of test coverage
+    - `feature` branch is ready to merge with develop branch
 
 ### Styling
 Bootstrap CSS is added to the project through a CDN link in the base.html <head> tag.
