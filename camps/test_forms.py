@@ -8,7 +8,7 @@ class TestCampForm(TestCase):
         form = CampForm({'title': 'A camp', 'country': 'Ireland', 'organisation': 'Volunteer-Ireland', 'description': 'A camp'})
         self.assertTrue(form.is_valid())
 
-    def test_correct_message_for_missing_title(self):
+    def test_correct_message_for_missing_data(self):
         form = CampForm({'title': ''})
         self.assertFalse(form.is_valid())
         self.assertEqual(form.errors['title'], [u'This field is required.'])
