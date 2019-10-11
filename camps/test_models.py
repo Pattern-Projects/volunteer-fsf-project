@@ -2,7 +2,7 @@ from django.test import TestCase
 from .models import Camp
 from django.utils import timezone
 
-class campModelTestCase(TestCase):
+class TestCampModels(TestCase):
     """
     Test Case - Camp Model
     """

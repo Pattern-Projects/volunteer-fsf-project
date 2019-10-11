@@ -2,7 +2,7 @@ from django.test import TestCase
 from .forms import CampForm
 
 # Create your tests here.
-class TestCampForm(TestCase):
+class TestCampForms(TestCase):
 
     def test_can_create_a_camp_with_minimum_details(self):
         form = CampForm({'title': 'A camp', 'country': 'Ireland', 'organisation': 'Volunteer-Ireland', 'description': 'A camp'})

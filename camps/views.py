@@ -18,4 +18,5 @@ def create_or_edit_a_volunteer_camp(request, pk=None):
     """
     Create a view that is used to create
     or edit a volunteer camp depending on the Post ID
+    And rendering it to the 'edit_camp.html' template
     """
