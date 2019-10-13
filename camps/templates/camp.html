@@ -1,1 +1,18 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm-10 col-md-9">
+            <h1>{{ camp.title }}</h1>
+            <div class="row">
+                <div class="col-xs-9">
+                    <p><span class="boldtext">Country:</span> {{ camp.country }} </p>
+                    <p><span class="boldtext">Organisation:</span> {{ camp.organisation }}</p>
+                    <p>{{ camp.description }}</p>
+                    <a href="{% url 'get_camps' %}" class="btn btn-default">Back</a>
+                    <a href="{% url 'edit_camp' camp.id %}" class="btn btn-default">Edit</a>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
