@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from volunteer.views import login, registration, logout, get_camps, create_camp, edit_camp
+from volunteer.views import login, registration, logout, create_camp, edit_camp
+from camps.views import get_camps, camp_details, create_or_edit_a_volunteer_camp
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
