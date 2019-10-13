@@ -8,3 +8,4 @@ volunteer_fsf_project/__pycache__/
 .gitpod.yml
 camps/migrations/
 .coverage
+env.py
