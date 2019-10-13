@@ -6,7 +6,8 @@ def get_camps(request):
     Create a view that will return a list
     of Camps and render them to the 'camps.html' template
     """
-    return render(request, "camps.html")
+    results = Camp.objects.all()
+    return render(request, "camps.html", {'camps': results})
 
 
 def camp_details(request, pk):
