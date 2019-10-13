@@ -307,6 +307,7 @@ Your project is now running! To view the project open it in Preview.
 - [Heroku Case Study - Life.io - Dataclips](https://www.heroku.com/customers/lifeio?c=7013A000002ILZjQAO&utm_campaign=Dataclips%20-%20Email&utm_medium=email&utm_source=nurture&utm_content=customers&utm_term=lifeio#heroku-dataclips)
 - [StackOverflow - Git pull from another repository](https://stackoverflow.com/questions/24815952/git-pull-from-another-repository/24816134#24816134)
 - [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+- [Best Practices When Versioning a Release](https://blog.codeship.com/best-practices-when-versioning-a-release/)
 
 ### Content
 The text on the website has been copied and edited from:
