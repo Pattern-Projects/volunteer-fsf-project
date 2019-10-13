@@ -175,10 +175,6 @@ The site was tested through a number of means:
 
 ### User Stories
 
-### Travis - Continuous Integration
-
-[![Build Status](https://travis-ci.org/Pattern-Projects/volunteer-fsf-project.svg?branch=master)](https://travis-ci.org/Pattern-Projects/volunteer-fsf-project)
-
 ### Django TestCase
 
 You can run theses tests by first following the steps in Deployment to get the project running.
@@ -192,13 +188,23 @@ You can run theses tests by first following the steps in Deployment to get the p
     - `coverage html`
 - When the command completes open the report in a web browser:
 
+### Travis - Continuous Integration
+
+[![Build Status](https://travis-ci.org/Pattern-Projects/volunteer-fsf-project.svg?branch=master)](https://travis-ci.org/Pattern-Projects/volunteer-fsf-project)
+Continuous Integration will run all the written Django TestCases against the latest updates to the project.
+You can set up Travis CI with your project by first following the steps in Deployment to get the project running.
+- Create an account at [Travis CI](travis-ci.org)
+- Connect to your Github account
+- From Setting>repositories activate your project
+- Travis will now run CI tests each time you push changes to your repository
+Note: You can instruct Heroku to wait for CI to complete before publishing changes to the site by ticking the 'Wait for CI to pass before deploy' checkbox in Heroku's deploy tab.
 
 ## Deployment
 
-To deploy your own instance of volunteer-fsf-project take a little effort.
+To deploy your own instance of volunteer-fsf-project takes a little effort.
 It is suggested that you use [Heroku](http://heroku.com) for your deplyment as the project was developed with that in mind.
 
-Deployment requires some preparation. Before following the steps below ensure you have done the following:
+Deployment requires some preparation. Before following the steps below ensure you have the following:
 1. A development environment with Python 3.6.8 or higher installed
 1. Open or Create a Heroku account at heroku.com
 2. Have an existing Github account from github.com
@@ -222,6 +228,7 @@ There are two ways of deploying to Heroku:
 4. On the Deployment tab set deployment method to Github
 5. In the connect to Github section sign in then connect your fork of the project
 6. With master branch selected, turn on Automatic Deploys
+    - Ticking the 'Wait for CI to pass before deploy' checkbox here will help prevent broken deployments.
 7. In the Manual Deploy section, with the master branch selected, click Deploy Branch for your first deployment
 
 Your project is now deployed! To view the running app click Open App at the top of the page. It may take a moment to open when visiting after a time of inactivity.
