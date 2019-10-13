@@ -9,9 +9,9 @@ class TestCampViews(TestCase):
         Test that get_camps returns a list of camps
         and renders them to the "camps.html" template
         """
-        # page = self.client.get("/")
-        # self.assertEqual(page.status_code, 404)
-        # self.assertTemplateUsed(page, "camps.html")
+        page = self.client.get("/")
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, "camps.html")
 
     def xtest_camp_details(self):
         """
