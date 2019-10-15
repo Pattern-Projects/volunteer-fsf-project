@@ -2,6 +2,9 @@
 {% block content %}
     {% for camp in camps %}
         <div class="row">
+            <div class="col-md-2 col-sm-3 text-center">
+                <img src="{{ camp.image }}"/>
+            </div>
             <div class="col-md-10 col-sm-9">
                 <h1>{{ camp.title }}</h1>
                 <div class="row">
@@ -16,4 +19,5 @@
             <hr>
         </div>
     {% endfor %}
+    <a href="{% url 'new_camp' %}">Add Camp</a>
 {% endblock %}
