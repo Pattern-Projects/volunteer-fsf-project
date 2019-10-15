@@ -13,27 +13,29 @@ class TestCampViews(TestCase):
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "camps.html")
 
-    def xtest_camp_details(self):
+    def test_camp_details(self):
         """
         Test that camp_details creates a Camp object and
         render it with the 'camp.html' template.
         Or return a 404 if the camp is not found
         """
         camp = Camp(
-            title="Camp",
-            country = "Ireland",
-            organisation = "Volunteer-Ireland",
-            description = "A camp in Ireland"
+            title="Camp"
             )
         camp.save()
 
-        page = self.client.get("/{0}".format(camp.id))
+        page = self.client.get("/camps/{0}/".format(camp.id))
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, "camp.html")
+
+        page = self.client.get("/camps/{0}/".format(2))
         self.assertEqual(page.status_code, 404)
-        # self.assertTemplateUsed(page, "camps.html")
+
 
     def test_create_or_edit_a_volunteer_camp(self):
         """
         test that a volunteer camp is opened with the 'edit_camp.html' template
+        and that /new_camp redirects to /camps/new_camp/
         """
         page = self.client.get("/camps/new_camp/")
         self.assertEqual(page.status_code, 200)
