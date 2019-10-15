@@ -17,6 +17,9 @@ def camp_details(request, pk):
     render it with the 'camp.html' template.
     Or return a 404 if the camp is not found
     """
+    camp = get_object_or_404(Camp, pk=pk)
+    camp.save()
+    return render(request, "camp.html", {'camp': camp})
 
 def create_or_edit_a_volunteer_camp(request, pk=None):
     """
