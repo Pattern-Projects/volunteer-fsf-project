@@ -69,3 +69,25 @@ class TestCampViews(TestCase):
         self.assertEqual("VI", camp.organisation)
         self.assertEqual("A camp", camp.description)
 
+    def test_edit_camp_page(self):
+        """
+        Test that the edit_camp page opens
+        when visited
+        """
+        camp = Camp(title="Camp")
+        camp.save()
+        page = self.client.get("/camps/{0}/edit_camp/".format(camp.id))
+
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, "edit_camp.html")
+
+    def test_camp_is_edited(self):
+        """
+        Test that a camp can have details edited through
+        the edit_camp.html page
+        """
+        camp = Camp(title="A camp")
+        camp.save()
+        page = self.client.post("/camps/{0}/edit_camp/".format(camp.id), {"title": "New Camp", "country": "Ireland", "organisation": "VI", "description": "A camp"})
+        self.assertRedirects(page, "/camps/", status_code=302, target_status_code=200)
+        # self.assertEqual("New Camp", camp.title)

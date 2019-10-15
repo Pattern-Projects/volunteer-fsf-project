@@ -12,7 +12,6 @@
                         <p><a href="{% url 'camp_details' camp.id %}"  class="btn btn-default">Read more</a></p>
                         <p><span class="boldtext">Title:</span> {{ camp.title }} </p>
                         <p>{{ camp.description|truncatewords:30 }}</p>
-                        <p><a href="{% url 'camp_details' camp.id %}"  class="btn btn-default">Read more</a></p>
                         <p><span class="boldtext">Country:</span> {{ camp.country }} </p>
                         <p><span class="boldtext">Organisation:</span> {{camp.organisation}}</p>
                     </div>
