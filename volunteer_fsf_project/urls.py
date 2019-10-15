@@ -13,8 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.generic import RedirectView
 from volunteer.views import login, registration, logout, create_camp, edit_camp
 from camps.views import get_camps, camp_details, create_or_edit_a_volunteer_camp
 
@@ -26,5 +27,7 @@ urlpatterns = [
     url(r'^registration$', registration, name="registration"),
     url(r'^get_camps$', get_camps, name="get_camps"),
     url(r'^add_camp$', create_camp),
-    url(r'^edit_camp/(?P<id>\d+)$', edit_camp)
+    url(r'^edit_camp/(?P<id>\d+)$', edit_camp),
+    url(r'^$', RedirectView.as_view(url='camps/')),
+    url(r'^camps/', include('camps.urls')),
 ]
