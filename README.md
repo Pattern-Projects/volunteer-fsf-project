@@ -37,9 +37,17 @@ Expected users of the website include
 ### Mockups
 
 The web app is a single page with different displays given for different functions:
-- [Mockup Missing]()
-- [Mockup Missing]()
-- [Mockup Missing]()
+- [Base](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=0%3A1)
+- [Base - Mobile Portrait](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=14%3A2)
+- [Base - Mobile Landscape](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=14%3A305)
+- [Camps](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=7%3A26)
+- [Camp](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=7%3A202)
+- [Travel](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=9%3A1988)
+- [News](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=7%3A702)
+- [News Event](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=9%3A1753)
+- [Stories](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=9%3A2235)
+- [Story](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=9%3A2157)
+- [Profile](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=9%3A2405)
 
 ### Camp Structure
 Camp information:
