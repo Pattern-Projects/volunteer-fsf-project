@@ -1,6 +1,7 @@
 /* Body */
 body {
     background-color: #E5E5E5;
+    color: #444455;
 }
 
 /* Structure */
@@ -17,9 +18,21 @@ body {
         text-align: center;
     }
 
-.secondary-nav {
+    .top-nav-item .nav-link{
+        color: #444455;
+    }
 
+    .top-nav-item .nav-link:hover{
+        color: #326CF0;
+    }
+
+.secondary-nav-bar {
+    background-color: #E7E9F3;
 }
+
+    .secondary-nav-bar .active {
+        font-weight: bold;
+    }
 
 .content {
 
