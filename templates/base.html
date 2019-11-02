@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
 </head>
 <body>
+    <div class="alert">
+        <div class="container">
+            <strong>Note:</strong> This is an alert box for any useful bit of information. <a href="#">Click Here<a/></div>
+        </div>
     <nav><ul>
         <li><a href="{% url 'home' %}">Home</a></li>
         {% if user.is_authenticated %}
@@ -23,7 +27,6 @@
             <li><a href="{% url 'registration' %}">Register</a></li>
         {% endif %}
     </ul></nav>
-    <i class="fas fa-hand-holding-heart"></i>
     <hr> {% if messages %}
     <div>
         {% for message in messages %} {{ message }} {% endfor %}

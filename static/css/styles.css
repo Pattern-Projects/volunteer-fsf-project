@@ -1,3 +1,50 @@
+/* Body */
+body {
+    background-color: #E5E5E5;
+}
+
+/* Structure */
+.alert {
+    background: #F9DDA8;
+}
+
+.topnav {
+
+}
+
+.secondary-nav {
+
+}
+
+.content {
+
+}
+
+.footer {
+
+}
+
+/* Elements */
+.pagination {
+
+}
+
+.item-box {
+
+}
+
+.info-box {
+
+}
+
+.call-out-1 {
+
+}
+
+.call-out-2 {
+
+}
+
 form {
     width: 50%;
 }
