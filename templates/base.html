@@ -13,26 +13,98 @@
     <script src="https://kit.fontawesome.com/f3e1d18d42.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
 </head>
+
+
 <body>
+
+    {% comment %} Alert Box {% endcomment %}
     <div class="alert">
         <div class="container">
             <strong>Note:</strong> This is an alert box for any useful bit of information. <a href="#">Click Here<a/></div>
         </div>
-    <nav><ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
+
+
+    {% comment %} Top Nav Bar {% endcomment %}
+    <div class="top-nav-bar">
+    <nav>
+        <div class="container">
+            <ul class="nav justify-content-end">
+
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">
+                <div class="top-nav-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <span>Home</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">
+                <div class="top-nav-icon">
+                    <i class="fas fa-globe-europe"></i>
+                </div>
+                <span>Travel</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">
+                <div class="top-nav-icon">
+                    <i class="far fa-newspaper"></i>
+                </div>
+                <span>News</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">
+                <div class="top-nav-icon">
+                    <i class="fas fa-hiking"></i>
+                </div>
+                <span>Stories</span>
+            </a>
+        </li>
+
+
+
+
         {% if user.is_authenticated %}
-            <li><a href="{% url 'logout' %}">Logout</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">
+                    <div class="top-nav-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    Profile
+                </a>
+            </li>
+
         {% else %}
-            <li><a href="{% url 'login' %}">Login</a></li>
-            <li><a href="{% url 'registration' %}">Register</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">
+                    <div class="top-nav-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    Login/Register
+                </a>
+            </li>
+
         {% endif %}
-    </ul></nav>
-    <hr> {% if messages %}
-    <div>
-        {% for message in messages %} {{ message }} {% endfor %}
+            </ul>
+        </div>
+    </nav>
+    </div> {% comment %} Nav Bar {% endcomment %}
+
+
+    {% if messages %}
+        <hr>
+        <div>
+    {% for message in messages %} {{ message }} {% endfor %}
     </div>
     {% endif %} {% block content %}{% endblock %}
     <h1>
         {% block page_heading %}{% endblock %}
     </h1>
+
+
 </body>

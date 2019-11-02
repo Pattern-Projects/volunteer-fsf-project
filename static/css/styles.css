@@ -6,11 +6,16 @@ body {
 /* Structure */
 .alert {
     background: #F9DDA8;
+    margin-bottom: 0;
 }
 
-.topnav {
-
+.top-nav-bar {
+    background-color: #FFFFFF;
 }
+
+    .top-nav-icon {
+        text-align: center;
+    }
 
 .secondary-nav {
 
