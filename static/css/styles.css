@@ -52,12 +52,31 @@ body {
     }
 
 .content {
-
+    min-height: 600px;
 }
 
-.footer {
-
+footer {
+    background-color: #79B1C4;
 }
+
+    footer h1 {
+        text-align: center;
+        color: #fff;
+    }
+
+    footer li {
+        list-style: none;
+    }
+
+    footer a {
+        color: #4063B1;
+        font-size: 1.3rem;
+    }
+
+    footer a:hover {
+        color: #ffffff;
+        font-size: 1.3rem;
+    }
 
 /* Elements */
 .pagination a {
@@ -66,12 +85,15 @@ body {
 
 .item-box {
     background-color: #ffffff;
+    border-radius: 5px;
     height: 100px;
 }
 
 .info-box {
     margin-top: 10px;
     background-color: #ffffff;
+    border: 1px solid #444555;
+    border-radius: 5px;
     height: 100px;
 }
 
