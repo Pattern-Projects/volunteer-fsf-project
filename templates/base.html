@@ -110,20 +110,20 @@
 
                         <ul class="navbar-nav mr-auto justify-content-start">
 
-                        <li class="nav-item secondary-nav-item active">
-                            <a class="nav-link" href="{% url 'home' %}">
+                        <li class="nav-item">
+                            <a class="btn btn-outline-primary my-2 my-sm-0 nav-link active-btn" href="{% url 'home' %}">
                                 <span>Active</span>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'home' %}">
+                            <a class="btn btn-outline-primary my-2 my-sm-0 nav-link" href="{% url 'home' %}">
                                 <span>Button</span>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'home' %}">
+                            <a class="btn btn-outline-primary my-2 my-sm-0 nav-link" href="{% url 'home' %}">
                                 <span>Button</span>
                             </a>
                         </li>
@@ -142,27 +142,36 @@
     </div><!-- secondary-nav-bar -->
 
     <!-- Content -->
-    <div class="row">
+    <div class="container">
+        <div class="row">
 
-        <!-- info box col -->
-        <div class="col-sm-3">
+            <!-- info box col -->
+            <div class="col-sm-3">
+                <div class="info-box">
 
-        </div>
+                </div>
+            </div>
 
 
 
 
-        <!-- content col -->
-        <div class="col-sm-9">
-            <div class="pagination">
-                <p>prev--next</p>
+            <!-- content col -->
+            <div class="col-sm-9">
+                <div class="pagination">
+                    <a href="#">prev--next</a>
+                </div>
+
+                <div class="item-box">
+
+                </div>
+
             </div>
         </div>
 
 
     </div>
 
-    {% if messages %}
+    {% comment %} {% if messages %}
         <hr>
         <div>
     {% for message in messages %} {{ message }} {% endfor %}
@@ -170,7 +179,7 @@
     {% endif %} {% block content %}{% endblock %}
     <h1>
         {% block page_heading %}{% endblock %}
-    </h1>
+    </h1> {% endcomment %}
 
 
 </body>
