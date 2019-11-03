@@ -84,25 +84,42 @@ footer {
 }
 
 .item-box {
+    margin-top:15px;
     background-color: #ffffff;
     border-radius: 5px;
     height: 100px;
 }
 
 .info-box {
-    margin-top: 10px;
+    margin-top: 15px;
     background-color: #ffffff;
     border: 1px solid #444555;
     border-radius: 5px;
     height: 100px;
 }
 
-.call-out-1 {
+.callout-1 {
+    margin-top:15px;
+    background-color: #E2E9F9;
 
+    text-align: center;
+    font-family: 'rubrik';
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 100px;
+    color: #777777;
 }
 
-.call-out-2 {
+.callout-2 {
+    background-color: #F1ECFD;
+    margin-top:15px;
 
+    text-align: center;
+    font-family: 'Red Hat Display';
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 100px;
+    color: #777777;
 }
 
 form {
