@@ -88,30 +88,38 @@ footer {
 
 /* Elements */
 .pagination a {
+    margin-top: 5px;
+    margin-bottom: 5px;
     color: #444555;
 }
 
 .info-box {
     margin-top: 15px;
+    margin-bottom: 15px;
+    min-height: 500px;
     background-color: #ffffff;
     border: 1px solid #444555;
     border-radius: 5px;
-    min-height: 500px;
+    padding: 10px;
 }
 
+    .info-header {
+        font-weight: bold;
+    }
+
 .item-box {
-    margin-top:15px;
+    margin-bottom:15px;
     background-color: #ffffff;
     border-radius: 5px;
     min-height: 250px;
 
--webkit-box-shadow: 1px 3px 15px -4px rgba(0,0,0,0.5);
--moz-box-shadow: 1px 3px 15px -4px rgba(0,0,0,0.5);
-box-shadow: 1px 3px 15px -4px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 1px 3px 15px -4px rgba(0,0,0,0.5);
+    -moz-box-shadow: 1px 3px 15px -4px rgba(0,0,0,0.5);
+    box-shadow: 1px 3px 15px -4px rgba(0,0,0,0.5);
 }
 
 .callout-1 {
-    margin-top:15px;
+    margin-bottom:15px;
     background-color: #E2E9F9;
 
     text-align: center;
@@ -124,7 +132,7 @@ box-shadow: 1px 3px 15px -4px rgba(0,0,0,0.5);
 
 .callout-2 {
     background-color: #F1ECFD;
-    margin-top:15px;
+    margin-bottom:15px;
 
     text-align: center;
     font-family: 'Red Hat Display';
