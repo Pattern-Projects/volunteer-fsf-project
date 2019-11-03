@@ -6,8 +6,11 @@ body {
 
 /* Structure */
 .alert {
-    background: #F9DDA8;
-    margin-bottom: 0;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    /* background: #F9DDA8; */
+    color: #856404;
+    margin-bottom: 0.2rem;
 }
 
 .top-nav-bar {
@@ -29,6 +32,10 @@ body {
 .secondary-nav-bar {
     background-color: #E7E9F3;
 }
+
+    .secondary-nav-bar .navbar {
+        padding: .5rem 0rem;
+    }
 
     .secondary-nav-bar ul .nav-item .active-btn {
         background-color: #F9DDA8;
@@ -57,6 +64,7 @@ body {
 
 footer {
     background-color: #79B1C4;
+    padding: 10px;
 }
 
     footer h1 {
@@ -83,19 +91,23 @@ footer {
     color: #444555;
 }
 
-.item-box {
-    margin-top:15px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    height: 100px;
-}
-
 .info-box {
     margin-top: 15px;
     background-color: #ffffff;
     border: 1px solid #444555;
     border-radius: 5px;
-    height: 100px;
+    min-height: 500px;
+}
+
+.item-box {
+    margin-top:15px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    min-height: 250px;
+
+-webkit-box-shadow: 1px 3px 15px -4px rgba(0,0,0,0.5);
+-moz-box-shadow: 1px 3px 15px -4px rgba(0,0,0,0.5);
+box-shadow: 1px 3px 15px -4px rgba(0,0,0,0.5);
 }
 
 .callout-1 {
