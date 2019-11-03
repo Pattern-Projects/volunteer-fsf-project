@@ -15,6 +15,7 @@
     <script src="https://kit.fontawesome.com/f3e1d18d42.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
 </head>
@@ -35,66 +36,53 @@
         <div class="container">
             <ul class="nav justify-content-end">
 
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">
-                <div class="top-nav-icon">
-                    <i class="fas fa-home"></i>
-                </div>
-                <span>Home</span>
-            </a>
-        </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">
+                        <div class="top-nav-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <span>Home</span>
+                    </a>
+                </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">
-                <div class="top-nav-icon">
-                    <i class="fas fa-globe-europe"></i>
-                </div>
-                <span>Travel</span>
-            </a>
-        </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">
+                        <div class="top-nav-icon">
+                            <i class="fas fa-globe-europe"></i>
+                        </div>
+                        <span>Travel</span>
+                    </a>
+                </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">
-                <div class="top-nav-icon">
-                    <i class="far fa-newspaper"></i>
-                </div>
-                <span>News</span>
-            </a>
-        </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">
+                        <div class="top-nav-icon">
+                            <i class="far fa-newspaper"></i>
+                        </div>
+                        <span>News</span>
+                    </a>
+                </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'home' %}">
-                <div class="top-nav-icon">
-                    <i class="fas fa-hiking"></i>
-                </div>
-                <span>Stories</span>
-            </a>
-        </li>
-
-
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">
+                        <div class="top-nav-icon">
+                            <i class="fas fa-hiking"></i>
+                        </div>
+                        <span>Stories</span>
+                    </a>
+                </li>
 
 
-        {% if user.is_authenticated %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}">
-                    <div class="top-nav-icon">
-                        <i class="fas fa-user-circle"></i>
-                    </div>
-                    <span>Profile</span>
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">
+                        <div class="top-nav-icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <span>Profile</span>
+                    </a>
+                </li>
 
-        {% else %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">
-                    <div class="top-nav-icon">
-                        <i class="fas fa-user-circle"></i>
-                    </div>
-                    Login/Register
-                </a>
-            </li>
 
-        {% endif %}
             </ul>
         </div>
     </nav>
@@ -153,35 +141,144 @@
             <!-- Side column -->
             <div class="col-md-3">
                 <div class="info-box">
+
                     <div class="info-section">
                         <div class="info-header">
                             Option Header:
                         </div>
+                        <form class="info-options">
 
-                        <ul class="info-options">
-                            <li class="info-option">Option</li>
-                            <li class="info-option">Option</li>
-                            <li class="info-option">Option</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                            <li class="info-option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Option
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li class="info-option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Option
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li class="info-option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Option
+                                    </label>
+                                </div>
+                            </li>
+
+                        </form><!-- info-options -->
+                    </div><!-- info-section -->
+
+                    <div class="info-section">
+                        <div class="info-header">
+                            Option Header:
+                        </div>
+                        <form class="info-options">
+
+                            <li class="info-option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Option
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li class="info-option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Option
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li class="info-option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Option
+                                    </label>
+                                </div>
+                            </li>
+
+                        </form><!-- info-options -->
+                    </div><!-- info-section -->
+
+                    <div class="info-section">
+                        <div class="info-header">
+                            Option Header:
+                        </div>
+                        <form class="info-options">
+
+                            <li class="info-option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="defaultRadio1" name="exampleRadios" value="option1" checked>
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Option
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li class="info-option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="defaultRadio1" name="exampleRadios" value="option1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Option
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li class="info-option">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="defaultRadio1" name="exampleRadios" value="option1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Option
+                                    </label>
+                                </div>
+                            </li>
+
+                        </form><!-- info-options -->
+                    </div><!-- info-section -->
 
 
 
 
-            <!-- content col -->
+                </div><!-- info-box -->
+            </div><!-- col-md-3 -->
+
+
+
+
+            <!-- content col-md-9 -->
             <div class="col-md-9">
 
                 <!-- pagination -->
                 <div class="pagination">
-                    <a href="#">prev</a>
-                    --
-                    <a href="#">next</a>
+                    <a href="#">prev-</a>
+
+                    <a href="#">-next</a>
                 </div>
+
+                <h1>
+                Content Header
+                </h1>
 
                 <!-- content -->
                 <div class="item-box">
+                <h3>
+                    Item Box Header
+                </h3>
+
 
                 </div>
 
@@ -189,6 +286,10 @@
                 <div class="callout-1">
                     Callout one right here
                 </div>
+
+                <h2>
+                    Second Header
+                </h2>
 
                 <!-- Callout 2 -->
                 <div class="callout-2">
@@ -226,9 +327,9 @@
                 <div class="col-md-6">
                     <h1>Get Involved</h1>
                     <ul>
-                        <li><a href="#">Our Goals</a></li>
-                        <li><a href="#">Information</a></li>
-                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Volunteer</a></li>
+                        <li><a href="#">Donate</a></li>
+                        <li><a href="#">Social</a></li>
                     </ul>
                 </div>
             </div>
