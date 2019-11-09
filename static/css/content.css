@@ -1,0 +1,45 @@
+.item-box .row {
+    padding: 10px;
+}
+
+.item-box .image-container {
+    overflow: hidden;
+    width: 95%;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.item-box .image-container img{
+    width:100%;
+}
+
+.item-box .details-container {
+    padding: 15px;
+    padding-top: 5px;
+}
+
+.item-box .btn {
+    border: 1px solid;
+    box-shadow: 0px 2px 5px -1px;
+}
+
+.item-box .btn:hover {
+    background-color: #E7E9F3;
+    border: 1px solid;
+    box-shadow: 0px 2px 0px -1px;
+}
+
+.edit_camp_form {
+    margin: 0 auto;
+    width: 80%;
+    font-family: 'roboto', sans-serif !important;
+}
+
+.edit_camp_form label {
+    font-weight: bold;
+}
+
+/* Camp form image upload button - remove border */
+input#id_image {
+    border: none;
+}

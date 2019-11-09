@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load bootstrap_tags %}
+{% block content %}
+<div class="item-box">
+
+    <h1>Edit Camp</h1>
+    <form method="POST" enctype="multipart/form-data" class="edit_camp_form">
+        {% csrf_token %}
+        {{ form | as_bootstrap }}
+        <button type="submit" class="btn btn-info">Save</button>
+    </form>
+
+</div>
+{% endblock %}

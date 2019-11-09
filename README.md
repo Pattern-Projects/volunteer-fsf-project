@@ -37,9 +37,40 @@ Expected users of the website include
 ### Mockups
 
 The web app is a single page with different displays given for different functions:
-- [Mockup Missing]()
-- [Mockup Missing]()
-- [Mockup Missing]()
+- [Base](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=0%3A1)
+- [Base - Mobile Portrait](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=14%3A2)
+- [Base - Mobile Landscape](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=14%3A305)
+
+- [Camps](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=7%3A26)
+- [Camp](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=7%3A202)
+- [Travel](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=9%3A1988)
+- [News](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=7%3A702)
+- [News Event](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=9%3A1753)
+- [Stories](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=9%3A2235)
+- [Story](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=9%3A2157)
+- [Profile](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=9%3A2405)
+
+### Camp Structure
+Camp information:
+- title
+- country
+- organisation
+- description
+- image
+
+Camp Details:
+- positions
+- positions_female
+- positions_male
+- start_date
+- end_date
+- extra_host_country_fee
+- extra_host_country_fee_currency
+
+Camp Organising Data:
+- created_date
+- published_date
+- tag
 
 
 ## Features
@@ -98,6 +129,34 @@ This project makes use of the following technologies:
 
 ## Developement
 
+### Git Flow
+Development Version Control workflow follows these steps:
+- New `feature` branches are branched from `develop` branch
+- `feature` is developed over development cycle
+- `feature` branch is tested with coverage
+- `feature` branch is merged into `develop` branch
+- `develop` branch is tagged with projects latest release version
+- `develop` branch is tested with django TestCase
+- Bug fixes and patches are added if required
+- `develop` branch is pushed to remote
+- `develop` branch is merged into `master` branch
+- `master` branch is pushed to remote
+- Travis tests Continuous Integration on latest `master` push
+- Heroku creates new build from latest `master` push
+
+Note: `feature` branches can be removed from remote after merging with `develop` branch but have been retained here for assessment.
+
+### Test Driven Development
+Features are developed using Test Driven Development practices:
+- `feature` branch is branched from `develop` branch
+- `feature` branch is tested with Django TestCase for pass standard
+- `feature` is broken into stages, tests are written for each stages
+- Stages are developed until they pass stage tests
+- Good time to commit to git
+- When all stages are complete:
+    - feature branch is tested with `coverage` to ensure high level of test coverage
+    - `feature` branch is ready to merge with develop branch
+
 ### Styling
 Bootstrap CSS is added to the project through a CDN link in the base.html <head> tag.
 Icons are imported from FontAwesome using their new kit system
@@ -125,10 +184,6 @@ The site was tested through a number of means:
 
 ### User Stories
 
-### Travis - Continuous Integration
-
-[![Build Status](https://travis-ci.org/Pattern-Projects/volunteer-fsf-project.svg?branch=master)](https://travis-ci.org/Pattern-Projects/volunteer-fsf-project)
-
 ### Django TestCase
 
 You can run theses tests by first following the steps in Deployment to get the project running.
@@ -142,13 +197,23 @@ You can run theses tests by first following the steps in Deployment to get the p
     - `coverage html`
 - When the command completes open the report in a web browser:
 
+### Travis - Continuous Integration
+
+[![Build Status](https://travis-ci.org/Pattern-Projects/volunteer-fsf-project.svg?branch=master)](https://travis-ci.org/Pattern-Projects/volunteer-fsf-project)
+Continuous Integration will run all the written Django TestCases against the latest updates to the project.
+You can set up Travis CI with your project by first following the steps in Deployment to get the project running.
+- Create an account at [Travis CI](travis-ci.org)
+- Connect to your Github account
+- From Setting>repositories activate your project
+- Travis will now run CI tests each time you push changes to your repository
+Note: You can instruct Heroku to wait for CI to complete before publishing changes to the site by ticking the 'Wait for CI to pass before deploy' checkbox in Heroku's deploy tab.
 
 ## Deployment
 
-To deploy your own instance of volunteer-fsf-project take a little effort.
+To deploy your own instance of volunteer-fsf-project takes a little effort.
 It is suggested that you use [Heroku](http://heroku.com) for your deplyment as the project was developed with that in mind.
 
-Deployment requires some preparation. Before following the steps below ensure you have done the following:
+Deployment requires some preparation. Before following the steps below ensure you have the following:
 1. A development environment with Python 3.6.8 or higher installed
 1. Open or Create a Heroku account at heroku.com
 2. Have an existing Github account from github.com
@@ -172,6 +237,7 @@ There are two ways of deploying to Heroku:
 4. On the Deployment tab set deployment method to Github
 5. In the connect to Github section sign in then connect your fork of the project
 6. With master branch selected, turn on Automatic Deploys
+    - Ticking the 'Wait for CI to pass before deploy' checkbox here will help prevent broken deployments.
 7. In the Manual Deploy section, with the master branch selected, click Deploy Branch for your first deployment
 
 Your project is now deployed! To view the running app click Open App at the top of the page. It may take a moment to open when visiting after a time of inactivity.
@@ -250,6 +316,7 @@ Your project is now running! To view the project open it in Preview.
 - [Heroku Case Study - Life.io - Dataclips](https://www.heroku.com/customers/lifeio?c=7013A000002ILZjQAO&utm_campaign=Dataclips%20-%20Email&utm_medium=email&utm_source=nurture&utm_content=customers&utm_term=lifeio#heroku-dataclips)
 - [StackOverflow - Git pull from another repository](https://stackoverflow.com/questions/24815952/git-pull-from-another-repository/24816134#24816134)
 - [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+- [Best Practices When Versioning a Release](https://blog.codeship.com/best-practices-when-versioning-a-release/)
 
 ### Content
 The text on the website has been copied and edited from:
@@ -263,4 +330,5 @@ Thank you to the following for inspiration, motivation and the direction I neede
 - Seun Owonikoko    @seun_mentor
 - Samantha Dartnall @Sammy Dartnall
 - Alan M.           @Alan Mc Gee
+- Anna Greaves      @Anna_G
 - Code Institute
