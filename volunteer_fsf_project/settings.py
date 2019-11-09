@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if os.environ.get('SECRET_KEY'):
     SECRET_KEY = os.environ.get('SECRET_KEY')
 else:
-    SECRET_KEY = 'whatever'
+    SECRET_KEY = 'akryjer'
 
 
 

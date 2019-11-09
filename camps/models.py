@@ -13,7 +13,7 @@ class Camp(models.Model):
     image = models.ImageField(upload_to="img", blank=True, null=True)
 
     # # Camp Details
-    # positions = models.IntegerField()
+    # positions = models.IntegerField(null=True)
     # positions_female = models.IntegerField()
     # positions_male = models.IntegerField()
     # start_date = models.DateTimeField(blank=False)
