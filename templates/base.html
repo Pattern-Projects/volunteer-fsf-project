@@ -10,26 +10,172 @@
 
     <title>{% block page_title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Icons and fonts -->
     <script src="https://kit.fontawesome.com/f3e1d18d42.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pragati+Narrow&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/content.css' %}"/>
 </head>
+
+
 <body>
-    <nav><ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        {% if user.is_authenticated %}
-            <li><a href="{% url 'logout' %}">Logout</a></li>
-        {% else %}
-            <li><a href="{% url 'login' %}">Login</a></li>
-            <li><a href="{% url 'registration' %}">Register</a></li>
-        {% endif %}
-    </ul></nav>
-    <i class="fas fa-hand-holding-heart"></i>
-    <hr> {% if messages %}
-    <div>
-        {% for message in messages %} {{ message }} {% endfor %}
+
+    <!--Alert Box-->
+    <div class="alert">
+        <div class="container">
+            <strong>Note:</strong> This is an alert box for any useful bit of information. <a href="#">Click Here<a/></div>
+        </div>
+
+
+    <!-- Top Nav Bar -->
+    <div class="top-nav-bar">
+    <nav>
+        <div class="container">
+            <ul class="nav justify-content-end">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">
+                        <div class="top-nav-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <span>Home</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">
+                        <div class="top-nav-icon">
+                            <i class="fas fa-globe-europe"></i>
+                        </div>
+                        <span>Travel</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">
+                        <div class="top-nav-icon">
+                            <i class="far fa-newspaper"></i>
+                        </div>
+                        <span>News</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">
+                        <div class="top-nav-icon">
+                            <i class="fas fa-hiking"></i>
+                        </div>
+                        <span>Stories</span>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">
+                        <div class="top-nav-icon">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <span>Profile</span>
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+    </nav>
+    </div> <!-- Nav Bar -->
+
+
+
+
+    <!-- secondary-nav-bar -->
+    <div class="secondary-nav-bar">
+
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <ul class="navbar-nav mr-auto justify-content-start">
+
+                        <li class="nav-item">
+                            <a class="btn btn-outline-primary my-2 my-sm-0 nav-link active-btn" href="{% url 'home' %}">
+                                <span>Active</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="btn btn-outline-primary my-2 my-sm-0 nav-link" href="{% url 'home' %}">
+                                <span>Button</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="btn btn-outline-primary my-2 my-sm-0 nav-link" href="{% url 'home' %}">
+                                <span>Button</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                    <!-- Search bar -->
+                    <form class="secondary-nav-search form-inline my-2 my-lg-0" action="{% url 'home' %}" method="get">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+
+                </div>
+            </nav>
+        </div><!-- container -->
+    </div><!-- secondary-nav-bar -->
+
+    {% if messages %}
+        <hr>
+        <div>
+    {% for message in messages %} {{ message }} {% endfor %}
     </div>
-    {% endif %} {% block content %}{% endblock %}
-    <h1>
-        {% block page_heading %}{% endblock %}
-    </h1>
+    {% endif %}
+
+    <!-- Content -->
+    <div class="content container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+
+        <div class="container">
+            <dic class="row">
+                <div class="col-md-6">
+                    <h1>About Us</h1>
+                    <ul>
+                        <li><a href="#">Our Goals</a></li>
+                        <li><a href="#">Information</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h1>Get Involved</h1>
+                    <ul>
+                        <li><a href="#">Volunteer</a></li>
+                        <li><a href="#">Donate</a></li>
+                        <li><a href="#">Social</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
 </body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>

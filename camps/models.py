@@ -10,7 +10,7 @@ class Camp(models.Model):
     country = models.CharField(max_length=200, blank=False)
     organisation = models.CharField(max_length=200, blank=False)
     description = models.TextField(blank=False)
-    # image = models.ImageField(upload_to="img", blank=True, null=True)
+    image = models.ImageField(upload_to="img", blank=True, null=True)
 
     # # Camp Details
     # positions = models.IntegerField()

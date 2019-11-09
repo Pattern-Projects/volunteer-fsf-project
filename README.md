@@ -37,9 +37,18 @@ Expected users of the website include
 ### Mockups
 
 The web app is a single page with different displays given for different functions:
-- [Mockup Missing]()
-- [Mockup Missing]()
-- [Mockup Missing]()
+- [Base](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=0%3A1)
+- [Base - Mobile Portrait](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=14%3A2)
+- [Base - Mobile Landscape](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=14%3A305)
+
+- [Camps](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=7%3A26)
+- [Camp](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=7%3A202)
+- [Travel](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=9%3A1988)
+- [News](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=7%3A702)
+- [News Event](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=9%3A1753)
+- [Stories](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=9%3A2235)
+- [Story](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=9%3A2157)
+- [Profile](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=9%3A2405)
 
 ### Camp Structure
 Camp information:
@@ -307,6 +316,7 @@ Your project is now running! To view the project open it in Preview.
 - [Heroku Case Study - Life.io - Dataclips](https://www.heroku.com/customers/lifeio?c=7013A000002ILZjQAO&utm_campaign=Dataclips%20-%20Email&utm_medium=email&utm_source=nurture&utm_content=customers&utm_term=lifeio#heroku-dataclips)
 - [StackOverflow - Git pull from another repository](https://stackoverflow.com/questions/24815952/git-pull-from-another-repository/24816134#24816134)
 - [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+- [Best Practices When Versioning a Release](https://blog.codeship.com/best-practices-when-versioning-a-release/)
 
 ### Content
 The text on the website has been copied and edited from:
@@ -320,4 +330,5 @@ Thank you to the following for inspiration, motivation and the direction I neede
 - Seun Owonikoko    @seun_mentor
 - Samantha Dartnall @Sammy Dartnall
 - Alan M.           @Alan Mc Gee
+- Anna Greaves      @Anna_G
 - Code Institute

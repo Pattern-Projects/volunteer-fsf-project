@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Camp
+from .forms import CampForm
 
 def get_camps(request):
     """
@@ -9,7 +10,6 @@ def get_camps(request):
     results = Camp.objects.all()
     return render(request, "camps.html", {'camps': results})
 
-
 def camp_details(request, pk):
     """
     Create a view that returns a single
@@ -17,10 +17,22 @@ def camp_details(request, pk):
     render it with the 'camp.html' template.
     Or return a 404 if the camp is not found
     """
+    camp = get_object_or_404(Camp, pk=pk)
+    camp.save()
+    return render(request, "camp.html", {'camp': camp})
 
 def create_or_edit_a_volunteer_camp(request, pk=None):
     """
     Create a view that is used to create
-    or edit a volunteer camp depending on the Post ID
+    or edit a volunteer camp depending on the Camp ID
     And rendering it to the 'edit_camp.html' template
     """
+    camp = get_object_or_404(Camp, pk=pk) if pk else None
+    if request.method == "POST":
+        form = CampForm(request.POST, request.FILES, instance=camp)
+        if form.is_valid():
+            camp = form.save()
+            return redirect(get_camps)
+    else:
+        form = CampForm(instance=camp)
+    return render(request, 'edit_camp.html', {'form': form})
