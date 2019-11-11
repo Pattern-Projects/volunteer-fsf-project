@@ -14,7 +14,7 @@ class TestCampViews(TestCase):
         self.assertTemplateUsed(page, "camps.html")
 
 
-    def xtest_camp_details(self):
+    def test_camp_details(self):
         """
         Test that camp_details creates a Camp object and
         render it with the 'camp.html' template.
@@ -27,7 +27,7 @@ class TestCampViews(TestCase):
         self.assertTemplateUsed(page, "camp.html")
 
 
-    def xtest_camp_details_of_uknown_camp(self):
+    def test_camp_details_of_uknown_camp(self):
         """
         Test that a 404 is returned if the camp id
         does not match an existing camp
@@ -49,7 +49,7 @@ class TestCampViews(TestCase):
         self.assertTemplateUsed(page, "edit_camp.html")
 
 
-    def test_for_redirect(self):
+    def xtest_for_redirect(self):
         """
         Test that browser redirects from '/new_camp'
         to '/camps/new_camp/
@@ -58,7 +58,7 @@ class TestCampViews(TestCase):
         page = self.client.get("/new_camp")
         self.assertRedirects(page, "/camps/new_camp/", status_code=302, target_status_code=200)
 
-    def xtest_camp_is_created(self):
+    def test_camp_is_created(self):
         """
         Test that a test is created by post method
         """
@@ -69,7 +69,7 @@ class TestCampViews(TestCase):
         self.assertEqual("VI", camp.organisation)
         self.assertEqual("A camp", camp.description)
 
-    def xtest_edit_camp_page(self):
+    def test_edit_camp_page(self):
         """
         Test that the edit_camp page opens
         when visited
