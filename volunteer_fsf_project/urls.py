@@ -22,9 +22,6 @@ from camps.views import get_camps, camp_details, create_or_edit_a_volunteer_camp
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', get_camps, name="home"),
-    url(r'^$', RedirectView.as_view(url='camps/')),
-    url(r'^get_camps$', get_camps, name="get_camps"),
-    url(r'^new_camp$', RedirectView.as_view(url='camps/new_camp/')),
     url(r'^camps/', include('camps.urls')),
 
     url(r'^login$', login, name="login"),
