@@ -4,7 +4,7 @@ from .models import Camp
 
 class TestCampViews(TestCase):
 
-    def xtest_get_camps(self):
+    def test_get_camps(self):
         """
         Test that get_camps returns a list of camps
         and renders them to the "camps.html" template
@@ -39,7 +39,7 @@ class TestCampViews(TestCase):
         self.assertEqual(page.status_code, 404)
 
 
-    def xtest_create_or_edit_a_volunteer_camp(self):
+    def test_create_or_edit_a_volunteer_camp(self):
         """
         test that a volunteer camp is opened with the
         'edit_camp.html' template
