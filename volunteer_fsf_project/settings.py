@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'volunteer_fsf_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-if "DATABASE_URL" in os.environ and "DEVELOPMENT" in os.environ:
+if "DATABASE_URL" in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
@@ -142,7 +142,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+    )
 
 MEDIA_URL = '/media/'
 
