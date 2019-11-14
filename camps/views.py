@@ -44,9 +44,7 @@ def archive_camp(request, pk=None):
     camp = get_object_or_404(Camp, pk=pk)
     camp.archived = True
     camp.save()
-
-    results = Camp.objects.filter(archived=True)
-    return render(request, "camps.html", {'camps': results})
+    return redirect(get_archived_camps)
 
 def get_archived_camps(request):
     """
@@ -54,3 +52,10 @@ def get_archived_camps(request):
     """
     results = Camp.objects.filter(archived=True)
     return render(request, "camps.html", {'camps': results})
+
+def delete_camp(request, pk=None):
+    """
+    Delete camp of given pk as id
+    """
+    Camp.objects.filter(id=pk).delete()
+    return redirect(get_camps)

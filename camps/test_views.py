@@ -97,3 +97,18 @@ class TestCampViews(TestCase):
         camp = get_object_or_404(Camp, pk=camp.id)
         self.assertTrue(camp.archived)
         
+    def test_camp_is_archived(self):
+        """
+        Test that a test is not archved when created
+        then archived after archive_camp() is called with id
+        """
+        # Create a camp, test it is added to db
+        page = self.client.post("/camps/new_camp/", {"title": "New Camp", "country": "Ireland", "organisation": "VI", "description": "A camp"})
+        results = Camp.objects.all()
+        self.assertEqual(1, results.count())
+        
+        # Delete camp, test it is removed from db
+        camp = get_object_or_404(Camp, pk=1)
+        page = self.client.get("/camps/{0}/delete_camp/".format(camp.id))
+        self.assertEqual(0, results.count())
+        
