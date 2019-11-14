@@ -1,10 +1,10 @@
 from django.apps import apps
 from django.test import TestCase
-from .apps import VolunteerConfig
+from .apps import AuthenticationConfig
 
 
-class TestTodoConfig(TestCase):
+class TestAuthenticationConfig(TestCase):
 
     def test_app(self):
-        self.assertEqual("volunteer", VolunteerConfig.name)
-        self.assertEqual("volunteer", apps.get_app_config("volunteer").name)
+        self.assertEqual("authentication", AuthenticationConfig.name)
+        self.assertEqual("authentication", apps.get_app_config("authentication").name)
