@@ -13,19 +13,19 @@ class Camp(models.Model):
     image = models.ImageField(upload_to="img", blank=True, null=True)
 
     # # Camp Details
-    # positions = models.IntegerField(null=True)
-    # positions_female = models.IntegerField()
-    # positions_male = models.IntegerField()
-    # start_date = models.DateTimeField(blank=False)
-    # end_date = models.DateTimeField(blank=False)
-    # extra_host_country_fee = models.DecimalField(max_digits=20, decimal_places=2)
-    # extra_host_country_fee_currency = models.CharField(max_length=200)
+    positions = models.IntegerField(null=True)
+    positions_female = models.IntegerField(null=True)
+    positions_male = models.IntegerField(null=True)
+    start_date = models.DateTimeField(default=timezone.now)
+    end_date = models.DateTimeField(default=timezone.now)
+    extra_host_country_fee = models.DecimalField(max_digits=20, decimal_places=2, null=True)
+    extra_host_country_fee_currency = models.CharField(default="", max_length=200)
 
     # # Camp Organising Data
     archived = models.BooleanField(default=False)
-    # created_date = models.DateTimeField(auto_now_add=True)
-    # published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
-    # tag = models.CharField(max_length=30, blank=True, null=True)
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(default=timezone.now)
+    tag = models.CharField(max_length=30, blank=True)
 
     # Return title str
     def __str__(self):
