@@ -22,6 +22,7 @@ class Camp(models.Model):
     # extra_host_country_fee_currency = models.CharField(max_length=200)
 
     # # Camp Organising Data
+    archived = models.BooleanField(default=False)
     # created_date = models.DateTimeField(auto_now_add=True)
     # published_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     # tag = models.CharField(max_length=30, blank=True, null=True)
