@@ -1,13 +1,13 @@
 from django.test import TestCase
-# from volunteer.models import Camp
-from volunteer.forms import CampForm
+# from authentication.models import Camp
+from .forms import UserLoginForm, UserRegistrationForm
 
-# volunteer Form Tests
+# authentication Form Tests
 class modelTestCase(TestCase):
-        def test_can_create_an_camp_with_just_a_name(self):
-            form = CampForm({'name':"Camp"})
+        def test_login_success(self):
+            form = UserLoginForm({'username':"John", 'password':'password'})
             self.assertTrue(form.is_valid())
             
-        def test_correct_message_for_missing_name(self):
-            form = CampForm({'name':''})
-            self.assertEqual(form.errors['name'], [u'This field is required.'])
+        def test_login_missing_name(self):
+            form = UserLoginForm({'username':'', 'password':'password'})
+            self.assertEqual(form.errors['username'], [u'This field is required.'])
