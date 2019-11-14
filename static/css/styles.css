@@ -44,6 +44,7 @@ p {
     }
 
 .secondary-nav-bar {
+    margin-bottom: 10px;
     background-color: #E7E9F3;
 }
 
@@ -111,7 +112,7 @@ footer {
 
 /* Elements */
 .pagination a {
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 5px;
     color: #444555;
 }

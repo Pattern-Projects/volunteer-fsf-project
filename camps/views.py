@@ -7,7 +7,7 @@ def get_camps(request):
     Create a view that will return a list
     of Camps and render them to the 'camps.html' template
     """
-    results = Camp.objects.all()
+    results = Camp.objects.order_by('published_date')[:30]
     return render(request, "camps.html", {'camps': results})
 
 def camp_details(request, pk):

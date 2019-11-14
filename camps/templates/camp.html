@@ -13,9 +13,20 @@
                     </div>
                         <div class="details-container">
                             <p><span class="boldtext">Country:</span> {{ camp.country }} </p>
-                            <p><span class="boldtext">Organisation:</span> {{ camp.organisation }}</p>
+                            <p><span class="boldtext">Organistaion:</span> {{ camp.organisation }}</p>
+                            <p><span class="boldtext">Required Language:</span> {{ camp.required_language }}</p>
+                            <p><span class="boldtext">Positions:</span> {{ camp.positions }}</p>
+                            <p><span class="boldtext">Positions (male):</span> {{ camp.positions_male }}</p>
+                            <p><span class="boldtext">Positions (female):</span> {{ camp.positions_female }}</p>
+                            <p><span class="boldtext">Positions (other):</span> {{ camp.positions_other }}</p>
+                            <p><span class="boldtext">Start Date:</span> {{ camp.start_date }}</p>
+                            <p><span class="boldtext">End Date:</span> {{ camp.end_date }}</p>
+                            <p><span class="boldtext">Local Fee:</span> {{ camp.extra_host_country_fee }}</p>
+                            <p><span class="boldtext">Local Fee Currency:</span> {{ camp.extra_host_country_fee_currency }}</p>
+                            <p><span class="boldtext">Tag:</span> {{ camp.tag }}</p>
                             <a href="{% url 'get_camps' %}" class="btn btn-default">Back</a>
                             <a href="{% url 'edit_camp' camp.id %}" class="btn btn-default">Edit</a>
+                            <a href="{% url 'delete_camp' camp.id %}" class="btn btn-default">Delete</a>
                     </div>
                 </div>
             </div>

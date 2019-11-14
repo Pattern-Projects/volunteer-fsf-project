@@ -157,7 +157,14 @@ Camps
                                         <p><span class="boldtext">Title:</span> {{ camp.title }} </p>
                                         <p>{{ camp.description|truncatewords:30 }}</p>
                                         <p><span class="boldtext">Country:</span> {{ camp.country }} </p>
+                                        <p><span class="boldtext">Positions Available:</span> {{ camp.positions }} </p>
+                                        <p><span class="boldtext">Positions (Male):</span> {{ camp.positions_male }} </p>
+                                        <p><span class="boldtext">Positions (Female):</span> {{ camp.positions_female }} </p>
+                                        <p><span class="boldtext">Positions (Other):</span> {{ camp.positions_other }} </p>
+                                        <p><span class="boldtext">Required Language:</span> {{ camp.required_language }} </p>
                                         <p><span class="boldtext">Organisation:</span> {{camp.organisation}}</p>
+                                        <p><span class="boldtext">Start Date:</span> {{camp.start_date}}</p>
+                                        <p><span class="boldtext">End Date:</span> {{camp.end_date}}</p>
                                     </div>
                                 </div>
                             </div>
