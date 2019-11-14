@@ -72,7 +72,6 @@ class TestCampViews(TestCase):
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "edit_camp.html")
 
-    # Requires Revisit urls
     def test_camp_is_edited(self):
         """
         Test that a camp can have details edited through
@@ -84,3 +83,17 @@ class TestCampViews(TestCase):
         camp = get_object_or_404(Camp, pk=camp.id)
         self.assertRedirects(page, "/camps/", status_code=302, target_status_code=200)
         self.assertEqual("New Camp", camp.title)
+
+    def test_camp_is_archived(self):
+        """
+        Test that a test is not archved when created
+        then archived after archive_camp() is called with id
+        """
+        page = self.client.post("/camps/new_camp/", {"title": "New Camp", "country": "Ireland", "organisation": "VI", "description": "A camp"})
+        camp = get_object_or_404(Camp, pk=1)
+        self.assertFalse(camp.archived)
+        
+        page = self.client.get("/camps/{0}/archive_camp/".format(camp.id))
+        camp = get_object_or_404(Camp, pk=camp.id)
+        self.assertTrue(camp.archived)
+        

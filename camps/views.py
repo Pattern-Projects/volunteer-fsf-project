@@ -36,3 +36,21 @@ def create_or_edit_a_volunteer_camp(request, pk=None):
     else:
         form = CampForm(instance=camp)
     return render(request, 'edit_camp.html', {'form': form})
+
+def archive_camp(request, pk=None):
+    """
+    Change the camp archive setting to true
+    """
+    camp = get_object_or_404(Camp, pk=pk)
+    camp.archived = True
+    camp.save()
+
+    results = Camp.objects.filter(archived=True)
+    return render(request, "camps.html", {'camps': results})
+
+def get_archived_camps(request):
+    """
+    Show a list of archived camps
+    """
+    results = Camp.objects.filter(archived=True)
+    return render(request, "camps.html", {'camps': results})
