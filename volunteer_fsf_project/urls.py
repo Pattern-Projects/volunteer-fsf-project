@@ -15,18 +15,20 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from django.views.generic import RedirectView
-from volunteer.views import login, registration, logout, create_camp, edit_camp
-from camps.views import get_camps, camp_details, create_or_edit_a_volunteer_camp
+from django.views import static
+from .settings import MEDIA_ROOT
+
+from authentication.views import login, registration, logout
+from camps.views import get_camps
+import camps.urls as urls_camps
+import authentication.urls as urls_authentication
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', get_camps, name="home"),
-    url(r'^camps/', include('camps.urls')),
 
-    url(r'^login$', login, name="login"),
-    url(r'^logout$', logout, name="logout"),
-    url(r'^registration$', registration, name="registration"),
-    # url(r'^add_camp$', create_camp),
-    # url(r'^edit_camp/(?P<id>\d+)$', edit_camp),
+    url(r'^$', get_camps, name="home"),
+    url(r'^camps/', include(urls_camps)),
+    url(r'^authentication/', include(urls_authentication)),
+
+    url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})
 ]

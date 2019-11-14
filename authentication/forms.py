@@ -2,7 +2,6 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
-from .models import Camp
 
 class UserLoginForm(forms.Form):
     """Form for user login"""
@@ -38,10 +37,4 @@ class UserRegistrationForm(UserCreationForm):
 
         return password2
 
-# Create forms
-class CampForm(forms.ModelForm):
-    """Form for creating and editing camp"""
-    class Meta:
-        model = Camp
-        fields = ('name', 'available')
 

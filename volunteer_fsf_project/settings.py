@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_forms_bootstrap',
-    'volunteer',
+    'authentication',
     'camps',
 ]
 
@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'volunteer_fsf_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-if "DATABASE_URL" in os.environ:
+if "DATABASE_URL" in os.environ and "DEVELOPMENT" not in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }

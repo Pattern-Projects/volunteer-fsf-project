@@ -81,6 +81,7 @@ class TestCampViews(TestCase):
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "edit_camp.html")
 
+    # Requires Revisit urls
     def xtest_camp_is_edited(self):
         """
         Test that a camp can have details edited through
