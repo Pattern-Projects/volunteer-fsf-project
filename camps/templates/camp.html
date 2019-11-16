@@ -14,16 +14,44 @@
                         <div class="details-container">
                             <p><span class="boldtext">Country:</span> {{ camp.country }} </p>
                             <p><span class="boldtext">Organistaion:</span> {{ camp.organisation }}</p>
-                            <p><span class="boldtext">Required Language:</span> {{ camp.required_language }}</p>
-                            <p><span class="boldtext">Positions:</span> {{ camp.positions }}</p>
-                            <p><span class="boldtext">Positions (male):</span> {{ camp.positions_male }}</p>
-                            <p><span class="boldtext">Positions (female):</span> {{ camp.positions_female }}</p>
-                            <p><span class="boldtext">Positions (other):</span> {{ camp.positions_other }}</p>
+                            
+                            {% if camp.required_language %}
+                                <p><span class="boldtext">Required Language:</span> {{ camp.required_language }} </p>
+							{% endif %}
+
+                            <!-- Show camp positions if positions are set -->
+                            {% if camp.positions or camp.positions_male or camp.positions_female or camp.positions_other %}
+                                <p><span class="boldtext">Positions Available:</span>
+                                    {% if camp.positions %}{{ camp.positions }}{% endif %}
+                                </p>
+                                {% if camp.positions_male or camp.positions_female or camp.positions_other %}
+                                    <div class="gender-container">
+                                        {% if camp.positions %}               
+                                            <p><span class="boldtext">Positions (Male):</span> {{ camp.positions_male }} </p>
+                                        {% endif %}
+                                        {% if camp.positions %}
+                                            <p><span class="boldtext">Positions (Female):</span> {{ camp.positions_female }} </p>
+                                        {% endif %}
+                                        {% if camp.positions %}
+                                            <p><span class="boldtext">Positions (Other):</span> {{ camp.positions_other }} </p>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                            
                             <p><span class="boldtext">Start Date:</span> {{ camp.start_date }}</p>
                             <p><span class="boldtext">End Date:</span> {{ camp.end_date }}</p>
-                            <p><span class="boldtext">Local Fee:</span> {{ camp.extra_host_country_fee }}</p>
-                            <p><span class="boldtext">Local Fee Currency:</span> {{ camp.extra_host_country_fee_currency }}</p>
-                            <p><span class="boldtext">Tag:</span> {{ camp.tag }}</p>
+                            
+                            {% if camp.extra_host_country_fee %}
+                                <p><span class="boldtext">Local Fee:</span> {{ camp.extra_host_country_fee }} </p>
+                                <p><span class="boldtext">Local Fee:</span> {{ camp.extra_host_country_fee_currency }} </p>
+							{% endif %}
+                            
+                            {% if camp.tag %}
+                                <p><span class="boldtext">Tag:</span> {{ camp.tag }} </p>
+                            {% endif %}
+
+
                             <a href="{% url 'get_camps' %}" class="btn btn-default">Back</a>
                             <a href="{% url 'edit_camp' camp.id %}" class="btn btn-default">Edit</a>
                             <a href="{% url 'delete_camp' camp.id %}" class="btn btn-default">Delete</a>

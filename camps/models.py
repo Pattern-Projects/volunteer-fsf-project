@@ -13,18 +13,18 @@ class Camp(models.Model):
     description = models.TextField(blank=False)
     image = models.ImageField(upload_to="img", blank=True, null=True)
 
-    # # Camp Details
-    positions = models.IntegerField(default=0)
-    positions_female = models.IntegerField(default=0)
-    positions_male = models.IntegerField(default=0)
-    positions_other = models.IntegerField(default=0)
-    required_language = models.CharField(max_length=200, blank=False, default="English")
+    # Camp Details
+    positions = models.IntegerField(default=0, blank=True)
+    positions_female = models.IntegerField(default=0, blank=True)
+    positions_male = models.IntegerField(default=0, blank=True)
+    positions_other = models.IntegerField(default=0, blank=True)
+    required_language = models.CharField(max_length=200, blank=True, default="English")
     start_date = models.DateField(default=date.today)
     end_date = models.DateField(default=date.today)
-    extra_host_country_fee = models.DecimalField(max_digits=20, decimal_places=2, null=True)
-    extra_host_country_fee_currency = models.CharField(default="", max_length=200)
+    extra_host_country_fee = models.DecimalField(max_digits=20, decimal_places=2, default=0, blank=True)
+    extra_host_country_fee_currency = models.CharField(default="", max_length=200, blank=True)
 
-    # # Camp Organising Data
+    # Camp Organising Data
     archived = models.BooleanField(default=False)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(default=timezone.now)

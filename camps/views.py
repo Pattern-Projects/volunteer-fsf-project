@@ -44,7 +44,7 @@ def archive_camp(request, pk=None):
     camp = get_object_or_404(Camp, pk=pk)
     camp.archived = True
     camp.save()
-    return redirect(get_archived_camps)
+    return redirect('get_archived_camps')
 
 def get_archived_camps(request):
     """
