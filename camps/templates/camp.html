@@ -26,13 +26,13 @@
                                 </p>
                                 {% if camp.positions_male or camp.positions_female or camp.positions_other %}
                                     <div class="gender-container">
-                                        {% if camp.positions %}               
+                                        {% if camp.positions_male %}               
                                             <p><span class="boldtext">Positions (Male):</span> {{ camp.positions_male }} </p>
                                         {% endif %}
-                                        {% if camp.positions %}
+                                        {% if camp.positions_female %}
                                             <p><span class="boldtext">Positions (Female):</span> {{ camp.positions_female }} </p>
                                         {% endif %}
-                                        {% if camp.positions %}
+                                        {% if camp.positions_other %}
                                             <p><span class="boldtext">Positions (Other):</span> {{ camp.positions_other }} </p>
                                         {% endif %}
                                     </div>
