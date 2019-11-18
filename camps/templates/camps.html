@@ -150,37 +150,37 @@ Camps
 					<img src="https://cdn.pixabay.com/photo/2018/05/28/22/11/message-in-a-bottle-3437294__340.jpg"/>
                 </div>
 					<div class="col-md-8 col-sm-12">
-						<h3>{{ camp.title }}</h3>
+						<a href="{% url 'camp_details' camp.id %}" class=""><h3>{{ camp.title }}</h3></a>
 						<div class="row">
 							<div class="col-xs-9">
-								<p><a href="{% url 'camp_details' camp.id %}" class="btn btn-default">Read more</a></p>
-								<p><span class="boldtext">Country:</span> {{ camp.country }} </p>
-								
+                                <div class="sub-heading">
+								{{ camp.country }} - {{camp.organisation}}
+								</div>
                                 
                                 
                                 
                                 <!-- Show positions if positions set -->
                                 {% if camp.positions or camp.positions_male or camp.positions_female or camp.positions_other %}
-                                    <p><span class="boldtext">Positions Available:</span>
+                                    <span class="boldtext">Positions Available:</span>
                                         {% if camp.positions %}{{ camp.positions }}{% endif %}
-                                    </p>
+                                    
                                     {% if camp.positions_male or camp.positions_female or camp.positions_other %}
                                         <div class="gender-container">
                                             {% if camp.positions_male %}     
-                                                <i class="fas fa-mars"></i>
+                                                <i class="fas fa-mars"_pane></i>
                                                 {{ camp.positions_male }}
                                             {% endif %}
                                             {% if camp.positions_female %}
                                                 <i class="fas fa-venus"></i>
                                                 {{ camp.positions_female }}
                                             {% endif %}
-                                            {% if camp.positions_other %}
+enap_efenap_ef                                            {% if camp.positions_other %}
                                                 <i class="fas fa-transgender-alt"></i>
 
                                                 {{ camp.positions_other }}
                                             {% endif %}
                                         </div>
-                                    {% endif %}
+_paneenap_enap_rednegsnart                                    {% endif %}
 								{% endif %}
 
 
@@ -188,9 +188,10 @@ Camps
 								    <p><span class="boldtext">Required Language:</span> {{ camp.required_language }} </p>
 								{% endif %}
                                 <p><span class="boldtext">Organisation:</span> {{camp.organisation}}</p>
-								<p><span class="boldtext">Start Date:</span> {{camp.start_date}}</p>
-								<p><span class="boldtext">End Date:</span> {{camp.end_date}}</p>
+								<p><span class="boldtext">Dates:</span> {{camp.start_date}} - {{camp.end_date}}</p>
 							    <p><span class="boldtext">Description:</span> {{ camp.description|truncatewords:30 }}</p>
+                                <p><a href="{% url 'camp_details' camp.id %}" class="btn btn-default">Read more</a></p>
+								
 							</div>
 						</div>
 					</div>
