@@ -14,10 +14,10 @@ class Camp(models.Model):
     image = models.ImageField(upload_to="img", blank=True, null=True)
 
     # Camp Details
-    positions = models.IntegerField(default=0, blank=True)
-    positions_female = models.IntegerField(default=0, blank=True)
-    positions_male = models.IntegerField(default=0, blank=True)
-    positions_other = models.IntegerField(default=0, blank=True)
+    positions = models.PositiveIntegerField(default=0, null=True)
+    positions_female = models.PositiveIntegerField(default=0, null=True)
+    positions_male = models.PositiveIntegerField(default=0, null=True)
+    positions_other = models.PositiveIntegerField(default=0, null=True)
     required_language = models.CharField(max_length=200, blank=True, default="English")
     start_date = models.DateField(default=date.today)
     end_date = models.DateField(default=date.today)
