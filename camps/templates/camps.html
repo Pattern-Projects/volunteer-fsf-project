@@ -148,6 +148,7 @@ Camps
 				<div class="col-md-3 col-sm-12 text-center image-container">
 					<!--<img src="/media/{{ camp.image }}"/>-->
 					<img src="https://cdn.pixabay.com/photo/2018/05/28/22/11/message-in-a-bottle-3437294__340.jpg"/>
+                    <a href="{% url 'camp_details' camp.id %}" class="btn btn-default d-lg-inline-block d-none camp-info-btn">Camp Info</a>
                 </div>
 					<div class="col-md-8 col-sm-12">
 						<a href="{% url 'camp_details' camp.id %}" class=""><h3 class="camp-title">{{ camp.title }}</h3></a>
@@ -156,9 +157,12 @@ Camps
 								</div>						<div class="row">
 							<div class="col-xs-9">
 
-                                
-                                
-                                
+								<div><span class="boldtext">Dates:</span> {{camp.start_date}} - {{camp.end_date}}</div>
+
+                                {% if camp.required_language %}
+								    <div><span class="boldtext">Required Language:</span> {{ camp.required_language }} </div>
+								{% endif %}
+
                                 <!-- Show positions if positions set -->
                                 {% if camp.positions or camp.positions_male or camp.positions_female or camp.positions_other %}
                                     <div class="">
@@ -189,13 +193,10 @@ Camps
                                     {% endif %}
 								{% endif %}
 
-
-                                {% if camp.required_language %}
-								    <div><span class="boldtext">Required Language:</span> {{ camp.required_language }} </div>
-								{% endif %}
-								<div><span class="boldtext">Dates:</span> {{camp.start_date}} - {{camp.end_date}}</div>
-							    <div><span class="boldtext">Description:</span> {{ camp.description|truncatewords:15 }}</div>
-                                <div><a href="{% url 'camp_details' camp.id %}" class="btn btn-default">Read more</a></div>
+							    <div>
+                                    <span class="boldtext">Description:</span> {{ camp.description|truncatewords:15 }}
+                                    <a href="{% url 'camp_details' camp.id %}" class="">Read more</a>
+                                </div>
 								
 							</div>
 						</div>
