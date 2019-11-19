@@ -150,47 +150,52 @@ Camps
 					<img src="https://cdn.pixabay.com/photo/2018/05/28/22/11/message-in-a-bottle-3437294__340.jpg"/>
                 </div>
 					<div class="col-md-8 col-sm-12">
-						<a href="{% url 'camp_details' camp.id %}" class=""><h3>{{ camp.title }}</h3></a>
-						<div class="row">
+						<a href="{% url 'camp_details' camp.id %}" class=""><h3 class="camp-title">{{ camp.title }}</h3></a>
+                                <div class="camp-subtitle">
+								{{ camp.region }} {% if camp.region and camp.country %}, {% endif %}{{ camp.country }} - {{camp.organisation}}
+								</div>						<div class="row">
 							<div class="col-xs-9">
-                                <div class="sub-heading">
-								{{ camp.country }} - {{camp.organisation}}
-								</div>
+
                                 
                                 
                                 
                                 <!-- Show positions if positions set -->
                                 {% if camp.positions or camp.positions_male or camp.positions_female or camp.positions_other %}
+                                    <div class="">
                                     <span class="boldtext">Positions Available:</span>
                                         {% if camp.positions %}{{ camp.positions }}{% endif %}
-                                    
+                                    </div>
                                     {% if camp.positions_male or camp.positions_female or camp.positions_other %}
                                         <div class="gender-container">
+                                            <div class="positions-pane male-positions-pane">
                                             {% if camp.positions_male %}     
                                                 <i class="fas fa-mars"_pane></i>
                                                 {{ camp.positions_male }}
+                                            </div>
                                             {% endif %}
                                             {% if camp.positions_female %}
+                                            <div class="positions-pane female-positions-pane">
                                                 <i class="fas fa-venus"></i>
                                                 {{ camp.positions_female }}
+                                            </div>
                                             {% endif %}
-enap_efenap_ef                                            {% if camp.positions_other %}
+                                            {% if camp.positions_other %}
+                                            <div class="positions-pane transgender-positions-pane">
                                                 <i class="fas fa-transgender-alt"></i>
-
                                                 {{ camp.positions_other }}
+                                            </div>
                                             {% endif %}
                                         </div>
-_paneenap_enap_rednegsnart                                    {% endif %}
+                                    {% endif %}
 								{% endif %}
 
 
                                 {% if camp.required_language %}
-								    <p><span class="boldtext">Required Language:</span> {{ camp.required_language }} </p>
+								    <div><span class="boldtext">Required Language:</span> {{ camp.required_language }} </div>
 								{% endif %}
-                                <p><span class="boldtext">Organisation:</span> {{camp.organisation}}</p>
-								<p><span class="boldtext">Dates:</span> {{camp.start_date}} - {{camp.end_date}}</p>
-							    <p><span class="boldtext">Description:</span> {{ camp.description|truncatewords:30 }}</p>
-                                <p><a href="{% url 'camp_details' camp.id %}" class="btn btn-default">Read more</a></p>
+								<div><span class="boldtext">Dates:</span> {{camp.start_date}} - {{camp.end_date}}</div>
+							    <div><span class="boldtext">Description:</span> {{ camp.description|truncatewords:15 }}</div>
+                                <div><a href="{% url 'camp_details' camp.id %}" class="btn btn-default">Read more</a></div>
 								
 							</div>
 						</div>
