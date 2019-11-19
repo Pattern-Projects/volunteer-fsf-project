@@ -163,14 +163,15 @@ Camps
 								    <div><span class="boldtext">Required Language:</span> {{ camp.required_language }} </div>
 								{% endif %}
 
-                                <!-- Show positions if positions set -->
+<!-- Show positions if positions set -->
                                 {% if camp.positions or camp.positions_male or camp.positions_female or camp.positions_other %}
+                                    <div class="">
                                     <div class="">
                                     <span class="boldtext">Positions Available:</span>
                                         {% if camp.positions %}{{ camp.positions }}{% endif %}
                                     </div>
                                     {% if camp.positions_male or camp.positions_female or camp.positions_other %}
-                                        <div class="gender-container">
+                                        <div class="gender-container text-center">
                                             <div class="positions-pane male-positions-pane" title="Male positions: {{ camp.positions_male }} / {{ camp.positions_male }}">
                                             {% if camp.positions_male %}     
                                                 <i class="fas fa-mars"_pane></i>
@@ -191,8 +192,8 @@ Camps
                                             {% endif %}
                                         </div>
                                     {% endif %}
+                                    </div>
 								{% endif %}
-
 							    <div>
                                     <span class="boldtext">Description:</span> {{ camp.description|truncatewords:15 }}
                                     <a href="{% url 'camp_details' camp.id %}" class="">Read more</a>
