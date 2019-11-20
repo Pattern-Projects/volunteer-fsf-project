@@ -4,6 +4,25 @@
 Camps
 {% endblock %}
 
+{% block secondary_nav %}
+                        <li class="nav-item">
+                            <a class="btn btn-outline-primary my-2 my-sm-0 nav-link active-btn" href="{% url 'filter_by_continent' 'AFRICA' %}">
+                                <span>Africa</span>
+                            </a>
+                        </li>
+
+                        {% for key, value in CONTINENTS %}
+                            <li class="nav-item">
+                                <a class="btn btn-outline-primary my-2 my-sm-0 nav-link" href="{% url 'filter_by_continent' key %}">
+                                    <span>{{value}}</span>
+                                </a>
+                            </li>
+                        {% endfor %}
+
+{% endblock %}
+
+
+
 {% block content %}
 
 <div class="row">

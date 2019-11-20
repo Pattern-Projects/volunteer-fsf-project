@@ -21,6 +21,16 @@ def camp_details(request, pk):
     camp.save()
     return render(request, "camp.html", {'camp': camp})
 
+def filter_by_continent (request, continent):
+    """
+    Return a list of camps where camp.continent
+    is equal to given continent
+    """
+    print(continent)
+    results = Camp.objects.filter(continent=continent)[:30]
+    return render(request, "camps.html", {'camps': results})
+
+
 def create_or_edit_a_volunteer_camp(request, pk=None):
     """
     Create a view that is used to create
