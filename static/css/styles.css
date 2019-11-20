@@ -21,11 +21,18 @@ p {
 
 /* Structure */
 .alert {
-    background-color: #fff3cd;
     border-color: #ffeeba;
     /* background: #F9DDA8; */
     color: #856404;
     margin-bottom: 0.2rem;
+}
+
+.alert.yellow {
+    background-color: #fff3cd;
+}
+
+.alert.blue {
+    background-color: lightblue;
 }
 
 .top-nav-bar {

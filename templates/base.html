@@ -27,11 +27,25 @@
 
 <body>
 
-    <!--Alert Box-->
+{% if DEVELOPMENT == 'Development' %}
+    <div class="alert blue">
+        <div class="container">
+            <strong>Note:</strong> This site is development mode. Please notify the sites admin. <a href="https://github.com/Pattern-Projects/volunteer-fsf-project/issues">Click Here<a/>
+        </div>
+    </div>
+{% elif DEVELOPMENT == 'Evaluation' %}
+    <div class="alert blue">
+        <div class="container">
+            <strong>Note:</strong> This site is evaluation mode. Login details are shared as part of project evaluation. <a href="https://github.com/Pattern-Projects/volunteer-fsf-project/issues">Click Here<a/>
+        </div>
+    </div>
+{% else %}
     <div class="alert">
         <div class="container">
-            <strong>Note:</strong> This is an alert box for any useful bit of information. <a href="#">Click Here<a/></div>
+            <strong>Note:</strong> Sign up to our newsletter to be kept up to date. <a href="#">Click Here<a/>
         </div>
+    </div>
+{% endif %}
 
 
     <!-- Top Nav Bar -->
