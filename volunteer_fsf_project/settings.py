@@ -75,11 +75,13 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
-                'volunteer_fsf_project.context_processors.export_vars',
+                
             ],
         },
     },
 ]
+if (DEBUG == False):
+    TEMPLATES.OPTIONS.context_processors.append('volunteer_fsf_project.context_processors.export_vars')
 
 WSGI_APPLICATION = 'volunteer_fsf_project.wsgi.application'
 
