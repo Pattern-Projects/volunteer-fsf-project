@@ -75,13 +75,11 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
-                
+                'volunteer_fsf_project.context_processors.export_vars',
             ],
         },
     },
 ]
-if (DEBUG == False):
-    TEMPLATES.OPTIONS.context_processors.append('volunteer_fsf_project.context_processors.export_vars')
 
 WSGI_APPLICATION = 'volunteer_fsf_project.wsgi.application'
 
@@ -151,14 +149,13 @@ MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
 
 ####### Tested code
-if (DEBUG==False):
-    DEFAULT_FILE_STORAGE = 'backend.custom_azure.AzureMediaStorage'
-    STATICFILES_STORAGE = 'backend.custom_azure.AzureStaticStorage'
+DEFAULT_FILE_STORAGE = 'backend.custom_azure.AzureMediaStorage'
+STATICFILES_STORAGE = 'backend.custom_azure.AzureStaticStorage'
 
-    STATIC_LOCATION = "static"
-    MEDIA_LOCATION = "media"
+STATIC_LOCATION = "static"
+MEDIA_LOCATION = "media"
 
-    AZURE_ACCOUNT_NAME = os.environ.get("AZURE_ACCOUNT_NAME")
-    AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
-    STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
-    MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
+AZURE_ACCOUNT_NAME = os.environ.get("AZURE_ACCOUNT_NAME")
+AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
+STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
+MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
