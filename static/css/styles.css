@@ -21,7 +21,6 @@ p {
 
 /* Structure */
 .alert {
-    border-color: #ffeeba;
     /* background: #F9DDA8; */
     color: #856404;
     margin-bottom: 0.2rem;
@@ -29,10 +28,12 @@ p {
 
 .alert.yellow {
     background-color: #fff3cd;
+    border-color: #ffeeba;
 }
 
-.alert.blue {
-    background-color: lightblue;
+.alert.red {
+    background-color: lightpink;
+    border-color: lightcoral;
 }
 
 .top-nav-bar {
