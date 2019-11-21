@@ -126,6 +126,7 @@ This project makes use of the following technologies:
 - [Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) CSS styling from **Bootstrap**.
 - [Font Awsome](https://fontawesome.com/) provide neat icons with easy styling.
 - [Travis CI](https://travis-ci.org/)  Continuous Integration from **Travis**.
+- [Datepicker](https://fengyuanchen.github.io/datepicker/)
 
 ## Developement
 
@@ -317,6 +318,7 @@ Your project is now running! To view the project open it in Preview.
 - [StackOverflow - Git pull from another repository](https://stackoverflow.com/questions/24815952/git-pull-from-another-repository/24816134#24816134)
 - [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 - [Best Practices When Versioning a Release](https://blog.codeship.com/best-practices-when-versioning-a-release/)
+- [How to Use Date Picker with Django](https://simpleisbetterthancomplex.com/tutorial/2019/01/03/how-to-use-date-picker-with-django.html#fengyuan-chens-datepicker)
 
 ### Content
 The text on the website has been copied and edited from:
