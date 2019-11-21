@@ -41,4 +41,3 @@ class Camp(models.Model):
     # Return title unicode
     def __unicode__(self):
         return self.title
-

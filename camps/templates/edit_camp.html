@@ -7,6 +7,7 @@
     <form method="POST" enctype="multipart/form-data" class="edit_camp_form">
         {% csrf_token %}
         {{ form | as_bootstrap }}
+
         <button type="submit" class="btn btn-info">Save</button>
     </form>
 </div>

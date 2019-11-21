@@ -97,6 +97,10 @@
     font-weight: bold;
 }
 
+.error-msg {
+    color: red;
+}
+
 /* Camp form image upload button - remove border */
 input#id_image {
     border: none;
