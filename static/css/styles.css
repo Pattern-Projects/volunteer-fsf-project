@@ -1,5 +1,6 @@
 /* Body */
 body {
+    font-family: roboto;
     background-color: #E5E5E5;
     color: #444555;
 }
@@ -20,11 +21,19 @@ p {
 
 /* Structure */
 .alert {
-    background-color: #fff3cd;
-    border-color: #ffeeba;
     /* background: #F9DDA8; */
     color: #856404;
     margin-bottom: 0.2rem;
+}
+
+.alert.yellow {
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.alert.red {
+    background-color: lightpink;
+    border-color: lightcoral;
 }
 
 .top-nav-bar {
@@ -44,6 +53,7 @@ p {
     }
 
 .secondary-nav-bar {
+    margin-bottom: 10px;
     background-color: #E7E9F3;
 }
 
@@ -111,7 +121,7 @@ footer {
 
 /* Elements */
 .pagination a {
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 5px;
     color: #444555;
 }
@@ -149,6 +159,7 @@ footer {
     -moz-box-shadow: 1px 3px 15px -4px rgba(0,0,0,0.5);
     box-shadow: 1px 3px 15px -4px rgba(0,0,0,0.5);
 
+    font-size: 1.2rem;
     padding: 15px;
 }
 
@@ -176,6 +187,3 @@ footer {
     color: #777777;
 }
 
-form {
-    width: 50%;
-}

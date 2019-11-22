@@ -9,28 +9,54 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>{% block page_title %}{% endblock %}</title>
+    
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
     <!-- Icons and fonts -->
     <script src="https://kit.fontawesome.com/f3e1d18d42.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pragati+Narrow&display=swap" rel="stylesheet">
-
+    
+    <!-- Connnected Files -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
     <link rel="stylesheet" href="{% static 'css/content.css' %}"/>
+
+    <!-- Fengyuan Chen's Datepicker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css" integrity="sha256-b88RdwbRJEzRx95nCuuva+hO5ExvXXnpX+78h8DjyOE=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js" integrity="sha256-/7FLTdzP6CfC1VBAj/rsp3Rinuuu9leMRGd354hvk0k=" crossorigin="anonymous"></script>
+
 </head>
 
 
 <body>
 
-    <!--Alert Box-->
+
+{% if DEVELOPMENT == 'Development' %}
+    <div class="alert red">
+        <div class="container">
+            <strong>Note:</strong> This site is in development mode. Please notify the site's admin. <a href="https://github.com/Pattern-Projects/volunteer-fsf-project/issues">Click Here<a/>
+        </div>
+    </div>
+{% elif DEVELOPMENT == 'Evaluation' %}
+    <div class="alert yellow">
+        <div class="container">
+            <strong>Note:</strong> This site is in review mode. Login details are shared for project evaluation purposes. <a href="https://github.com/Pattern-Projects/volunteer-fsf-project/issues">GitHub Repository<a/>
+        </div>
+    </div>
+{% else %}
     <div class="alert">
         <div class="container">
-            <strong>Note:</strong> This is an alert box for any useful bit of information. <a href="#">Click Here<a/></div>
+            <strong>Note:</strong> Sign up to our newsletter to be kept up to date. <a href="#">Click Here<a/>
         </div>
-
+    </div>
+{% endif %}
 
     <!-- Top Nav Bar -->
     <div class="top-nav-bar">
@@ -102,27 +128,8 @@
             <span class="navbar-toggler-icon"></span>
             </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                        <ul class="navbar-nav mr-auto justify-content-start">
-
-                        <li class="nav-item">
-                            <a class="btn btn-outline-primary my-2 my-sm-0 nav-link active-btn" href="{% url 'home' %}">
-                                <span>Active</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="btn btn-outline-primary my-2 my-sm-0 nav-link" href="{% url 'home' %}">
-                                <span>Button</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="btn btn-outline-primary my-2 my-sm-0 nav-link" href="{% url 'home' %}">
-                                <span>Button</span>
-                            </a>
-                        </li>
-
+                    <ul class="navbar-nav mr-auto justify-content-start">
+                        {% block secondary_nav %}{% endblock %}
                     </ul>
 
                     <!-- Search bar -->
@@ -175,7 +182,13 @@
 
 </body>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+      $(".datepicker").datepicker({
+          format:'yyyy-mm-dd',
+      });
+    });
+  </script>
 </html>

@@ -1,178 +1,141 @@
 {% extends 'base.html' %}
 
+{% load bootstrap_tags %}
+
 {% block page_title %}
 Camps
 {% endblock %}
 
-{% block content %}
+{% block secondary_nav %}
 
-        <div class="row">
-
-            <!-- Side column -->
-            <div class="col-md-3">
-                <div class="info-box">
-
-                    <div class="info-section">
-                        <div class="info-header">
-                            Option Header:
-                        </div>
-                        <form class="info-options">
-
-                            <li class="info-option">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                        Option
-                                    </label>
-                                </div>
-                            </li>
-
-                            <li class="info-option">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                        Option
-                                    </label>
-                                </div>
-                            </li>
-
-                            <li class="info-option">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                        Option
-                                    </label>
-                                </div>
-                            </li>
-
-                        </form><!-- info-options -->
-                    </div><!-- info-section -->
-
-                    <div class="info-section">
-                        <div class="info-header">
-                            Option Header:
-                        </div>
-                        <form class="info-options">
-
-                            <li class="info-option">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                        Option
-                                    </label>
-                                </div>
-                            </li>
-
-                            <li class="info-option">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                        Option
-                                    </label>
-                                </div>
-                            </li>
-
-                            <li class="info-option">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                        Option
-                                    </label>
-                                </div>
-                            </li>
-
-                        </form><!-- info-options -->
-                    </div><!-- info-section -->
-
-                    <div class="info-section">
-                        <div class="info-header">
-                            Option Header:
-                        </div>
-                        <form class="info-options">
-
-                            <li class="info-option">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" id="defaultRadio1" name="exampleRadios" value="option1" checked>
-                                    <label class="form-check-label" for="defaultCheck1">
-                                        Option
-                                    </label>
-                                </div>
-                            </li>
-
-                            <li class="info-option">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" id="defaultRadio1" name="exampleRadios" value="option1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                        Option
-                                    </label>
-                                </div>
-                            </li>
-
-                            <li class="info-option">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" id="defaultRadio1" name="exampleRadios" value="option1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                        Option
-                                    </label>
-                                </div>
-                            </li>
-
-                        </form><!-- info-options -->
-                    </div><!-- info-section -->
-
-
-
-
-                </div><!-- info-box -->
-            </div><!-- col-md-3 -->
-
-
-
-
-            <!-- content col-md-9 -->
-            <div class="col-md-9">
-
-                <!-- pagination -->
-                <div class="pagination">
-                    <a href="#">prev-</a>
-
-                    <a href="#">-next</a>
-                </div>
-
-
-                <!-- Add camps to page -->
-                {% for camp in camps %}
-                    <!-- content -->
-                    <div class="item-box">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-12 text-center image-container">
-                                <!--<img src="/media/{{ camp.image }}"/>-->
-                                <img src="https://cdn.pixabay.com/photo/2018/05/28/22/11/message-in-a-bottle-3437294__340.jpg"/>
-                            </div>
-                            <div class="col-md-8 col-sm-12">
-                                <h3>{{ camp.title }}</h3>
-                                <div class="row">
-                                    <div class="col-xs-9">
-                                        <p><a href="{% url 'camp_details' camp.id %}"  class="btn btn-default">Read more</a></p>
-                                        <p><span class="boldtext">Title:</span> {{ camp.title }} </p>
-                                        <p>{{ camp.description|truncatewords:30 }}</p>
-                                        <p><span class="boldtext">Country:</span> {{ camp.country }} </p>
-                                        <p><span class="boldtext">Organisation:</span> {{camp.organisation}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
-                {% endfor %}
-
-                <a href="{% url 'new_camp' %}">Add Camp</a>
-
-
-
-
-        </div>
-    </div>
+                    {% for continent in form.continent %}
+                        <li class="nav-item">
+                            <a class="btn btn-outline-primary my-2 my-sm-0 nav-link {% if continent == form.continent.0 %} active-btn{% endif %}" href="{% url 'filter_by_continent' 'All' %}">
+                                <span>{{continent}}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
 
 
 {% endblock %}
+
+
+
+{% block content %}
+
+<div class="row">
+
+	<!-- Side column -->
+	<div class="col-md-3">
+		<div class="info-box">
+
+			<div class="info-section">
+				<div class="info-header">
+					Filter options:
+				</div>
+				<form class="info-options">
+
+					{{ form | as_bootstrap }}
+
+            <button type="submit" class="btn btn-info">Update</button>
+
+				</form><!-- info-options -->
+			</div><!-- info-section -->
+
+
+
+
+		</div><!-- info-box -->
+	</div><!-- col-md-3 -->
+
+
+
+
+	<!-- content col-md-9 -->
+	<div class="col-md-9">
+
+		<!-- pagination -->
+		<div class="pagination">
+			<a href="#">prev-</a>
+
+			<a href="#">-next</a>
+		</div>
+
+
+		<!-- Add camps to page -->
+		{% for camp in camps %}
+		<!-- content -->
+		<div class="item-box">
+			<div class="row">
+				<div class="col-md-3 col-sm-12 text-center image-container">
+					<!--<img src="/media/{{ camp.image }}"/>-->
+					<img src="https://cdn.pixabay.com/photo/2018/05/28/22/11/message-in-a-bottle-3437294__340.jpg"/>
+                    <a href="{% url 'camp_details' camp.id %}" class="btn btn-default d-lg-inline-block d-none camp-info-btn">Camp Info</a>
+                </div>
+					<div class="col-md-8 col-sm-12">
+						<a href="{% url 'camp_details' camp.id %}" class=""><h3 class="camp-title">{{ camp.title }}</h3></a>
+                                <div class="camp-subtitle">
+								{{ camp.region }} {% if camp.region and camp.country %}, {% endif %}{{ camp.country }} - {{camp.organisation}}
+								</div>						<div class="row">
+							<div class="col-xs-9">
+
+								<div><span class="boldtext">Dates:</span> {{camp.start_date}} - {{camp.end_date}}</div>
+
+                                {% if camp.required_language %}
+								    <div><span class="boldtext">Required Language:</span> {{ camp.required_language }} </div>
+								{% endif %}
+
+<!-- Show positions if positions set -->
+                                {% if camp.positions or camp.positions_male or camp.positions_female or camp.positions_other %}
+                                    <div class="">
+                                    <div class="">
+                                    <span class="boldtext">Positions Available:</span>
+                                        {% if camp.positions %}{{ camp.positions }}{% endif %}
+                                    </div>
+                                    {% if camp.positions_male or camp.positions_female or camp.positions_other %}
+                                        <div class="gender-container text-center">
+                                            <div class="positions-pane male-positions-pane" title="Male positions: {{ camp.positions_male }} / {{ camp.positions_male }}">
+                                            {% if camp.positions_male %}     
+                                                <i class="fas fa-mars"_pane></i>
+                                                {{ camp.positions_male }}
+                                            </div>
+                                            {% endif %}
+                                            {% if camp.positions_female %}
+                                            <div class="positions-pane female-positions-pane" title="Female positions: {{ camp.positions_female }} / {{ camp.positions_female }} ">
+                                                <i class="fas fa-venus"></i>
+                                                {{ camp.positions_female }}
+                                            </div>
+                                            {% endif %}
+                                            {% if camp.positions_other %}
+                                            <div class="positions-pane transgender-positions-pane"title="Transgeder-Alternative positions: {{ camp.positions_other }} / {{ camp.positions_other }}" >
+                                                <i class="fas fa-transgender-alt"></i>
+                                                {{ camp.positions_other }}
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+                                    </div>
+								{% endif %}
+							    <div>
+                                    <span class="boldtext">Description:</span> {{ camp.description|truncatewords:15 }}
+                                    <a href="{% url 'camp_details' camp.id %}" class="">Read more</a>
+                                </div>
+								
+							</div>
+						</div>
+					</div>
+					<hr>
+				</div>
+			</div>
+			{% endfor %}
+
+			<a href="{% url 'new_camp' %}">Add Camp</a>
+
+
+
+
+		</div>
+	</div>
+
+
+	{% endblock %}

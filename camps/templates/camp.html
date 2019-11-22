@@ -2,7 +2,7 @@
 {% block content %}
 <div class="item-box">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-lg-4">
             <h1>{{ camp.title }}</h1>
             <hr>
             <div class="row">
@@ -12,15 +12,68 @@
                         <img src="https://cdn.pixabay.com/photo/2018/05/28/22/11/message-in-a-bottle-3437294__340.jpg"/>
                     </div>
                         <div class="details-container">
-                            <p><span class="boldtext">Country:</span> {{ camp.country }} </p>
-                            <p><span class="boldtext">Organisation:</span> {{ camp.organisation }}</p>
+                            <div class="camp-details"><span class="boldtext">Country:</span> {{ camp.country }} </div>
+                            <div class="camp-details"><span class="boldtext">Organistaion:</span> {{ camp.organisation }}</div>
+                            
+                            {% if camp.required_language %}
+                                <div class="camp-details"><span class="boldtext">Required Language:</span> {{ camp.required_language }} </div>
+							{% endif %}
+
+                                <!-- Show positions if positions set -->
+                                {% if camp.positions or camp.positions_male or camp.positions_female or camp.positions_other %}
+                                    <div class="camp-details">
+                                    <div class="">
+                                    <span class="boldtext">Positions Available:</span>
+                                        {% if camp.positions %}{{ camp.positions }}{% endif %}
+                                    </div>
+                                    {% if camp.positions_male or camp.positions_female or camp.positions_other %}
+                                        <div class="gender-container text-center">
+                                            <div class="positions-pane male-positions-pane" title="Male positions: {{ camp.positions_male }} / {{ camp.positions_male }}">
+                                            {% if camp.positions_male %}     
+                                                <i class="fas fa-mars"_pane></i>
+                                                {{ camp.positions_male }}
+                                            </div>
+                                            {% endif %}
+                                            {% if camp.positions_female %}
+                                            <div class="positions-pane female-positions-pane" title="Female positions: {{ camp.positions_female }} / {{ camp.positions_female }} ">
+                                                <i class="fas fa-venus"></i>
+                                                {{ camp.positions_female }}
+                                            </div>
+                                            {% endif %}
+                                            {% if camp.positions_other %}
+                                            <div class="positions-pane transgender-positions-pane"title="Transgeder-Alternative positions: {{ camp.positions_other }} / {{ camp.positions_other }}" >
+                                                <i class="fas fa-transgender-alt"></i>
+                                                {{ camp.positions_other }}
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+                                    </div>
+								{% endif %}
+
+
+                            
+                            <div class="camp-details"><span class="boldtext">Start Date:</span> {{ camp.start_date }}</div>
+                            <div class="camp-details"><span class="boldtext">End Date:</span> {{ camp.end_date }}</div>
+                            
+                            {% if camp.extra_host_country_fee %}
+                                <div class="camp-details"><span class="boldtext">Local Fee:</span> {{ camp.extra_host_country_fee }} </div>
+                                <div class="camp-details"><span class="boldtext">Local Fee:</span> {{ camp.extra_host_country_fee_currency }} </div>
+							{% endif %}
+                            
+                            {% if camp.tag %}
+                                <div class="camp-details"><span class="boldtext">Tag:</span> {{ camp.tag }} </div>
+                            {% endif %}
+
+
                             <a href="{% url 'get_camps' %}" class="btn btn-default">Back</a>
                             <a href="{% url 'edit_camp' camp.id %}" class="btn btn-default">Edit</a>
+                            <a href="{% url 'delete_camp' camp.id %}" class="btn btn-default">Delete</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-lg-8">
             <div class="row">
                 <div class="col-xs-9">
                     <!--<img src="/media/{{ camp.image }}"/>-->
@@ -35,26 +88,3 @@
     </div>
 </div>
 {% endblock %}
-
-
-<div class="item-box">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-12 text-center image-container">
-                                <!--<img src="/media/{{ camp.image }}"/>-->
-                                <img src="https://cdn.pixabay.com/photo/2018/05/28/22/11/message-in-a-bottle-3437294__340.jpg"/>
-                            </div>
-                            <div class="col-md-8 col-sm-12">
-                                <h3>{{ camp.title }}</h3>
-                                <div class="row">
-                                    <div class="col-xs-9">
-                                        <p><a href="{% url 'camp_details' camp.id %}"  class="btn btn-default">Read more</a></p>
-                                        <p><span class="boldtext">Title:</span> {{ camp.title }} </p>
-                                        <p>{{ camp.description|truncatewords:30 }}</p>
-                                        <p><span class="boldtext">Country:</span> {{ camp.country }} </p>
-                                        <p><span class="boldtext">Organisation:</span> {{camp.organisation}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                        </div>
-                    </div>

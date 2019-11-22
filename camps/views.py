@@ -1,14 +1,25 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Camp
-from .forms import CampForm
+from .models import Camp, FilterModel
+from .forms import CampForm, FilterForm
 
 def get_camps(request):
     """
     Create a view that will return a list
     of Camps and render them to the 'camps.html' template
     """
-    results = Camp.objects.all()
-    return render(request, "camps.html", {'camps': results})
+    model = FilterModel()
+
+    # TODO:Repair or remove
+    if request.method == "POST":
+        form = FilterForm(request.POST, request.FILES, instance=model)
+        if form.is_valid():
+            model = form.save()
+            results = Camp.objects.filter(model)[:30]
+    else:
+        form = FilterForm(instance=model)
+        results = Camp.objects.order_by('published_date')[:30]
+
+    return render(request, "camps.html", {'camps': results, 'form': form})
 
 def camp_details(request, pk):
     """
@@ -20,6 +31,16 @@ def camp_details(request, pk):
     camp = get_object_or_404(Camp, pk=pk)
     camp.save()
     return render(request, "camp.html", {'camp': camp})
+
+def filter_by_continent (request, continent):
+    """
+    Return a list of camps where camp.continent
+    is equal to given continent
+    """
+    print(continent)
+    results = Camp.objects.filter(continent=continent)[:30]
+    return render(request, "camps.html", {'camps': results})
+
 
 def create_or_edit_a_volunteer_camp(request, pk=None):
     """
@@ -44,9 +65,7 @@ def archive_camp(request, pk=None):
     camp = get_object_or_404(Camp, pk=pk)
     camp.archived = True
     camp.save()
-
-    results = Camp.objects.filter(archived=True)
-    return render(request, "camps.html", {'camps': results})
+    return redirect('get_archived_camps')
 
 def get_archived_camps(request):
     """
@@ -54,3 +73,10 @@ def get_archived_camps(request):
     """
     results = Camp.objects.filter(archived=True)
     return render(request, "camps.html", {'camps': results})
+
+def delete_camp(request, pk=None):
+    """
+    Delete camp of given pk as id
+    """
+    Camp.objects.filter(id=pk).delete()
+    return redirect(get_camps)

@@ -52,11 +52,13 @@ class TestCampViews(TestCase):
         """
         Test that a test is created by post method
         """
-        page = self.client.post("/camps/new_camp/", {"title": "New Camp", "country": "Ireland", "organisation": "VI", "description": "A camp"})
+        page = self.client.post("/camps/new_camp/", {'title': 'A Camp', 'region' : 'West', 'country': 'Ireland', 'continent' : 'EUROPE', 'organisation': 'Volunteer-Ireland', 'positions' : 0, 'positions_male' : 0, 'positions_female' : 0, 'positions_other' : 0, 
+        'description': 'A camp', 'start_date': '2019-11-15','end_date': '2019-11-15','created_date': '2019-11-15 07:04:08','published_date': '2019-11-15 07:04:08'
+        })
         camp = get_object_or_404(Camp, pk=1)
-        self.assertEqual("New Camp", camp.title)
+        self.assertEqual("A Camp", camp.title)
         self.assertEqual("Ireland", camp.country)
-        self.assertEqual("VI", camp.organisation)
+        self.assertEqual("Volunteer-Ireland", camp.organisation)
         self.assertEqual("A camp", camp.description)
         self.assertRedirects(page, "/camps/", status_code=302, target_status_code=200)
 
@@ -77,9 +79,13 @@ class TestCampViews(TestCase):
         Test that a camp can have details edited through
         the edit_camp.html page
         """
-        camp = Camp(title="A camp")
+        camp = Camp(title= 'This camp', region="West", country='Ireland', continent="EUROPE", organisation= 'Volunteer-Ireland', description= 'A camp',
+        start_date= '2019-11-15',end_date= '2019-11-15',created_date= '2019-11-15 07:04:08',published_date='2019-11-15 07:04:08'
+        )
         camp.save()
-        page = self.client.post("/camps/{0}/edit_camp/".format(camp.id), {"title": "New Camp", "country": "Ireland", "organisation": "VI", "description": "A camp"})
+        page = self.client.post("/camps/{0}/edit_camp/".format(camp.id), {'title': 'New Camp', 'region' : 'West', 'country': 'Ireland', 'continent' : 'EUROPE', 'organisation': 'Volunteer-Ireland', 'positions' : 0, 'positions_male' : 0, 'positions_female' : 0, 'positions_other' : 0, 
+        'description': 'A camp', 'start_date': '2019-11-15','end_date': '2019-11-15','created_date': '2019-11-15 07:04:08','published_date': '2019-11-15 07:04:08'
+        })
         camp = get_object_or_404(Camp, pk=camp.id)
         self.assertRedirects(page, "/camps/", status_code=302, target_status_code=200)
         self.assertEqual("New Camp", camp.title)
@@ -89,11 +95,30 @@ class TestCampViews(TestCase):
         Test that a test is not archved when created
         then archived after archive_camp() is called with id
         """
-        page = self.client.post("/camps/new_camp/", {"title": "New Camp", "country": "Ireland", "organisation": "VI", "description": "A camp"})
+        page = self.client.post("/camps/new_camp/", {'title': 'A camp', 'region' : 'West', 'country': 'Ireland', 'continent' : 'EUROPE', 'organisation': 'Volunteer-Ireland', 'positions' : 0, 'positions_male' : 0, 'positions_female' : 0, 'positions_other' : 0, 
+        'description': 'A camp', 'start_date': '2019-11-15','end_date': '2019-11-15','created_date': '2019-11-15 07:04:08','published_date': '2019-11-15 07:04:08'
+        })
         camp = get_object_or_404(Camp, pk=1)
         self.assertFalse(camp.archived)
         
         page = self.client.get("/camps/{0}/archive_camp/".format(camp.id))
         camp = get_object_or_404(Camp, pk=camp.id)
         self.assertTrue(camp.archived)
+        
+    def test_camp_is_deleted(self):
+        """
+        Test that a camp is created
+        then deleted after delete_camp() is called with id
+        """
+        # Create a camp, test it is added to db
+        page = self.client.post("/camps/new_camp/", {'title': 'A camp', 'region' : 'West', 'country': 'Ireland', 'continent' : 'EUROPE', 'organisation': 'Volunteer-Ireland', 'positions' : 0, 'positions_male' : 0, 'positions_female' : 0, 'positions_other' : 0, 
+        'description': 'A camp', 'start_date': '2019-11-15','end_date': '2019-11-15','created_date': '2019-11-15 07:04:08','published_date': '2019-11-15 07:04:08'
+        })
+        results = Camp.objects.all()
+        self.assertEqual(1, results.count())
+        
+        # Delete camp, test it is removed from db
+        camp = get_object_or_404(Camp, pk=1)
+        page = self.client.get("/camps/{0}/delete_camp/".format(camp.id))
+        self.assertEqual(0, results.count())
         
