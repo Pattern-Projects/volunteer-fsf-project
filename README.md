@@ -20,11 +20,13 @@ The project is shared for use with the [GNU General Public License v3](https://g
 
 ### Users
 
-Expected users of the website include
+Expected users of the website include volunteer camp organisers, voluntary organisations and volunteers of all kinds. They come to the site to participate in volunteering activities.
 
 ### User Stories
 
-1.
+1. Volunteer Camp Organisers can notify the voluntary company of their camp.
+2. Volunteer organisations can list the camps on the site.
+3. Volunteers looking for a work camp experience can apply to work at the camp.
 
 ### Design
 
@@ -36,7 +38,7 @@ Expected users of the website include
 
 ### Mockups
 
-The web app is a single page with different displays given for different functions:
+The web app was designed with a series of mockups as a dynamic page with different displays given for different views:
 - [Base](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=0%3A1)
 - [Base - Mobile Portrait](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=14%3A2)
 - [Base - Mobile Landscape](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=14%3A305)
@@ -51,23 +53,29 @@ The web app is a single page with different displays given for different functio
 - [Profile](https://www.figma.com/file/St1YNKFGOfqXLi6pbS0Epc/Volunteer?node-id=9%3A2405)
 
 ### Camp Structure
-Camp information:
+The camp model is structured in the following way:
+#### Camp information:
 - title
+- region
 - country
+- continent
 - organisation
 - description
 - image
 
-Camp Details:
+#### Camp Details:
 - positions
 - positions_female
 - positions_male
+- positions_other
+- required_language
 - start_date
 - end_date
 - extra_host_country_fee
 - extra_host_country_fee_currency
 
-Camp Organising Data:
+#### Camp Organising Data:
+- archived
 - created_date
 - published_date
 - tag
@@ -115,10 +123,6 @@ This project makes use of the following technologies:
     - [django.test](https://docs.djangoproject.com/en/1.11/topics/testing/) extends Python's unittest.
     - [Coverage.py 4.5.4](https://coverage.readthedocs.io/en/v4.5.x/) generates interactive HTML reports on the coverage of running a function across the project code. Used here for gauging effectiveness of testing.
 - [PostgreSQL](https://www.postgresql.org/) is an open-source relational DBMS that works well with **Heroku** and **Django**.
-- [gunicorn 19.9.0](https://gunicorn.org/) is a web server gateway interface that runs on **Python**.
-- [psycopg2 2.7.3.2](https://pypi.org/project/psycopg2/) is a PostgreSQL database adapter for **Python**.
-- [dj_database_url 0.5.0](https://pypi.org/project/dj-database-url/) is a simple helper to configure Django database using db url.
-- [Django Forms Bootsrap](https://github.com/pinax/django-forms-bootstrap) this plug-in allows for bootstrap styling on django forms.
 - [Heroku](http://heroku.com) is a cloud platform as a service which allows easy deployment of this project and database.
 - [Heroku Toolbelt](https://devcenter.heroku.com/articles/heroku-cli) connects to Heroku through a terminal.
 - [Gitpod](gitpod.io) is an in browser IDE that can open and setup git repositories directly from github.
@@ -126,26 +130,37 @@ This project makes use of the following technologies:
 - [Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) CSS styling from **Bootstrap**.
 - [Font Awsome](https://fontawesome.com/) provide neat icons with easy styling.
 - [Travis CI](https://travis-ci.org/)  Continuous Integration from **Travis**.
-- [Datepicker](https://fengyuanchen.github.io/datepicker/)
+
+### Dependencies
+- [gunicorn 19.9.0](https://gunicorn.org/) is a web server gateway interface that runs on **Python**.
+- [psycopg2 2.7.3.2](https://pypi.org/project/psycopg2/) is a PostgreSQL database adapter for **Python**.
+- [dj_database_url 0.5.0](https://pypi.org/project/dj-database-url/) is a simple helper to configure Django database using db url.
+- [Django Forms Bootstrap](https://github.com/pinax/django-forms-bootstrap) this plug-in allows for bootstrap styling on django forms.
+- [Datepicker](https://fengyuanchen.github.io/datepicker/) popup calander date picker
 
 ## Developement
 
 ### Git Flow
 Development Version Control workflow follows these steps:
-- New `feature` branches are branched from `develop` branch
-- `feature` is developed over development cycle
+- New `feature` branches are branched from the `develop` branch
+- `feature` is developed over a development cycle
 - `feature` branch is tested with coverage
+- `feature` branch is pushed to remote
 - `feature` branch is merged into `develop` branch
-- `develop` branch is tagged with projects latest release version
-- `develop` branch is tested with django TestCase
+- `feature` branch is deleted from local
+- `release` branch is branched from `develop` branch
+- `release` branch is tagged with projects latest release version
+- `release` branch is tested with django TestCase
 - Bug fixes and patches are added if required
+- `release` branch is merged into `develop` branch
+- `release` branch is deleted
 - `develop` branch is pushed to remote
 - `develop` branch is merged into `master` branch
 - `master` branch is pushed to remote
 - Travis tests Continuous Integration on latest `master` push
 - Heroku creates new build from latest `master` push
 
-Note: `feature` branches can be removed from remote after merging with `develop` branch but have been retained here for assessment.
+Note: `feature` branches can be removed from remote after merging with `develop` branch. They have been retained here for assessment purposes.
 
 ### Test Driven Development
 Features are developed using Test Driven Development practices:
@@ -159,17 +174,17 @@ Features are developed using Test Driven Development practices:
     - `feature` branch is ready to merge with develop branch
 
 ### Styling
-Bootstrap CSS is added to the project through a CDN link in the base.html <head> tag.
-Icons are imported from FontAwesome using their new kit system
+**Bootstrap** CSS is added to the project through a CDN link in the base.html <head> tag.
+Icons are imported from **FontAwesome** using their new kit system
 
 ### Heroku
 Heroku provides a number of useful tools to aid in development
 
 #### Heroku Postgres Add-on
-Databases can be created and hosted on heroku using their built in PostgreSQL add-ons.
+Databases can be created and hosted on heroku using their built in **PostgreSQL** add-ons.
 
 #### Dataclips
-The Heorku Postgres add-on allows for secure links to SQL quries of the database known as dataclips. They are great for quick referencing of the database and sharing of specific data across teams.
+The Heorku Postgres add-on allows for secure links to SQL queries of the database known as dataclips. They are great for quick referencing of the database and sharing of specific data across teams.
 Following the provided links quickly exports and downloads the current data quiry results to you computer or a Google Sheets account.
 Example:
 - All available camps
@@ -205,7 +220,7 @@ Continuous Integration will run all the written Django TestCases against the lat
 You can set up Travis CI with your project by first following the steps in Deployment to get the project running.
 - Create an account at [Travis CI](travis-ci.org)
 - Connect to your Github account
-- From Setting>repositories activate your project
+- From Setting > Repositories activate your project
 - Travis will now run CI tests each time you push changes to your repository
 Note: You can instruct Heroku to wait for CI to complete before publishing changes to the site by ticking the 'Wait for CI to pass before deploy' checkbox in Heroku's deploy tab.
 
@@ -235,6 +250,7 @@ There are two ways of deploying to Heroku:
     - `DISABLE_COLLECTSTATIC : 1`
     - `HOSTNAME : your_app_name.herokuapp.com`
     - `SECRET_KEY : your_secret_key`
+    - `AZURE_ACCOUNT_NAME : volunteerfsfproject`
 4. On the Deployment tab set deployment method to Github
 5. In the connect to Github section sign in then connect your fork of the project
 6. With master branch selected, turn on Automatic Deploys
@@ -283,7 +299,8 @@ In the terminal export the following values:
 Next run the project:
     `python3 manage.py runserver`
 
-Your project is now running! To view the project open it in a web browser.
+Your project is now running! To view the project open it in a web browser. 
+Djangos built in server is not meant for deployed hosting. Please consider another server for this.
 
 ### Running with Gitpod
 Open the forked volunteer-fsf-project page on github.com
@@ -330,7 +347,14 @@ The images for the website are taken from:
 ### Acknowledgements
 Thank you to the following for inspiration, motivation and the direction I needed:
 - Seun Owonikoko    @seun_mentor
+
 - Samantha Dartnall @Sammy Dartnall
 - Alan M.           @Alan Mc Gee
 - Anna Greaves      @Anna_G
+- Andy              @mormoran
+- Libby Henry       @Libby_alumni
+- Jorden V          @Jorden
+- Samantha Dartnall @Sammy Dartnall_lead
+- John Lynch        @John_Lynch_alumnus
+
 - Code Institute
