@@ -49,4 +49,4 @@ class FilterModel(models.Model):
     start_after = models.DateField(default=date.today)
     end_before = models.DateField(default=date.today)
     
-    english_required = models.BooleanField()
+    english_required = models.BooleanField(null=True, blank=True)
