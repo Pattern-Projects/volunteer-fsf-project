@@ -7,19 +7,15 @@ Camps
 {% endblock %}
 
 {% block secondary_nav %}
+
+                    {% for continent in form.continent %}
                         <li class="nav-item">
-                            <a class="btn btn-outline-primary my-2 my-sm-0 nav-link active-btn" href="{% url 'filter_by_continent' 'AFRICA' %}">
-                                <span>All</span>
+                            <a class="btn btn-outline-primary my-2 my-sm-0 nav-link {% if continent == form.continent.0 %} active-btn{% endif %}" href="{% url 'filter_by_continent' 'All' %}">
+                                <span>{{continent}}</span>
                             </a>
                         </li>
+                    {% endfor %}
 
-                        {% for key, value in CONTINENTS %}
-                            <li class="nav-item">
-                                <a class="btn btn-outline-primary my-2 my-sm-0 nav-link" href="{% url 'filter_by_continent' key %}">
-                                    <span>{{value}}</span>
-                                </a>
-                            </li>
-                        {% endfor %}
 
 {% endblock %}
 

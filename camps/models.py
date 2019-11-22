@@ -11,7 +11,7 @@ class Camp(models.Model):
     title = models.CharField(max_length=200, blank=False)
     region = models.CharField(max_length=200, blank=False)
     country = models.CharField(max_length=200, blank=False)
-    CONTINENTS = [('All','All'),('AFRICA','Africa'),('ASIA','Asia'),('ANTARCTICA', 'Antarctica'),('AUSTRALIA', 'Australia'),('N_AMERICA', 'North America'),('S_AMERICA', 'South America'),('EUROPE', 'Europe'),]
+    CONTINENTS = [('ALL','All'),('ASIA','Asia'),('AFRICA','Africa'),('AUSTRALIA', 'Australia'),('AMERICAS', 'Americas'),('EUROPE', 'Europe'),]
     continent = models.CharField(max_length=10, choices=CONTINENTS, default=1)
     organisation = models.CharField(max_length=200, blank=False)
     description = models.TextField(blank=False)
@@ -43,7 +43,7 @@ class Camp(models.Model):
         return self.title
 
 class FilterModel(models.Model):
-    CONTINENTS = [('All','All'),('ASIA','Asia'),('AFRICA','Africa'),('ANTARCTICA', 'Antarctica'),('AUSTRALIA', 'Australia'),('N_AMERICA', 'North America'),('S_AMERICA', 'South America'),('EUROPE', 'Europe'),]
+    CONTINENTS = [('ALL','All'),('ASIA','Asia'),('AFRICA','Africa'),('AUSTRALIA', 'Australia'),('AMERICAS', 'Americas'),('EUROPE', 'Europe'),]
     continent = models.CharField(max_length=10, choices=CONTINENTS, default=1)
 
     start_after = models.DateField(default=date.today)
