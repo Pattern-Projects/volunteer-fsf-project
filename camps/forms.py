@@ -19,3 +19,9 @@ class FilterForm(forms.ModelForm):
     class Meta:
         model = FilterModel
         fields = ('start_after', 'end_before', 'english_required', 'continent')
+
+    # Add css on init
+    def __init__(self, *args, **kwargs):
+        super(FilterForm, self).__init__(*args, **kwargs)
+        self.fields['start_after'].widget.attrs['class'] = 'datepicker'        
+        self.fields['end_before'].widget.attrs['class'] = 'datepicker'
