@@ -9,11 +9,11 @@ def get_camps(request):
     """
     model = FilterModel()
 
+    # TODO:Repair or remove
     if request.method == "POST":
         form = FilterForm(request.POST, request.FILES, instance=model)
         if form.is_valid():
             model = form.save()
-            return redirect(get_camps)
             results = Camp.objects.filter(model)[:30]
     else:
         form = FilterForm(instance=model)
