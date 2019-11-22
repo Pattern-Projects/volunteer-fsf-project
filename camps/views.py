@@ -1,14 +1,16 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Camp
-from .forms import CampForm
+from .models import Camp, FilterModel
+from .forms import CampForm, FilterForm
 
 def get_camps(request):
     """
     Create a view that will return a list
     of Camps and render them to the 'camps.html' template
     """
+    model = FilterModel()
+    form = FilterForm(instance=model)
     results = Camp.objects.order_by('published_date')[:30]
-    return render(request, "camps.html", {'camps': results})
+    return render(request, "camps.html", {'camps': results, 'form': form})
 
 def camp_details(request, pk):
     """

@@ -41,3 +41,12 @@ class Camp(models.Model):
     # Return title unicode
     def __unicode__(self):
         return self.title
+
+class FilterModel(models.Model):
+    CONTINENTS = [('All','All'),('ASIA','Asia'),('AFRICA','Africa'),('ANTARCTICA', 'Antarctica'),('AUSTRALIA', 'Australia'),('N_AMERICA', 'North America'),('S_AMERICA', 'South America'),('EUROPE', 'Europe'),]
+    continent = models.CharField(max_length=10, choices=CONTINENTS, default=1)
+
+    start_after = models.DateField(default=date.today)
+    end_before = models.DateField(default=date.today)
+    
+    english_required = models.BooleanField()

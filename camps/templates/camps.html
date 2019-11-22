@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load bootstrap_tags %}
+
 {% block page_title %}
 Camps
 {% endblock %}
@@ -7,7 +9,7 @@ Camps
 {% block secondary_nav %}
                         <li class="nav-item">
                             <a class="btn btn-outline-primary my-2 my-sm-0 nav-link active-btn" href="{% url 'filter_by_continent' 'AFRICA' %}">
-                                <span>Africa</span>
+                                <span>All</span>
                             </a>
                         </li>
 
@@ -33,108 +35,13 @@ Camps
 
 			<div class="info-section">
 				<div class="info-header">
-					Option Header:
+					Dates:
 				</div>
 				<form class="info-options">
 
-					<li class="info-option">
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-							<label class="form-check-label" for="defaultCheck1">
-                                        Option
-                                    </label>
-						</div>
-					</li>
+					{{ form | as_bootstrap }}
 
-					<li class="info-option">
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-							<label class="form-check-label" for="defaultCheck1">
-                                        Option
-                                    </label>
-						</div>
-					</li>
-
-					<li class="info-option">
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-							<label class="form-check-label" for="defaultCheck1">
-                                        Option
-                                    </label>
-						</div>
-					</li>
-
-				</form><!-- info-options -->
-			</div><!-- info-section -->
-
-			<div class="info-section">
-				<div class="info-header">
-					Option Header:
-				</div>
-				<form class="info-options">
-
-					<li class="info-option">
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-							<label class="form-check-label" for="defaultCheck1">
-                                        Option
-                                    </label>
-						</div>
-					</li>
-
-					<li class="info-option">
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-							<label class="form-check-label" for="defaultCheck1">
-                                        Option
-                                    </label>
-						</div>
-					</li>
-
-					<li class="info-option">
-						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-							<label class="form-check-label" for="defaultCheck1">
-                                        Option
-                                    </label>
-						</div>
-					</li>
-
-				</form><!-- info-options -->
-			</div><!-- info-section -->
-
-			<div class="info-section">
-				<div class="info-header">
-					Option Header:
-				</div>
-				<form class="info-options">
-
-					<li class="info-option">
-						<div class="form-check">
-							<input class="form-check-input" type="radio" id="defaultRadio1" name="exampleRadios" value="option1" checked>
-							<label class="form-check-label" for="defaultCheck1">
-                                        Option
-                                    </label>
-						</div>
-					</li>
-
-					<li class="info-option">
-						<div class="form-check">
-							<input class="form-check-input" type="radio" id="defaultRadio1" name="exampleRadios" value="option1">
-							<label class="form-check-label" for="defaultCheck1">
-                                        Option
-                                    </label>
-						</div>
-					</li>
-
-					<li class="info-option">
-						<div class="form-check">
-							<input class="form-check-input" type="radio" id="defaultRadio1" name="exampleRadios" value="option1">
-							<label class="form-check-label" for="defaultCheck1">
-                                        Option
-                                    </label>
-						</div>
-					</li>
+            <button type="submit" class="btn btn-info">Update</button>
 
 				</form><!-- info-options -->
 			</div><!-- info-section -->

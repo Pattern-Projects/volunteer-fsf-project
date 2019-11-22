@@ -1,6 +1,6 @@
 from django import forms
 from django.conf import settings
-from .models import Camp
+from .models import Camp, FilterModel
 
 class CampForm(forms.ModelForm):
     class Meta:
@@ -13,3 +13,9 @@ class CampForm(forms.ModelForm):
         super(CampForm, self).__init__(*args, **kwargs)
         self.fields['start_date'].widget.attrs['class'] = 'datepicker'        
         self.fields['end_date'].widget.attrs['class'] = 'datepicker'
+
+class FilterForm(forms.ModelForm):
+    english_required = forms.BooleanField()
+    class Meta:
+        model = FilterModel
+        fields = ('start_after', 'end_before', 'english_required', 'continent')
