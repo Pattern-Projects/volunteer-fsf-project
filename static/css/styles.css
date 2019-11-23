@@ -51,6 +51,19 @@ p {
         color: #326CF0;
     }
 
+    .dropdown-menu {
+        margin: 0;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu:hover {
+        display: block;
+    }
+
+
 .secondary-nav-bar {
     margin-bottom: 10px;
     background-color: #E7E9F3;
