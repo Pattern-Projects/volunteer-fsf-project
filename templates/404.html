@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block page_title %}Login{% endblock %}
+{% block content %}
+<h1>Oops, this isn't right</h1>
+<div class="item-box">
+    <p>The page you're looking for wasn't found (404).</p>
+    <p>Sorry about that.</p>
+    
+    <p><a href="{% url 'home' %}">Return Home </p></a>
+</div>
+{% endblock %}
