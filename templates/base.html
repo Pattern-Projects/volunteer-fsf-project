@@ -109,12 +109,13 @@
                         </div>
                         <span>Profile</span>
                     </a>
+                    {% if request.user.is_authenticated %}
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="{% url 'logout'%}">Log Out</a>
                     </div>
+                    {% endif %}
 
                 </li>
-
 
             </ul>
         </div>
