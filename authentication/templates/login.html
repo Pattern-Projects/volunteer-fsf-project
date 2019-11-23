@@ -3,9 +3,14 @@
 {% block page_title %}Login{% endblock %}
 {% block page_heading %}Login{% endblock %}
 {% block content %}
-<form method="POST">
-    {% csrf_token %}
-    {{ login_form | as_bootstrap }}
-    <button type="submit">Login</button>
-<form>
+<h1>Login</h1>
+<div class="item-box">
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ login_form | as_bootstrap }}
+        <button type="submit">Login</button>
+    <form>
+        <p>Not a member? <a href="{% url 'registration' %}">Register</a>
+</div>
 {% endblock %}

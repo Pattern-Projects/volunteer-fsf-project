@@ -5,10 +5,14 @@
 {% block page_title %}Registation{% endblock %}
 {% block page_heading %}Registration{% endblock %}
 {% block content %}
-<form method="POST">
-    {% csrf_token %}
-    {{ registration_form | as_bootstrap }}
-    <button type="submit">Register</button>
-</form>
+<h1>Register</h1>
+<div class="item-box">
 
+    <form method="POST">
+        {% csrf_token %}
+        {{ registration_form | as_bootstrap }}
+        <button type="submit">Register</button>
+    </form>
+    <p>Already registered? <a href="{% url 'login' %}">Login</a>
+</div>
 {% endblock %}
