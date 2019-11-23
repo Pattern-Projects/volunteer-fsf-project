@@ -10,7 +10,7 @@ Camps
 
                     {% for continent in form.continent %}
                         <li class="nav-item">
-                            <a class="btn btn-outline-primary my-2 my-sm-0 nav-link {% if continent == form.continent.0 %} active-btn{% endif %}" href="{% url 'home' %}">
+                            <a class="btn btn-outline-primary my-2 my-sm-0 nav-link {% if continent == form.continent.0 %} active-btn{% endif %}" href="{% url 'filter_by_continent' 'All' %}">
                                 <span>{{continent}}</span>
                             </a>
                         </li>

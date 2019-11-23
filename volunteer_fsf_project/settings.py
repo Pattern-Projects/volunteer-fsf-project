@@ -5,7 +5,7 @@ import dj_database_url
 if os.path.exists('env.py'):
     import env
 
-if os.environ.get('DEVELOPMENT'):
+if os.environ.get('DEVELOPMENT')=='Development':
     development = True
 else:
     development = False
@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'volunteer_fsf_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-if "DATABASE_URL" in os.environ and "DEVELOPMENT" not in os.environ:
+if "DATABASE_URL" in os.environ and development is False:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }

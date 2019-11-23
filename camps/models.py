@@ -11,7 +11,7 @@ class Camp(models.Model):
     title = models.CharField(max_length=200, blank=False)
     region = models.CharField(max_length=200, blank=False)
     country = models.CharField(max_length=200, blank=False)
-    CONTINENTS = [('ALL','All'),('ASIA','Asia'),('AFRICA','Africa'),('AUSTRALIA', 'Australia'),('AMERICAS', 'Americas'),('EUROPE', 'Europe'),]
+    CONTINENTS = [('ASIA','Asia'),('AFRICA','Africa'),('AUSTRALIA', 'Australia'),('AMERICAS', 'Americas'),('EUROPE', 'Europe'),]
     continent = models.CharField(max_length=10, choices=CONTINENTS, default=1)
     organisation = models.CharField(max_length=200, blank=False)
     description = models.TextField(blank=False)
