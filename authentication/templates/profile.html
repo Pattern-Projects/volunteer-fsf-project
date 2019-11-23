@@ -1,17 +1,10 @@
 {% extends 'base.html' %}
 
-{% load bootstrap_tags %}
-
 {% block page_title %}Profile{% endblock %}
 {% block page_heading %}Profile{% endblock %}
+
 {% block content %}
 <div class="item-box">
-
-    <form method="POST">
-        {% csrf_token %}
-        {{ registration_form | as_bootstrap }}
-        <button type="submit">Register</button>
-    </form>
-    <p>Already registered? <a href="{% url 'login' %}">Login</a></p>
+    <p>Welcome {{user.name}} </p>
 </div>
 {% endblock %}

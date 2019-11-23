@@ -2,6 +2,13 @@ from django.shortcuts import render, HttpResponse, redirect, reverse, get_object
 from django.contrib import auth, messages
 from .forms import UserLoginForm, UserRegistrationForm
 
+# Profile
+def profile(request):
+    if (auth.get_user):
+        return render(request, 'profile.html')
+    else:
+        return render(request, "registration.html")
+
 # Authentication 
 
 #Register
@@ -31,7 +38,9 @@ def registration(request):
 
 # Login
 def login(request):
-    """Opens the loginn page"""
+    """
+    Opens the login page
+    """
     if request.method=='POST':
         login_form = UserLoginForm(request.POST)
         if login_form.is_valid():
@@ -40,6 +49,7 @@ def login(request):
             if user:
                 messages.success(request, 'successful login!')
                 auth.login(user=user, request=request)
+                return render(request, 'profile.html')
             else:
                 login_form.add_error(None, 'Username or password are incorrect')
 
