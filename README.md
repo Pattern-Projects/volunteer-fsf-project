@@ -112,6 +112,7 @@ Features planned, implemented and outlined for later development
 - Authentication
     - Logout
     - Login
+- Profile Page
 ### Features Left to Implement
 
 
