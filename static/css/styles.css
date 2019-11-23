@@ -64,6 +64,9 @@ p {
         display: block;
     }
 
+    .dropdown-item {
+        padding: .25rem .5rem;
+    }
 
 .secondary-nav-bar {
     margin-bottom: 10px;

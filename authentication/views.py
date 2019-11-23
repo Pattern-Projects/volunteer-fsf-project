@@ -4,10 +4,10 @@ from .forms import UserLoginForm, UserRegistrationForm
 
 # Profile
 def profile(request):
-    if (auth.get_user):
+    if request.user.is_authenticated:
         return render(request, 'profile.html')
     else:
-        return render(request, "registration.html")
+        return redirect(reverse('login'))
 
 # Authentication 
 
@@ -41,6 +41,9 @@ def login(request):
     """
     Opens the login page
     """
+    if request.user.is_authenticated:
+        return redirect(reverse('profile'))
+
     if request.method=='POST':
         login_form = UserLoginForm(request.POST)
         if login_form.is_valid():
@@ -62,4 +65,4 @@ def logout(request):
     """Logs out any logged in users"""
     auth.logout(request)
     messages.success(request, 'Successful')
-    return redirect(reverse('get_camps'))
+    return redirect(reverse('home'))
