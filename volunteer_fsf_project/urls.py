@@ -10,6 +10,7 @@ from .views import error404, error500
 from authentication.views import login, registration, logout
 from camps.views import get_camps
 import camps.urls as urls_camps
+import search.urls as urls_search
 import authentication.urls as urls_authentication
 
 urlpatterns = [
@@ -17,6 +18,7 @@ urlpatterns = [
 
     url(r'^$', get_camps, name="home"),
     url(r'^camps/', include(urls_camps)),
+    url(r'^search/', include(urls_search)),
     url(r'^authentication/', include(urls_authentication)),
 
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})

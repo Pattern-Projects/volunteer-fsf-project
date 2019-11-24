@@ -11,15 +11,15 @@ def get_camps(request):
 
     # TODO:Repair or remove
     if request.method == "POST":
-        form = FilterForm(request.POST, request.FILES, instance=model)
-        if form.is_valid():
-            model = form.save()
+        filter = FilterForm(request.POST, request.FILES, instance=model)
+        if filter.is_valid():
+            model = filter.save()
             results = Camp.objects.filter(model)[:30]
     else:
-        form = FilterForm(instance=model)
+        filter = FilterForm(instance=model)
         results = Camp.objects.order_by('published_date')[:30]
 
-    return render(request, "camps.html", {'camps': results, 'form': form})
+    return render(request, "camps.html", {'camps': results, 'form': filter})
 
 def camp_details(request, pk):
     """
