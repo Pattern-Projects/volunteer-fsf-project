@@ -3,6 +3,7 @@
 A site for volunteers to find volunteering opportunities around the world.
 Data from volunteer work camps will be displayed and can be applied to by paying a small fee.
 
+Please check the [wiki](https://github.com/Pattern-Projects/volunteer-fsf-project/wiki) for tips on how to use the website.
 ## License
 
 The project is shared for use with the [GNU General Public License v3](https://github.com/Pattern-Projects/oireachtas-ifd-project/blob/master/LICENSE)
@@ -24,7 +25,7 @@ Expected users of the website include volunteer camp organisers, voluntary organ
 
 ### User Stories
 
-1. Volunteer Camp Organisers can notify the voluntary company of their camp.
+1. Volunteer Camp Organisers can notify the voluntary organistaion of their camp.
 2. Volunteer organisations can list the camps on the site.
 3. Volunteers looking for a work camp experience can apply to work at the camp.
 
@@ -323,6 +324,7 @@ Your project is now running! To view the project open it in Preview.
 ## Credits
 
 ### Useful Links
+- [Django 1.11 Documentation](https://docs.djangoproject.com/en/1.11/)
 - [`$ pip freeze > requirements.txt` considered harmful](https://medium.com/@tomagee/pip-freeze-requirements-txt-considered-harmful-f0bce66cf895)
 - [django.test](https://docs.djangoproject.com/en/1.11/topics/testing/)
 - [Process Types and the Procfile](https://pythonhosted.org/deis/using_deis/process-types/)
@@ -357,5 +359,6 @@ Thank you to the following for inspiration, motivation and the direction I neede
 - Jorden V          @Jorden
 - Samantha Dartnall @Sammy Dartnall_lead
 - John Lynch        @John_Lynch_alumnus
+- Anybody that I may have forgotten
 
 - Code Institute
