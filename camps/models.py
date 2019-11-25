@@ -9,7 +9,7 @@ class Camp(models.Model):
 
     # Camp information
     title = models.CharField(max_length=200, blank=False)
-    tagline = models.CharField(max_length=30, blank=True)
+    tagline = models.CharField(max_length=200, blank=True)
     region = models.CharField(max_length=200, blank=False)
     country = models.CharField(max_length=200, blank=False)
     CONTINENTS = [('ASIA','Asia'),('AFRICA','Africa'),('AUSTRALIA', 'Australia'),('AMERICAS', 'Americas'),('EUROPE', 'Europe'),]

@@ -11,11 +11,11 @@ class TestSearchViews(TestCase):
         Creates 3 camps, one with title Find
         Searches for Find, then counts number of results
         """
-        camp = Camp(title="Camp")
+        camp = Camp(title="Camp", price=100)
         camp.save()
-        camp = Camp(title="Find")
+        camp = Camp(title="Find", price=100)
         camp.save()
-        camp = Camp(title="Camp")
+        camp = Camp(title="Camp", price=100)
         camp.save()
 
         page = self.client.get("/search/?query=Find")
@@ -33,11 +33,11 @@ class TestSearchViews(TestCase):
         Creates 3 camps, one with region Find
         Searches for Find, then counts number of results
         """
-        camp = Camp(title="Camp", region="Region")
+        camp = Camp(title="Camp", price=100, region="Region")
         camp.save()
-        camp = Camp(title="Camp", region="Find")
+        camp = Camp(title="Camp", price=100, region="Find")
         camp.save()
-        camp = Camp(title="Camp", region="Region")
+        camp = Camp(title="Camp", price=100, region="Region")
         camp.save()
 
         page = self.client.get("/search/?query=Find")
@@ -54,11 +54,11 @@ class TestSearchViews(TestCase):
         Creates 3 camps, one with country Find
         Searches for Find, then counts number of results
         """
-        camp = Camp(title="Camp", country="Country")
+        camp = Camp(title="Camp", price=100, country="Country")
         camp.save()
-        camp = Camp(title="Camp", country="Find")
+        camp = Camp(title="Camp", price=100, country="Find")
         camp.save()
-        camp = Camp(title="Camp", country="Country")
+        camp = Camp(title="Camp", price=100, country="Country")
         camp.save()
 
         page = self.client.get("/search/?query=Find")
@@ -75,11 +75,11 @@ class TestSearchViews(TestCase):
         Creates 3 camps, one with continent Find
         Searches for Find, then counts number of results
         """
-        camp = Camp(title="Camp", continent="Continent")
+        camp = Camp(title="Camp", price=100, continent="Continent")
         camp.save()
-        camp = Camp(title="Camp", continent="Find")
+        camp = Camp(title="Camp", price=100, continent="Find")
         camp.save()
-        camp = Camp(title="Camp", continent="Continent")
+        camp = Camp(title="Camp", price=100, continent="Continent")
         camp.save()
 
         page = self.client.get("/search/?query=Find")
@@ -88,15 +88,3 @@ class TestSearchViews(TestCase):
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "camps.html")
         self.assertEqual(1, camps.count())
-
-
-
-
-
-
-
-
-
-        
-
-        
