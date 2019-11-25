@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% load bootstrap_tags %}
+{% block page_title %}Edit Camp{% endblock %}
+{% block page_heading %}Edit Camp{% endblock %}
 {% block content %}
-<div class="item-box">
+    <div class="item-box">
 
-    <h1>Edit Camp</h1>
-    <form method="POST" enctype="multipart/form-data" class="edit_camp_form">
+    <form method="POST" enctype="multipart/form-data" class="full_camp_form">
         {% csrf_token %}
         {{ form | as_bootstrap }}
 

@@ -5,8 +5,8 @@ from .models import Camp, FilterModel
 class CampForm(forms.ModelForm):
     class Meta:
         model = Camp
-        fields = ('title', 'region', 'country', 'continent', 'organisation', 'description', 'image', 'positions', 'positions_male', 'positions_female', 'positions_other', 
-        'required_language', 'start_date', 'end_date', 'price', 'extra_host_country_fee', 'extra_host_country_fee_currency', 'created_date', 'published_date', 'tag')
+        fields = ('title', 'tagline', 'region', 'country', 'continent', 'organisation', 'description', 'image', 'positions', 'positions_male', 'positions_female', 'positions_other', 
+        'required_language', 'start_date', 'end_date', 'price', 'extra_host_country_fee', 'extra_host_country_fee_currency', 'created_date', 'published_date')
 
     # Add css on init
     def __init__(self, *args, **kwargs):

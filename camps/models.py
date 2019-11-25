@@ -9,6 +9,7 @@ class Camp(models.Model):
 
     # Camp information
     title = models.CharField(max_length=200, blank=False)
+    tagline = models.CharField(max_length=30, blank=True)
     region = models.CharField(max_length=200, blank=False)
     country = models.CharField(max_length=200, blank=False)
     CONTINENTS = [('ASIA','Asia'),('AFRICA','Africa'),('AUSTRALIA', 'Australia'),('AMERICAS', 'Americas'),('EUROPE', 'Europe'),]
@@ -33,7 +34,6 @@ class Camp(models.Model):
     archived = models.BooleanField(default=False)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(default=timezone.now)
-    tag = models.CharField(max_length=30, blank=True)
 
     # Return title str
     def __str__(self):

@@ -87,13 +87,13 @@
     margin-top: 10px;
 }
 
-.edit_camp_form {
+.full_camp_form {
     margin: 0 auto;
     width: 80%;
     font-family: 'roboto', sans-serif !important;
 }
 
-.edit_camp_form label {
+.full_camp_form label {
     font-weight: bold;
 }
 
