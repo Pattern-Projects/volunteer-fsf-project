@@ -69,6 +69,16 @@
                             <a href="{% url 'get_camps' %}" class="btn btn-default">Back</a>
                             <a href="{% url 'edit_camp' camp.id %}" class="btn btn-default">Edit</a>
                             <a href="{% url 'delete_camp' camp.id %}" class="btn btn-default">Delete</a>
+                            
+                            <form method="post" action="{% url 'add_to_cart' camp.id %}">
+                                {% csrf_token %}
+                                <div class="input-group">
+                                    <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-success" type="submit">Add</button>
+                                    </span>
+                                </div>
+                            </form>
                     </div>
                 </div>
             </div>
