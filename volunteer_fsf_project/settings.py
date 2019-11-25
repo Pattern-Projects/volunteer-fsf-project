@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'authentication',
     'camps',
     'storages',
+    'search',
+    'checkout',
 ]
 
 MIDDLEWARE = [
@@ -153,6 +155,9 @@ STATICFILES_STORAGE = 'backend.custom_azure.AzureStaticStorage'
 
 STATIC_LOCATION = "static"
 MEDIA_LOCATION = "media"
+
+STRIPE_PUBLISHABLE_KEY = os.getenv('STRIPE_PUBLISHABLE')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET')
 
 AZURE_ACCOUNT_NAME = os.environ.get("AZURE_ACCOUNT_NAME")
 AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'

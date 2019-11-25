@@ -12,6 +12,7 @@ from camps.views import get_camps
 import camps.urls as urls_camps
 import search.urls as urls_search
 import authentication.urls as urls_authentication
+import cart.urls as urls_cart
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -20,6 +21,7 @@ urlpatterns = [
     url(r'^camps/', include(urls_camps)),
     url(r'^search/', include(urls_search)),
     url(r'^authentication/', include(urls_authentication)),
+    url(r'^cart/', include(urls_cart)),
 
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})
 ]

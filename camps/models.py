@@ -25,6 +25,7 @@ class Camp(models.Model):
     required_language = models.CharField(max_length=200, blank=True, default="English")
     start_date = models.DateField(default=date.today)
     end_date = models.DateField(default=date.today)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
     extra_host_country_fee = models.DecimalField(max_digits=20, decimal_places=2, default=0, blank=True)
     extra_host_country_fee_currency = models.CharField(default="", max_length=200, blank=True)
 
