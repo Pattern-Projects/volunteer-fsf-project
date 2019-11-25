@@ -19,6 +19,7 @@ class Order(models.Model):
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, on_delete=models.PROTECT)
     camp = models.ForeignKey(Camp, null=False, on_delete=models.PROTECT)
+    quantity = models.IntegerField(blank=False)
 
     def __str__(self):
-        return "{0}-{1}".format(self.camp.title, self.product.price)
+        return "{0} {1} @ {2}".format(self.quantity, self.camp.name, self.camp.price)

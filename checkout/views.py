@@ -10,7 +10,7 @@ import stripe
 
 # Create your views here.
 
-stripe.api_key = settings.STRIPE_SECRET_KEY
+stripe.api_key = settings.STRIPE_SECRET
 
 @login_required
 def checkout(request):
@@ -25,12 +25,13 @@ def checkout(request):
 
             cart = request.session.get('cart', {})
             total = 0
-            for id in cart.items():
+            for id, quantity in cart.items():
                 camp = get_object_or_404(Camp, pk=id)
-                total += camp.extra_host_country_fee
+                total += quantity * camp.price
                 order_line_item = OrderLineItem(
                     order = order,
-                    camp = camp
+                    camp = camp,
+                    quantity = quantity
                 )
                 order_line_item.save()
 
@@ -41,7 +42,7 @@ def checkout(request):
                     description = request.user.email,
                     card = payment_form.cleaned_data['stripe_id'],
                 )
-            except stripe.error.CArdError:
+            except stripe.error.CardError:
                 messages.error(request, 'Your card was declined!')
 
             if customer.paid:
@@ -56,4 +57,4 @@ def checkout(request):
     else:
         payment_form = MakePaymentForm()
         order_form = OrderForm()
-    return render(request, 'checkout.html' {'order_form':order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE_KEY})
+    return render(request, 'checkout.html', {"order_form":order_form, "payment_form": payment_form, "publishable": settings.STRIPE_PUBLISHABLE})
