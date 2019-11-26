@@ -24,7 +24,6 @@ def adjust_cart(request, id):
     """
     Change items in cart
     """
-    print(request.POST)
     quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
 
