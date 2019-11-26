@@ -45,6 +45,10 @@ class TestCheckoutConfig(TestCase):
             'date' : '2019-11-15',
             }
         )
+        messages = list(page.context['messages'])
+        print()
+        self.assertEqual(str(messages[1]), 'We were unable to process your payment at this time')
+
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "checkout.html")
         
@@ -84,6 +88,9 @@ class TestCheckoutConfig(TestCase):
             'stripe_id' : '1',
             }
         )
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, "checkout.html")
+        
 
 
     

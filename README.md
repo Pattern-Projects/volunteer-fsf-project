@@ -359,6 +359,7 @@ Thank you to the following for inspiration, motivation and the direction I neede
 - Jorden V          @Jorden
 - Samantha Dartnall @Sammy Dartnall_lead
 - John Lynch        @John_Lynch_alumnus
+- Antonio Augello   @Antonio
 - Anybody that I may have forgotten
 
 - Code Institute
