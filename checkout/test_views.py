@@ -46,7 +46,7 @@ class TestCheckoutConfig(TestCase):
             }
         )
         messages = list(page.context['messages'])
-        print()
+        print(messages)
         self.assertEqual(str(messages[1]), 'We were unable to process your payment at this time')
 
         self.assertEqual(page.status_code, 200)
