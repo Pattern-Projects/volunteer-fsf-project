@@ -114,6 +114,10 @@ Features planned, implemented and outlined for later development
     - Logout
     - Login
 - Profile Page
+- Cart for camps
+- Camp checkout
+- Strip payments
+
 ### Features Left to Implement
 
 
