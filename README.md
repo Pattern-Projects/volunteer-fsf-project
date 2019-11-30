@@ -135,7 +135,8 @@ This project makes use of the following technologies:
 - [AWS Cloud9](https://www.awseducate.com/signin/SiteLogin) IDE services from Amazon and connecting into their suite of products.
 - [Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) CSS styling from **Bootstrap**.
 - [Font Awsome](https://fontawesome.com/) provide neat icons with easy styling.
-- [Travis CI](https://travis-ci.org/)  Continuous Integration from **Travis**.
+- [Travis CI](https://travis-ci.org/) Continuous Integration from **Travis**.
+- [Stripe](https://stripe.com/) is used for recieving payments.
 
 ### Dependencies
 - [gunicorn 19.9.0](https://gunicorn.org/) is a web server gateway interface that runs on **Python**.
@@ -326,6 +327,7 @@ Next run the project:
 Your project is now running! To view the project open it in Preview.
 
 ## Credits
+This project is developed with the aid of resources, advice and care from many others. Here's to them.
 
 ### Useful Links
 - [Django 1.11 Documentation](https://docs.djangoproject.com/en/1.11/)
