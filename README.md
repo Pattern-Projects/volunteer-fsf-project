@@ -326,6 +326,12 @@ Next run the project:
 
 Your project is now running! To view the project open it in Preview.
 
+## Bugs
+### Developer Tools Alerts
+A number of alerts appeared in developer tools warning of cross-site cookies.  
+Resolved: It turns out this was a universal issue across all sites and a number of browsers.  
+Fixing this is outside the scope of this project.
+
 ## Credits
 This project is developed with the aid of resources, advice and care from many others. Here's to them.
 
