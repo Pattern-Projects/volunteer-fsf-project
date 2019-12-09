@@ -35,6 +35,7 @@
         <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
     </div>
 
+    {% if total != 0 %}
     <form role="form" method="post" class="full_camp_form" id="payment-form" action="{% url 'checkout' %}">
         <h1>Payment Info</h1>
 
@@ -59,5 +60,6 @@
             <input class=" btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
         </div>
     </form>
+    {% endif %}
     </div>
 {% endblock %}
