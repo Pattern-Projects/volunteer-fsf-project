@@ -16,7 +16,7 @@ import checkout.urls as urls_checkout
 import search.urls as urls_search
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin', admin.site.urls),
 
     url(r'^$', get_camps, name="home"),
     url(r'^authentication/', include(urls_authentication)),
