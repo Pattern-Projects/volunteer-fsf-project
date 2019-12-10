@@ -22,7 +22,7 @@ class TestCampViews(TestCase):
         camp = Camp(title="Camp", price=100)
         camp.save()
 
-        page = self.client.get("/camps/{0}/".format(camp.id))
+        page = self.client.get("/camps/{0}".format(camp.id))
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "camp.html")
 
@@ -69,7 +69,7 @@ class TestCampViews(TestCase):
         """
         camp = Camp(title="Camp", price=100)
         camp.save()
-        page = self.client.get("/camps/{0}/edit_camp/".format(camp.id))
+        page = self.client.get("/camps/{0}/edit_camp".format(camp.id))
 
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "edit_camp.html")
@@ -83,7 +83,7 @@ class TestCampViews(TestCase):
         start_date= '2019-11-15',end_date= '2019-11-15', price= 100, created_date= '2019-11-15 07:04:08',published_date='2019-11-15 07:04:08'
         )
         camp.save()
-        page = self.client.post("/camps/{0}/edit_camp/".format(camp.id), {'title': 'New Camp', 'region' : 'West', 'country': 'Ireland', 'continent' : 'EUROPE', 'organisation': 'Volunteer-Ireland', 'positions' : 0, 'positions_male' : 0, 'positions_female' : 0, 'positions_other' : 0, 
+        page = self.client.post("/camps/{0}/edit_camp".format(camp.id), {'title': 'New Camp', 'region' : 'West', 'country': 'Ireland', 'continent' : 'EUROPE', 'organisation': 'Volunteer-Ireland', 'positions' : 0, 'positions_male' : 0, 'positions_female' : 0, 'positions_other' : 0, 
         'description': 'A camp', 'start_date': '2019-11-15','end_date': '2019-11-15', 'price': '100', 'created_date': '2019-11-15 07:04:08','published_date': '2019-11-15 07:04:08'
         })
         camp = get_object_or_404(Camp, pk=camp.id)
@@ -100,7 +100,7 @@ class TestCampViews(TestCase):
         camp = get_object_or_404(Camp, pk=1)
         self.assertFalse(camp.archived)
         
-        page = self.client.get("/camps/{0}/archive_camp/".format(camp.id))
+        page = self.client.get("/camps/{0}/archive_camp".format(camp.id))
         camp = get_object_or_404(Camp, pk=camp.id)
         self.assertTrue(camp.archived)
         
@@ -117,6 +117,6 @@ class TestCampViews(TestCase):
         
         # Delete camp, test it is removed from db
         camp = get_object_or_404(Camp, pk=1)
-        page = self.client.get("/camps/{0}/delete_camp/".format(camp.id))
+        page = self.client.get("/camps/{0}/delete_camp".format(camp.id))
         self.assertEqual(0, results.count())
         
