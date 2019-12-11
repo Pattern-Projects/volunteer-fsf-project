@@ -327,10 +327,20 @@ Next run the project:
 Your project is now running! To view the project open it in Preview.
 
 ## Bugs
-### Developer Tools Alerts
+
+### Resolved
+#### Developer Tools Alerts
 A number of alerts appeared in developer tools warning of cross-site cookies.  
 Resolved: It turns out this was a universal issue across all sites and a number of browsers.  
 Fixing this is outside the scope of this project.
+
+#### Server 500 on evaluation site
+Clicking any links on the evalutaion site was causing the page to 404.
+Resolved: This was an easy fix. Required adding of stripe keys to config vars.
+
+#### Checkout error on cart empty
+The checkout process was hitting a snag.
+Resolved: Checkout page does not include checkout ability when cart is empty.
 
 ## Credits
 This project is developed with the aid of resources, advice and care from many others. Here's to them.
