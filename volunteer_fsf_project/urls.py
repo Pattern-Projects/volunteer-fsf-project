@@ -15,6 +15,7 @@ import camps.urls as urls_camps
 import cart.urls as urls_cart
 import checkout.urls as urls_checkout
 import search.urls as urls_search
+import travel.urls as urls_travel
 
 urlpatterns = [
     url(r'^admin', admin.site.urls),
@@ -26,6 +27,7 @@ urlpatterns = [
     url(r'^cart/', include(urls_cart)),
     url(r'^checkout/', include(urls_checkout)),
     url(r'^search/', include(urls_search)),
+    url(r'^travel/', include(urls_travel), name="travel"),
 
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})
 ]
