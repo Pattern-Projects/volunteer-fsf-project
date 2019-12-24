@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import StoryPost
+from camps.models import Camp
 from .forms import StoryPostForm
 
 # Create your views here.
@@ -20,7 +21,8 @@ def story_post_details(request, pk):
     post = get_object_or_404(StoryPost, pk=pk)
     post.views += 1
     post.save()
-    return render(request, "story_post.html", {'post': post})
+    camp = get_object_or_404(Camp, pk=post.camp_id)
+    return render(request, "story_post.html", {'post': post, 'camp': camp})
 
 def create_or_edit_a_story_post(request, pk=None):
     """

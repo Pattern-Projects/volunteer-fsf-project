@@ -9,31 +9,52 @@ Camps
 {% block secondary_nav %}
 {% endblock %}
 {% block content %}
-<div class="item-box">
+
     <div class="row">
-        <div class="col-md-2 col-sm-3 text-center">
-            <a class="story-img" href="#">
-                <img src="/media/img/profile.jpg" class="img-circle">
-            </a>
-            <p><span class="boldtext">Author:</span> Niel</p>
-        </div>
-        <div class="col-sm-10 col-md-9">
-            {% if post.image %}
-                <img class="img-blogpost" src="/media/{{ post.image }}">
-            {% endif %}
-            <h3>{{ post.title }}</h3>
-            <div class="row">
-                <div class="col-xs-9">
-                    <p>{{ post.content }}</p>
-                    <p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
-                    <p><span class="boldtext">Views:</span> {{post.views}}</p>
-                    <p><span class="boldtext">Tag:</span> {{ post.tag }}</p>
-                    <a href="{% url 'stories' %}" class="btn btn-default">Back to Blog</a>
-                    <a href="{% url 'edit_story_post' post.id %}" class="btn btn-default">Edit Post</a>
-                    <hr>
+        <!-- Side column -->
+        <div class="col-md-3">
+            <div class="info-box">
+
+                <div class="info-section">
+                    <div class="info-header">
+                        {{ camp.title }}
+                    </div>
+                        {{ camp.coutry }}
+                        {{ camp.organisation }}                        
+                </br>
+                <a href="{% url 'camp_details' camp.id %}" class="btn btn-info">View Camp</a>
+
+                </div><!-- info-section -->
+
+            </div><!-- info-box -->
+        </div><!-- col-md-3 -->
+
+
+
+        
+	<div class="col-md-9">
+        <div class="item-box">
+                <a class="story-img" href="#">
+                    <img src="/media/img/profile.jpg" class="img-circle">
+                </a>
+                <p><span class="boldtext">Author:</span> Niel</p>
+
+                {% if post.image %}
+                    <img class="img-blogpost" src="/media/{{ post.image }}">
+                {% endif %}
+                <h3>{{ post.title }}</h3>
+                <div class="row">
+                    <div class="col-xs-9">
+                        <p>{{ post.content }}</p>
+                        <p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
+                        <p><span class="boldtext">Views:</span> {{post.views}}</p>
+                        <a href="{% url 'stories' %}" class="btn btn-default">Back to Blog</a>
+                        <a href="{% url 'edit_story_post' post.id %}" class="btn btn-default">Edit Post</a>
+                        <hr>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    </div>
 {% endblock %}
