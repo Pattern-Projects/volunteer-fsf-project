@@ -72,6 +72,11 @@ th{
         padding: .25rem .5rem;
     }
 
+    .fa-bell {
+        color: red;
+        font-size: 15px;
+    }
+
 .secondary-nav-bar {
     margin-bottom: 10px;
     background-color: #E7E9F3;
