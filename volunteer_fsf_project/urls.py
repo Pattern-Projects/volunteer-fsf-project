@@ -10,7 +10,7 @@ from .views import error404, error500
 from authentication.views import login, registration, logout
 from camps.views import get_camps
 import authentication.urls as urls_authentication
-import blog.urls as urls_blog
+import stories.urls as urls_stories
 import camps.urls as urls_camps
 import cart.urls as urls_cart
 import checkout.urls as urls_checkout
@@ -23,7 +23,7 @@ urlpatterns = [
 
     url(r'^$', get_camps, name="home"),
     url(r'^authentication/', include(urls_authentication)),
-    url(r'^blog/', include(urls_blog)),
+    url(r'^stories/', include(urls_stories), name="stories"),
     url(r'^camps/', include(urls_camps)),
     url(r'^cart/', include(urls_cart)),
     url(r'^checkout/', include(urls_checkout)),

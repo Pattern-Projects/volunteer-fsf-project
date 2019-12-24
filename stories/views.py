@@ -1,14 +1,14 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Post
-from .forms import BlogPostForm
+from .models import StoryPost
+from .forms import StoryPostForm
 
 # Create your views here.
 def get_posts(request):
     """
         Retrieve travel page content and show here
     """
-    posts = Post.objects.all().order_by('-published_date')
-    return render(request, "posts.html", {'posts': posts})
+    posts = StoryPost.objects.all().order_by('-published_date')
+    return render(request, "story_posts.html", {'posts': posts})
 
 def post_details(request, pk):
     """
@@ -17,10 +17,10 @@ def post_details(request, pk):
     render it tot hte 'postdetauils.html' template.
     Or return a 404 if the post is not found
     """
-    post = get_object_or_404(Post, pk=pk)
+    post = get_object_or_404(StoryPost, pk=pk)
     post.views += 1
     post.save()
-    return render(request, "post.html", {'post': post})
+    return render(request, "story_post.html", {'post': post})
 
 def create_or_edit_a_post(request, pk=None):
     """
@@ -28,12 +28,12 @@ def create_or_edit_a_post(request, pk=None):
     or edit a post depending on the Post ID
     And rendering it to the 'edit_post.html' template
     """
-    post = get_object_or_404(Post, pk=pk) if pk else None
+    post = get_object_or_404(StoryPost, pk=pk) if pk else None
     if request.method == "POST":
-        form = BlogPostForm(request.POST, request.FILES, instance=post)
+        form = StoryPostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             post = form.save()
             return redirect(post_details, post.pk)
     else:
-        form = BlogPostForm(instance=post)
-    return render(request, 'edit_post.html', {'form': form})
+        form = StoryPostForm(instance=post)
+    return render(request, 'edit_story_post.html', {'form': form})

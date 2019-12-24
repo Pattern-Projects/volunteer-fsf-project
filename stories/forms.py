@@ -1,7 +1,7 @@
 from django import forms
-from .models import Post
+from .models import StoryPost
 
-class BlogPostForm(forms.ModelForm):
+class StoryPostForm(forms.ModelForm):
     class Meta:
-        model = Post
+        model = StoryPost
         fields = ('title', 'content', 'image', 'tag', 'published_date')
