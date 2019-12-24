@@ -3,14 +3,14 @@ from .models import StoryPost
 from .forms import StoryPostForm
 
 # Create your views here.
-def get_posts(request):
+def get_story_posts(request):
     """
         Retrieve travel page content and show here
     """
     posts = StoryPost.objects.all().order_by('-published_date')
     return render(request, "story_posts.html", {'posts': posts})
 
-def post_details(request, pk):
+def story_post_details(request, pk):
     """
     Create a view that returns a single
     Post object based on the post ID (pk) and
@@ -22,7 +22,7 @@ def post_details(request, pk):
     post.save()
     return render(request, "story_post.html", {'post': post})
 
-def create_or_edit_a_post(request, pk=None):
+def create_or_edit_a_story_post(request, pk=None):
     """
     A view that is used to create
     or edit a post depending on the Post ID
@@ -33,7 +33,7 @@ def create_or_edit_a_post(request, pk=None):
         form = StoryPostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             post = form.save()
-            return redirect(post_details, post.pk)
+            return redirect(story_post_details, post.pk)
     else:
         form = StoryPostForm(instance=post)
     return render(request, 'edit_story_post.html', {'form': form})
