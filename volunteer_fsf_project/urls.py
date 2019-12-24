@@ -14,6 +14,7 @@ import blog.urls as urls_blog
 import camps.urls as urls_camps
 import cart.urls as urls_cart
 import checkout.urls as urls_checkout
+import news.urls as urls_news
 import search.urls as urls_search
 import travel.urls as urls_travel
 
@@ -26,6 +27,7 @@ urlpatterns = [
     url(r'^camps/', include(urls_camps)),
     url(r'^cart/', include(urls_cart)),
     url(r'^checkout/', include(urls_checkout)),
+    url(r'^news/', include(urls_news), name="news"),
     url(r'^search/', include(urls_search)),
     url(r'^travel/', include(urls_travel), name="travel"),
 

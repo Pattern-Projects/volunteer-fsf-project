@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'blog',
     'camps',
     'cart',
+    'news',
     'storages',
     'search',
     'travel',
