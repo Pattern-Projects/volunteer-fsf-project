@@ -12,8 +12,12 @@
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}
 
+{% block page_heading %}
+<h1>Your Order</h1>
+{% endblock %}
+
 {% block content %}
-    <h1>Your Order</h1>
+    
     <div class="item-box">
     <table>
         <tr>
@@ -36,7 +40,7 @@
     </div>
 
     {% if total != 0 %}
-    <form role="form" method="post" class="full_camp_form" id="payment-form" action="{% url 'checkout' %}">
+    <form role="form" method="post" class="" id="payment-form" action="{% url 'checkout' %}">
         <h1>Payment Info</h1>
 
         <div id="credit-card-errors" style="display: none;">
@@ -45,12 +49,12 @@
 
     <div class="item-box">
         <h3>User Details</h3>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-12">
             {{ order_form | as_bootstrap }}
         </div>
     <hr>
         <h3>Card Details</h3>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-12">
             {{ payment_form | as_bootstrap }}
         </div>
     </div>

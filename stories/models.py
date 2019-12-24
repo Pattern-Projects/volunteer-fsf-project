@@ -14,7 +14,7 @@ class StoryPost(models.Model):
     views = models.IntegerField(default=0)
     image = models.ImageField(upload_to="img", blank=True, null=True)
     
-    camp_id = models.IntegerField(default=0)
+    camp_id = models.IntegerField(default=1)
 
     def __str__(self):
         return self.title
