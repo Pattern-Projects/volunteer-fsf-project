@@ -1,21 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Post, TravelPost
+from .models import Post
 from .forms import BlogPostForm
 
 # Create your views here.
-def get_travel_post(request):
-    """
-        Retrieve travel page content and show here
-    """
-    posts = TravelPost.objects.all()
-    if (posts):
-        post.views += 1
-        post.save()
-        return render(request, "post.html", {'post': post})
-    else:
-        return render(request, "travel_post.html")
-
-def get_post(request):
+def get_posts(request):
     """
         Retrieve travel page content and show here
     """
