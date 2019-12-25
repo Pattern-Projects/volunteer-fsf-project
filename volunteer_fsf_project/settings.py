@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'cart',
     'checkout',
     'donate',
+    'goals',
     'news',
     'privacy',
     'storages',
