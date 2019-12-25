@@ -14,6 +14,7 @@ import stories.urls as urls_stories
 import camps.urls as urls_camps
 import cart.urls as urls_cart
 import checkout.urls as urls_checkout
+import donate.urls as urls_donate
 import news.urls as urls_news
 import privacy.urls as urls_privacy
 import search.urls as urls_search
@@ -28,6 +29,7 @@ urlpatterns = [
     url(r'^camps/', include(urls_camps), name="camps"),
     url(r'^cart/', include(urls_cart)),
     url(r'^checkout/', include(urls_checkout)),
+    url(r'^donate/', include(urls_donate), name="donate"),
     url(r'^news/', include(urls_news), name="news"),
     url(r'^privacy/', include(urls_privacy), name="privacy"),
     url(r'^search/', include(urls_search)),

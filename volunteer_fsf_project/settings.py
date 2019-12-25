@@ -47,12 +47,13 @@ INSTALLED_APPS = [
     'stories',
     'camps',
     'cart',
+    'checkout',
+    'donate',
     'news',
     'privacy',
     'storages',
     'search',
     'travel',
-    'checkout',
 ]
 
 MIDDLEWARE = [

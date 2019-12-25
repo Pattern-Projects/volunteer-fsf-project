@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap_tags %}
+
+{% block head_js %}
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+    //<![CDATA[
+        Stripe.publishableKey = '{{ publishable }}';
+    //]]>
+</script>
+<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+{% endblock %}
+
+{% block page_heading %}
+<h1>Make a Donation</h1>
+{% endblock %}
+
+{% block content %}
+    
+
+    <form role="form" method="post" class="" id="payment-form" action="{% url 'donate' %}">
+
+        <div id="credit-card-errors" style="display: none;">
+            <div id="alert-message block-message error" id="stripe-error-message"></div>
+        </div>
+
+    <div class="item-box">
+        <h3>User Details</h3>
+        <div class="form-group col-md-12">
+            {{ order_form | as_bootstrap }}
+        </div>
+    <hr>
+        <h3>Card Details</h3>
+        <div class="form-group col-md-12">
+            {{ payment_form | as_bootstrap }}
+        </div>
+    </div>
+
+        {% csrf_token %}
+        <div class="form-group col-md-12">
+            <input class=" btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+        </div>
+    </form>
+    </div>
+{% endblock %}
