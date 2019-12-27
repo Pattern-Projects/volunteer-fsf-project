@@ -9,7 +9,7 @@ class TestCampViews(TestCase):
         Test that get_camps returns a list of camps
         and renders them to the "camps.html" template
         """
-        page = self.client.get("/")
+        page = self.client.get("/camps/")
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "camps.html")
 
