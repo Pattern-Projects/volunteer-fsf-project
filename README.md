@@ -6,7 +6,7 @@ Data from volunteer work camps will be displayed and can be applied to by paying
 Please check the [wiki](https://github.com/Pattern-Projects/volunteer-fsf-project/wiki) for tips on how to use the website.
 ## License
 
-The project is shared for use with the [GNU General Public License v3](https://github.com/Pattern-Projects/oireachtas-ifd-project/blob/master/LICENSE)
+The project is shared for use with the [GNU General Public License v3](https://github.com/Pattern-Projects/volunteer-fsf-project/blob/master/LICENSE)
 
 >   This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -132,7 +132,7 @@ This project makes use of the following technologies:
 - [Heroku](http://heroku.com) is a cloud platform as a service which allows easy deployment of this project and database.
 - [Heroku Toolbelt](https://devcenter.heroku.com/articles/heroku-cli) connects to Heroku through a terminal.
 - [Gitpod](gitpod.io) is an in browser IDE that can open and setup git repositories directly from github.
-- [AWS Cloud9](https://www.awseducate.com/signin/SiteLogin) IDE services from Amazon and connecting into their suite of products.
+- [Azure](https://azure.microsoft.com/) IDE services from Microsoft and connecting into their suite of hosting products.
 - [Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) CSS styling from **Bootstrap**.
 - [Font Awsome](https://fontawesome.com/) provide neat icons with easy styling.
 - [Travis CI](https://travis-ci.org/) Continuous Integration from **Travis**.
