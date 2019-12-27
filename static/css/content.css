@@ -18,6 +18,9 @@
     border-radius: 6px;
 }
 
+.item-box .post-image {
+    width: 100%;
+}
 
 .item-box .camp-title {
     margin-bottom: 0;
