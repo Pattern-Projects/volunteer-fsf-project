@@ -3,6 +3,8 @@
 {% block page_title %}Login{% endblock %}
 {% block page_heading %}Login{% endblock %}
 {% block content %}
+
+
 <div class="item-box">
 
     <form method="POST">
@@ -12,4 +14,20 @@
     <form>
         <p>Not a member? <a href="{% url 'registration' %}">Register</a></p>
 </div>
+    {% if DEVELOPMENT == 'Evaluation' %}
+        <div class="callout-2">
+            Admin User
+            <table class="callout-table">
+            <tr>
+            <th>Username</th>
+            <td>root</td>
+            </tr>
+            <tr>
+            <th>Password</th>
+            <td>rootroot</td>
+            </tr>
+            </table>
+        </div>
+        
+    {% endif %}
 {% endblock %}
