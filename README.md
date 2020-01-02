@@ -3,6 +3,9 @@
 A site for volunteers to find volunteering opportunities around the world.
 Data from volunteer work camps will be displayed and can be applied to by paying a small fee.
 
+- [Development Pipeline Version](https://volunteer-fsf-development.herokuapp.com/)  
+- [Evaluation Pipeline Version](https://volunteer-fsf-project.herokuapp.com/)  
+
 Please check the [wiki](https://github.com/Pattern-Projects/volunteer-fsf-project/wiki) for tips on how to use the website.
 ## License
 
@@ -17,7 +20,7 @@ The project is shared for use with the [GNU General Public License v3](https://g
 ## UX
 
 <!--Responsive Views of Home Page-->
-![Responsive image missing](documentation/Responsive.png)
+![Responsive image missing](media/img/home-screen.png)
 
 ### Users
 
@@ -32,10 +35,14 @@ Expected users of the website include volunteer camp organisers, voluntary organ
 ### Design
 
 <!--- Gold circles representing the seats of the Oireachtas-->
-![Website Logo Missing](documentation/logo.png)
 - Colour scheme consists of complementary colours
 - roboto font used throughout the website
     - font-family: 'Roboto', 'helvetica' sans-serif;
+- Icons imported from Font FontAwesome
+- Designed for accessibility:
+    - Semantic structure
+    - Alt text
+    - Colour Contrast
 
 ### Mockups
 
@@ -81,6 +88,11 @@ The camp model is structured in the following way:
 - published_date
 - tag
 
+Other models include:
+- Order
+- News
+- Story
+- User
 
 ## Features
 
@@ -119,7 +131,8 @@ Features planned, implemented and outlined for later development
 - Strip payments
 
 ### Features Left to Implement
-
+- Camp Filtering
+- Image uploads
 
 ## Technologies Used
 
@@ -206,6 +219,10 @@ Example:
 The site was tested through a number of means:
 
 ### User Stories
+
+1. Volunteer Camp Organisers can notify the voluntary organistaion of their camp.
+2. Volunteer organisations can list the camps on the site.
+3. Volunteers looking for a work camp experience can apply to work at the camp.
 
 ### Django TestCase
 
