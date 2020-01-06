@@ -7,6 +7,8 @@ Data from volunteer work camps will be displayed and can be applied to by paying
 - [Evaluation Pipeline Version](https://volunteer-fsf-project.herokuapp.com/)  
 
 Please check the [wiki](https://github.com/Pattern-Projects/volunteer-fsf-project/wiki) for tips on how to use the website.
+
+[Root access login details for Evaluation.](https://github.com/Pattern-Projects/volunteer-fsf-project/wiki/Evaluation)
 ## License
 
 The project is shared for use with the [GNU General Public License v3](https://github.com/Pattern-Projects/volunteer-fsf-project/blob/master/LICENSE)
@@ -216,7 +218,6 @@ Example:
     - [JSON](https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.json?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c)
     - Google Sheets - paste provided macro into your sheet:
         - ```=IMPORTDATA("https://data.heroku.com/dataclips/sedlidytgswqyydiviezgqoozuql.csv?access-token=d2641951-1bcf-4669-b49f-04efebb0c44c")```
-
 
 ## Testing
 
