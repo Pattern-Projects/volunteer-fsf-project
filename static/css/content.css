@@ -90,6 +90,10 @@
     margin-top: 10px;
 }
 
+.story-img>img {
+    height: 100px;
+}
+
 .full_camp_form {
     margin: 0 auto;
     width: 80%;
