@@ -16,7 +16,6 @@ The project is shared for use with the [GNU General Public License v3](https://g
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-
 ## UX
 
 <!--Responsive Views of Home Page-->
@@ -202,6 +201,11 @@ Heroku provides a number of useful tools to aid in development
 
 #### Heroku Postgres Add-on
 Databases can be created and hosted on heroku using their built in **PostgreSQL** add-ons.
+
+#### Pipeline Developement
+Allows for staging of the development version app alongside the production ready app.
+New features added to the development app can be tested on the staged apps without directly affecting the
+user experience of the production version.
 
 #### Dataclips
 The Heorku Postgres add-on allows for secure links to SQL queries of the database known as dataclips. They are great for quick referencing of the database and sharing of specific data across teams.

@@ -14,11 +14,14 @@ class CampForm(forms.ModelForm):
         self.fields['start_date'].widget.attrs['class'] = 'datepicker'        
         self.fields['end_date'].widget.attrs['class'] = 'datepicker'
 
+class CampFilterForm(forms.Form):
+    start_after = forms.CharField(required=False)
+    end_before = forms.CharField(required=False)
+
 class FilterForm(forms.ModelForm):
-    english_required = forms.BooleanField()
     class Meta:
         model = FilterModel
-        fields = ('start_after', 'end_before', 'english_required', 'continent')
+        fields = ('start_after', 'end_before')
 
     # Add css on init
     def __init__(self, *args, **kwargs):

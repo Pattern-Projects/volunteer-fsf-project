@@ -1,23 +1,19 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Camp, FilterModel
-from .forms import CampForm, FilterForm
-
+from .forms import CampForm, FilterForm, CampFilterForm
 def get_camps(request):
     """
     Create a view that will return a list
     of Camps and render them to the 'camps.html' template
     """
-    model = FilterModel()
 
-    # TODO:Repair or remove
-    if request.method == "POST":
-        filter = FilterForm(request.POST, request.FILES, instance=model)
-        if filter.is_valid():
-            model = filter.save()
-            results = Camp.objects.filter(model)[:30]
-    else:
-        filter = FilterForm(instance=model)
-        results = Camp.objects.order_by('published_date')[:30]
+    results = Camp.objects.all()
+    filter = FilterForm(request.GET)
+    if filter.is_valid():
+        results = Camp.objects.filter(
+            start_date__gte=request.GET['start_after'],
+            end_date__lte=request.GET['end_before']
+        )[:30]
 
     return render(request, "camps.html", {'camps': results, 'form': filter})
 

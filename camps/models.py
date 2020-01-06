@@ -44,10 +44,6 @@ class Camp(models.Model):
         return self.title
 
 class FilterModel(models.Model):
-    CONTINENTS = [('ALL','All'),('ASIA','Asia'),('AFRICA','Africa'),('AUSTRALIA', 'Australia'),('AMERICAS', 'Americas'),('EUROPE', 'Europe'),]
-    continent = models.CharField(max_length=10, choices=CONTINENTS, default=1)
-
     start_after = models.DateField(default=date.today)
     end_before = models.DateField(default=date.today)
     
-    english_required = models.BooleanField(null=True, blank=True)
