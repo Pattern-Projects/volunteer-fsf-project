@@ -50,7 +50,7 @@ def login(request):
             user = auth.authenticate(   username=request.POST['username'],
                                         password=request.POST['password'])
             if user:
-                messages.success(request, 'successful login!')
+                messages.success(request, 'You have been logged in!')
                 auth.login(user=user, request=request)
                 return render(request, 'profile.html')
             else:
@@ -64,5 +64,5 @@ def login(request):
 def logout(request):
     """Logs out any logged in users"""
     auth.logout(request)
-    messages.success(request, 'Successful')
+    messages.success(request, 'You have been logged out!')
     return redirect(reverse('home'))
