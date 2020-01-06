@@ -20,7 +20,7 @@ The project is shared for use with the [GNU General Public License v3](https://g
 ## UX
 
 <!--Responsive Views of Home Page-->
-![Responsive image](https://github.com/Pattern-Projects/volunteer-fsf-project/blob/df2a5687074117ae9af064c38b98dffad2df4e15/media/img/home-screen.png)
+![Responsive image](media/img/homescreen.png)
 
 ### Users
 
