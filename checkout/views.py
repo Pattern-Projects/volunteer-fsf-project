@@ -51,7 +51,7 @@ def checkout(request):
                     request.session['cart'] = {}
                     return redirect(reverse('home'))
                 else:
-                    messages.error(request, 'Unable to take payment')
+                    messages.error(request, 'Unable to take payment at this time.')
             else:
                 messages.error(request, "We were unable to process your payment at this time")
         else:
