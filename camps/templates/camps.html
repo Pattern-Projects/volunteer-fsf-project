@@ -130,8 +130,9 @@ Camps
 			</div>
 			{% endfor %}
 
+            {% if request.user.is_authenticated %}
 			<a href="{% url 'new_camp' %}">Add Camp</a>
-
+            {% endif %}
 
 
 
