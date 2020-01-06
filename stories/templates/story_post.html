@@ -19,7 +19,9 @@ Camps
                     <div class="info-header">
                         {{ camp.title }}
                     </div>
-                        {{ camp.coutry }}
+
+                        {{ camp.tagline }}</br>
+                        {{ camp.country }}</br>
                         {{ camp.organisation }}                        
                 </br>
                 <a href="{% url 'camp_details' camp.id %}" class="btn btn-info">View Camp</a>
