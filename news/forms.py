@@ -4,4 +4,4 @@ from .models import NewsPost
 class NewsPostForm(forms.ModelForm):
     class Meta:
         model = NewsPost
-        fields = ('title', 'content', 'image', 'tag', 'published_date')
+        fields = ('title', 'content', 'tag', 'published_date')
